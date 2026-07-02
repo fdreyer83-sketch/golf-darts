@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier Financier Investisseurs — Golf Indoor & Fléchettes | Strasbourg 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0F6E56;--gm:#1D9E75;--gl:#E1F5EE;--gxl:#F0FAF6;--go:#BA7517;--gol:#FAEEDA;--r:#A32D2D;--rl:#FCEBEB;--b:#185FA5;--bl:#E6F1FB;--p:#534AB7;--pl:#EEEDF9;--t:#1a1a1a;--t2:#4a4a4a;--mu:#888780;--br:#D3D1C7;--brl:#E8E6DF;--sur:#FAFAF8;--w:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"DM Sans",sans-serif;font-size:14.5px;line-height:1.7;color:var(--t);background:var(--sur);max-width:960px;margin:0 auto;padding:0 24px 80px;}
+.cover{background:linear-gradient(135deg,#06302A 0%,#0F6E56 55%,#1A8A66 100%);color:white;padding:60px 52px;margin:0 -24px 48px;position:relative;overflow:hidden;}
+.cover::before{content:"";position:absolute;top:-80px;right:-80px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.04);}
+.cover::after{content:"";position:absolute;bottom:-60px;left:200px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.03);}
+.cv-tag{display:inline-block;background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);padding:4px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;}
+.cover h1{font-family:"Playfair Display",serif;font-size:38px;font-weight:700;line-height:1.2;margin-bottom:8px;}
+.cv-sub{font-size:15px;opacity:.75;margin-bottom:10px;}
+.cv-conf{display:inline-block;background:rgba(186,117,23,.3);border:1px solid rgba(186,117,23,.5);color:#FFD97A;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:.08em;margin-bottom:32px;}
+.cv-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);}
+.cv-kpi strong{display:block;font-size:24px;font-weight:700;color:white;margin-bottom:2px;}
+.cv-kpi span{font-size:11px;opacity:.65;line-height:1.3;}
+.toc{background:var(--w);border:1px solid var(--br);border-radius:12px;padding:24px 28px;margin-bottom:48px;}
+.toc-h{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:14px;}
+.toc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px;}
+.toc-a{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;text-decoration:none;color:var(--t2);font-size:12.5px;font-weight:500;}
+.toc-a:hover{background:var(--gxl);color:var(--g);}
+.toc-n{width:22px;height:22px;border-radius:5px;background:var(--g);color:white;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sec{margin-bottom:56px;}
+.sec-hd{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--gl);}
+.sec-n{width:38px;height:38px;background:var(--g);color:white;border-radius:9px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.sec-title{font-family:"Playfair Display",serif;font-size:24px;font-weight:600;}
+.sec-sub{font-size:12.5px;color:var(--mu);margin-top:2px;}
+h3{font-size:15px;font-weight:600;margin:22px 0 10px;}
+p{color:var(--t2);margin-bottom:10px;font-size:14px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0;}
+.stat{background:var(--w);border:1px solid var(--br);border-radius:9px;padding:14px;text-align:center;}
+.stat-v{font-size:22px;font-weight:700;color:var(--g);line-height:1.2;margin-bottom:3px;}
+.stat-l{font-size:11px;color:var(--mu);line-height:1.4;}
+.stat.go .stat-v{color:var(--go);}
+.stat.r .stat-v{color:var(--r);}
+.stat.b .stat-v{color:var(--b);}
+.stat.p .stat-v{color:var(--p);}
+.stat.dark{background:var(--g);border-color:var(--g);}
+.stat.dark .stat-v{color:white;font-size:26px;}
+.stat.dark .stat-l{color:rgba(255,255,255,.7);}
+.tw{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--br);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--g);color:white;padding:10px 13px;text-align:left;font-weight:500;font-size:11.5px;white-space:nowrap;}
+tbody tr:nth-child(even){background:var(--gxl);}
+tbody tr:hover{background:var(--gl);}
+td{padding:9px 13px;border-bottom:1px solid var(--brl);color:var(--t2);vertical-align:middle;}
+td strong{color:var(--t);font-weight:600;}
+.total td{background:var(--g)!important;color:white!important;font-weight:700;font-size:13.5px;}
+.subtot td{background:var(--gl)!important;font-weight:600;color:var(--g)!important;}
+.cat td{background:#F3F1EB;font-weight:700;font-size:11px;color:var(--mu);letter-spacing:.07em;text-transform:uppercase;padding:7px 13px;}
+.b{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;}
+.bg{background:var(--gl);color:var(--g);}
+.bo{background:var(--gol);color:var(--go);}
+.br2{background:var(--rl);color:var(--r);}
+.bb{background:var(--bl);color:var(--b);}
+.bp{background:var(--pl);color:var(--p);}
+.bgr{background:#EEECE6;color:#666;}
+.info{background:var(--bl);border-left:3px solid var(--b);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#1a3a60;}
+.warn{background:var(--gol);border-left:3px solid var(--go);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#4a2e00;}
+.ok{background:var(--gl);border-left:3px solid var(--g);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--g);}
+.danger{background:var(--rl);border-left:3px solid var(--r);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--r);}
+.callout{background:var(--g);color:white;border-radius:11px;padding:22px 26px;margin:20px 0;display:flex;gap:16px;}
+.callout-icon{font-size:24px;flex-shrink:0;}
+.callout h4{color:rgba(255,255,255,.85);margin:0 0 5px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;}
+.callout p{color:rgba(255,255,255,.8);font-size:13px;margin:0;}
+.fin-stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:16px 0;}
+.fi{border-radius:9px;padding:14px 16px;border:1px solid var(--br);background:var(--w);}
+.fi-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;}
+.fi-a{font-size:20px;font-weight:700;margin-bottom:2px;}
+.fi-p{font-size:11px;color:var(--mu);}
+.fi1 .fi-l,.fi1 .fi-a{color:var(--g);}
+.fi2 .fi-l,.fi2 .fi-a{color:var(--b);}
+.fi3 .fi-l,.fi3 .fi-a{color:var(--go);}
+.fi4 .fi-l,.fi4 .fi-a{color:var(--p);}
+.fi5 .fi-l,.fi5 .fi-a{color:var(--r);}
+.fi6 .fi-l,.fi6 .fi-a{color:#2D8A5C;}
+.progress-bar{background:#E8E6DF;border-radius:6px;height:18px;overflow:hidden;margin:4px 0 12px;}
+.progress-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:white;transition:width .3s;}
+.pf-g{background:var(--g);}
+.pf-b{background:var(--b);}
+.pf-o{background:var(--go);}
+.pf-p{background:var(--p);}
+.pf-r{background:var(--r);}
+.pf-gr{background:#888;}
+.scenario-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;}
+.sc{background:var(--w);border:1px solid var(--br);border-radius:10px;padding:18px;position:relative;overflow:hidden;}
+.sc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;}
+.sc-p::before{background:var(--r);}
+.sc-b::before{background:var(--go);}
+.sc-o::before{background:var(--gm);}
+.sc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+.sc-p .sc-label{color:var(--r);}
+.sc-b .sc-label{color:var(--go);}
+.sc-o .sc-label{color:var(--g);}
+.sc-ca{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;margin-bottom:3px;}
+.sc-p .sc-ca{color:var(--r);}
+.sc-b .sc-ca{color:var(--go);}
+.sc-o .sc-ca{color:var(--g);}
+.sc-d{font-size:11.5px;color:var(--mu);line-height:1.7;}
+.sc-roi{margin-top:10px;padding-top:8px;border-top:1px solid var(--brl);font-size:12px;font-weight:600;}
+.sc-p .sc-roi{color:var(--r);}
+.sc-b .sc-roi{color:var(--go);}
+.sc-o .sc-roi{color:var(--g);}
+.lever-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0;}
+.lever{background:var(--w);border:1px solid var(--br);border-radius:9px;padding:14px 16px;}
+.lever-icon{font-size:20px;margin-bottom:6px;}
+.lever-title{font-size:12px;font-weight:700;color:var(--g);margin-bottom:4px;}
+.lever-val{font-size:18px;font-weight:700;color:var(--t);margin-bottom:3px;}
+.lever-sub{font-size:11px;color:var(--mu);}
+hr{border:none;border-top:1px solid var(--brl);margin:28px 0;}
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0;}
+.risk{border-radius:9px;padding:14px 16px;border:1px solid var(--br);}
+.risk-r{background:var(--rl);border-color:var(--r);}
+.risk-o{background:var(--gol);border-color:var(--go);}
+.risk-g{background:var(--gl);border-color:var(--g);}
+.risk-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.risk-r .risk-label{color:var(--r);}
+.risk-o .risk-label{color:var(--go);}
+.risk-g .risk-label{color:var(--g);}
+.risk ul{list-style:none;font-size:12px;line-height:1.8;}
+.risk ul li::before{content:"→ ";opacity:.6;}
+@media(max-width:600px){.cover{padding:36px 20px;}.cover h1{font-size:26px;}.scenario-row{grid-template-columns:1fr;}}
+</style></head><body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-tag">Dossier Financier Investisseurs · Juin 2026</div>
+  <h1>Golf Indoor &amp; Fléchettes<br>Connectées · Strasbourg</h1>
+  <div class="cv-sub">Bar · Restauration · Entertainment — Eurométropole de Strasbourg</div>
+  <div class="cv-conf">CONFIDENTIEL — Document réservé aux investisseurs et partenaires financiers</div>
+  <div class="cv-kpis">
+    <div class="cv-kpi"><strong>524 K€</strong><span>Besoin total de financement</span></div>
+    <div class="cv-kpi"><strong>18 K€</strong><span>Apport personnel (3,4%)</span></div>
+    <div class="cv-kpi"><strong>506 K€</strong><span>Financement à lever</span></div>
+    <div class="cv-kpi"><strong>440 K€</strong><span>CA cible année 2</span></div>
+    <div class="cv-kpi"><strong>+62 K€</strong><span>EBE cible année 2</span></div>
+    <div class="cv-kpi"><strong>4–5 ans</strong><span>Retour sur investissement</span></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-h">Sommaire du dossier financier</div>
+  <div class="toc-g">
+    <a href="#s1" class="toc-a"><div class="toc-n">1</div>Synthèse exécutive</a>
+    <a href="#s2" class="toc-a"><div class="toc-n">2</div>Besoin total de financement</a>
+    <a href="#s3" class="toc-a"><div class="toc-n">3</div>Plan de financement</a>
+    <a href="#s4" class="toc-a"><div class="toc-n">4</div>CAPEX — Investissements</a>
+    <a href="#s5" class="toc-a"><div class="toc-n">5</div>OPEX — Charges fixes &amp; variables</a>
+    <a href="#s6" class="toc-a"><div class="toc-n">6</div>Projections de revenus</a>
+    <a href="#s7" class="toc-a"><div class="toc-n">7</div>Compte de résultat prévisionnel</a>
+    <a href="#s8" class="toc-a"><div class="toc-n">8</div>Plan de trésorerie (Cash Flow)</a>
+    <a href="#s9" class="toc-a"><div class="toc-n">9</div>ROI &amp; seuil de rentabilité</a>
+    <a href="#s10" class="toc-a"><div class="toc-n">10</div>Stratégie de levier &amp; garanties</a>
+    <a href="#s11" class="toc-a"><div class="toc-n">11</div>Analyse des risques</a>
+    <a href="#s12" class="toc-a"><div class="toc-n">12</div>Engagements &amp; conditions</a>
+  </div>
+</div>
+
+<!-- S1 SYNTHÈSE -->
+<div class="sec" id="s1">
+  <div class="sec-hd"><div class="sec-n">1</div><div><div class="sec-title">Synthèse exécutive</div><div class="sec-sub">Le projet, l'opportunité, les chiffres clés</div></div></div>
+
+  <p>Ce dossier présente le projet de création d'un <strong>espace de divertissement hybride</strong> à Strasbourg combinant 4 simulateurs de golf indoor haute technologie, 6 pistes de fléchettes connectées, et un bar/restaurant. Le concept s'adresse à une clientèle urbaine CSP+, aux entreprises de l'Eurométropole, et aux golfeurs alsaciens en recherche d'une solution d'entraînement toute l'année.</p>
+
+  <div class="callout">
+    <div class="callout-icon">🎯</div>
+    <div>
+      <h4>L'opportunité en une phrase</h4>
+      <p>Strasbourg est la seule grande métropole française sans aucun concurrent sur ce concept en 2026. Paris compte déjà 3 établissements similaires (dont le Matchplay Society, golf + fléchettes + restauration, ouvert en 2024). Le marché est vierge, la demande existe, et le timing post-JO golf 2024 est idéal.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">524 K€</div><div class="stat-l">Besoin total de financement</div></div>
+    <div class="stat go"><div class="stat-v">440 K€</div><div class="stat-l">CA projeté année 2</div></div>
+    <div class="stat b"><div class="stat-v">62 K€</div><div class="stat-l">EBE projeté année 2</div></div>
+    <div class="stat"><div class="stat-v">55%</div><div class="stat-l">Marge brute globale estimée</div></div>
+    <div class="stat p"><div class="stat-v">An 3</div><div class="stat-l">Résultat net positif</div></div>
+    <div class="stat r"><div class="stat-v">4–5 ans</div><div class="stat-l">Retour sur investissement</div></div>
+  </div>
+
+  <h3>Atouts différenciants pour les investisseurs</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Atout</th><th>Détail</th><th>Impact financier</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Marché vierge à Strasbourg</strong></td><td>0 concurrent direct identifié en 2026</td><td>Acquisition clientèle rapide, pas de guerre des prix</td></tr>
+      <tr><td><strong>Double activité = double revenus</strong></td><td>Golf (premium) + fléchettes (accessibilité) + F&amp;B</td><td>6 sources de revenus distinctes, risque dilué</td></tr>
+      <tr><td><strong>Météo-indépendant, toute l'année</strong></td><td>Haute saison golf Oct–Mar = basse saison outdoor</td><td>Pas de saisonnalité prononcée, CA lissé</td></tr>
+      <tr><td><strong>Tissu corporate exceptionnel</strong></td><td>Institutions européennes, sièges sociaux Wacken</td><td>Privatisations 800–2 000 €/événement récurrents</td></tr>
+      <tr><td><strong>Modèle validé à Paris</strong></td><td>Matchplay Society, Swing City, Chill &amp; Golf</td><td>Risque concept minimisé — replication prouvée</td></tr>
+      <tr><td><strong>Revenus récurrents (abonnements)</strong></td><td>Abonnements mensuels 179 €/mois</td><td>Socle de CA prévisible, réduit la volatilité</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S2 BESOIN FINANCEMENT -->
+<div class="sec" id="s2">
+  <div class="sec-hd"><div class="sec-n">2</div><div><div class="sec-title">Besoin total de financement</div><div class="sec-sub">Décomposition du besoin, contexte apport limité</div></div></div>
+
+  <div class="warn">⚠️ <strong>Contexte apport personnel :</strong> L'apport personnel disponible est de <strong>15 000 à 20 000 €</strong>, soit environ <strong>3–4% du besoin total</strong>. Ce niveau d'apport est atypique pour un projet de cette envergure. Ce dossier démontre comment un plan de financement multi-sources structuré permet de compenser ce levier limité tout en offrant des garanties solides aux financeurs.</div>
+
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">524 K€</div><div class="stat-l">Besoin total</div></div>
+    <div class="stat r"><div class="stat-v">18 K€</div><div class="stat-l">Apport personnel (3,4%)</div></div>
+    <div class="stat go"><div class="stat-v">506 K€</div><div class="stat-l">À financer via partenaires</div></div>
+    <div class="stat b"><div class="stat-v">×28</div><div class="stat-l">Effet de levier nécessaire</div></div>
+  </div>
+
+  <h3>Décomposition du besoin (CAPEX + Fonds de roulement)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Catégorie</th><th>Montant</th><th>% du total</th><th>Financement cible</th></tr></thead>
+    <tbody>
+      <tr class="cat"><td colspan="4">INVESTISSEMENTS CORPORELS &amp; TRAVAUX</td></tr>
+      <tr><td>Droit au bail + dépôt de garantie</td><td>63 000 €</td><td>12%</td><td>Prêt bancaire</td></tr>
+      <tr><td>Travaux gros œuvre + second œuvre</td><td>93 000 €</td><td>18%</td><td>Prêt bancaire + TDR</td></tr>
+      <tr><td>Décoration, mobilier, signalétique</td><td>43 000 €</td><td>8%</td><td>Prêt bancaire</td></tr>
+      <tr class="subtot"><td><strong>Sous-total Immobilier</strong></td><td><strong>199 000 €</strong></td><td><strong>38%</strong></td><td></td></tr>
+      <tr class="cat"><td colspan="4">ÉQUIPEMENTS GOLF (4 BAYS)</td></tr>
+      <tr><td>4 × Monitors TrackMan iO</td><td>72 000 €</td><td>14%</td><td>Leasing spécialisé</td></tr>
+      <tr><td>Installation complète × 4 (écrans, projecteurs, PC, enclosures)</td><td>58 000 €</td><td>11%</td><td>Prêt bancaire</td></tr>
+      <tr><td>Logiciels &amp; licences golf (an 1)</td><td>4 000 €</td><td>1%</td><td>Apport + prêt d'honneur</td></tr>
+      <tr class="subtot"><td><strong>Sous-total Golf</strong></td><td><strong>134 000 €</strong></td><td><strong>26%</strong></td><td></td></tr>
+      <tr class="cat"><td colspan="4">ÉQUIPEMENTS FLÉCHETTES (6 PISTES)</td></tr>
+      <tr><td>6 × Cibles connectées + 6 × TV 55"</td><td>13 800 €</td><td>2,6%</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Aménagement 6 pistes (LED, sol, protection)</td><td>9 000 €</td><td>1,7%</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Option cabines immersives (différé an 2)</td><td>0 €</td><td>—</td><td>Autofinancement an 2</td></tr>
+      <tr class="subtot"><td><strong>Sous-total Fléchettes</strong></td><td><strong>22 800 €</strong></td><td><strong>4,3%</strong></td><td></td></tr>
+      <tr class="cat"><td colspan="4">BAR &amp; RESTAURATION</td></tr>
+      <tr><td>Équipement bar (tireuses, frigos, cocktails)</td><td>15 000 €</td><td>2,9%</td><td>Prêt bancaire</td></tr>
+      <tr><td>Cuisine légère (frigos pro, plancha, lave-vaisselle)</td><td>24 000 €</td><td>4,6%</td><td>Prêt bancaire</td></tr>
+      <tr><td>Vaisselle, mobilier de salle</td><td>19 000 €</td><td>3,6%</td><td>Prêt bancaire</td></tr>
+      <tr class="subtot"><td><strong>Sous-total F&amp;B</strong></td><td><strong>58 000 €</strong></td><td><strong>11%</strong></td><td></td></tr>
+      <tr class="cat"><td colspan="4">DIGITAL, ADMIN &amp; FONDS DE ROULEMENT</td></tr>
+      <tr><td>Digital (caisse, réservation, site web, réseau)</td><td>9 000 €</td><td>1,7%</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Marketing lancement (shooting, ads, RP)</td><td>12 000 €</td><td>2,3%</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Licences admin (Licence IV, permis, assurances)</td><td>7 000 €</td><td>1,3%</td><td>Apport personnel</td></tr>
+      <tr><td>Frais création société + expertise comptable</td><td>4 000 €</td><td>0,8%</td><td>Apport personnel</td></tr>
+      <tr><td><strong>Fonds de roulement (3 mois de charges)</strong></td><td><strong>62 000 €</strong></td><td><strong>12%</strong></td><td>Prêt bancaire</td></tr>
+      <tr class="subtot"><td><strong>Sous-total Admin + FDR</strong></td><td><strong>94 000 €</strong></td><td><strong>18%</strong></td><td></td></tr>
+      <tr class="total"><td><strong>TOTAL BESOIN DE FINANCEMENT</strong></td><td><strong>507 800 €</strong></td><td><strong>100%</strong></td><td>Scénario de base</td></tr>
+      <tr><td><em>Provision imprévus (+3%)</em></td><td><em>+16 200 €</em></td><td><em>—</em></td><td>Réserve sécurité</td></tr>
+      <tr class="total"><td><strong>TOTAL AVEC PROVISION</strong></td><td><strong>524 000 €</strong></td><td><strong>—</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S3 PLAN FINANCEMENT -->
+<div class="sec" id="s3">
+  <div class="sec-hd"><div class="sec-n">3</div><div><div class="sec-title">Plan de financement</div><div class="sec-sub">Architecture financière multi-sources pour compenser un apport limité</div></div></div>
+
+  <div class="info">💡 <strong>Principe de la stratégie :</strong> Un apport de 18 K€ ne permet pas d'accéder directement à un prêt bancaire de 270 K€. La stratégie consiste à <strong>empiler les prêts d'honneur à 0%</strong> (Initiative + Réseau Entreprendre) pour atteindre un niveau d'apport crédible aux yeux des banques, puis d'utiliser <strong>Bpifrance comme garant</strong> pour sécuriser le prêt principal. Le leasing des simulateurs sort une partie du CAPEX du bilan.</div>
+
+  <h3>Architecture de financement cible</h3>
+  <div class="fin-stack">
+    <div class="fi fi1"><div class="fi-l">Apport personnel</div><div class="fi-a">18 000 €</div><div class="fi-p">3,4% du total</div></div>
+    <div class="fi fi6"><div class="fi-l">Prêts d'honneur ×2</div><div class="fi-a">65 000 €</div><div class="fi-p">Initiative + Rés. Entreprendre</div></div>
+    <div class="fi fi2"><div class="fi-l">Prêt bancaire pro</div><div class="fi-a">245 000 €</div><div class="fi-p">Garanti Bpifrance 60%</div></div>
+    <div class="fi fi3"><div class="fi-l">Leasing simulateurs</div><div class="fi-a">100 000 €</div><div class="fi-p">TrackMan × 4 — hors bilan</div></div>
+    <div class="fi fi4"><div class="fi-l">Prêt TDR Grand Est</div><div class="fi-a">40 000 €</div><div class="fi-p">Taux 0, région Grand Est</div></div>
+    <div class="fi fi5"><div class="fi-l">Aides &amp; exonérations</div><div class="fi-a">~56 000 €</div><div class="fi-p">ACRE + ARCE + subventions</div></div>
+  </div>
+
+  <h3>Visualisation de la structure de financement</h3>
+  <div style="background:var(--w);border:1px solid var(--br);border-radius:9px;padding:18px 20px;margin:14px 0;">
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:var(--g);">Apport personnel — 18 000 € (3,4%)</span></div>
+    <div class="progress-bar"><div class="progress-fill pf-g" style="width:3.4%;">3%</div></div>
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:#2D8A5C;">Prêts d'honneur — 65 000 € (12,4%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:12.4%;background:#2D8A5C;">12%</div></div>
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:var(--b);">Prêt bancaire pro — 245 000 € (46,8%)</span></div>
+    <div class="progress-bar"><div class="progress-fill pf-b" style="width:46.8%;">47%</div></div>
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:var(--go);">Leasing simulateurs — 100 000 € (19,1%)</span></div>
+    <div class="progress-bar"><div class="progress-fill pf-o" style="width:19.1%;">19%</div></div>
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:var(--p);">Prêt TDR Grand Est — 40 000 € (7,6%)</span></div>
+    <div class="progress-bar"><div class="progress-fill pf-p" style="width:7.6%;">8%</div></div>
+    <div style="margin-bottom:6px;"><span style="font-size:12px;font-weight:600;color:var(--r);">Aides &amp; exonérations — 56 000 € (10,7%)</span></div>
+    <div class="progress-bar"><div class="progress-fill pf-r" style="width:10.7%;">11%</div></div>
+    <div style="text-align:right;font-size:11px;color:var(--mu);margin-top:4px;">Total : 524 000 €</div>
+  </div>
+
+  <h3>Détail ligne par ligne des sources de financement</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Source</th><th>Organisme</th><th>Montant</th><th>Taux / Durée</th><th>Mensualité</th><th>Conditions clés</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Apport personnel</strong></td><td>Porteur de projet</td><td>18 000 €</td><td>—</td><td>—</td><td>Fonds propres disponibles immédiatement</td></tr>
+      <tr><td><strong>Prêt d'honneur Initiative Strasbourg</strong></td><td>Initiative Strasbourg</td><td>15 000 €</td><td>0% / 5 ans</td><td>250 €/mois</td><td>Sans garantie personnelle. Dossier + comité de sélection. Effet levier bancaire ×8–15</td></tr>
+      <tr><td><strong>Prêt d'honneur Réseau Entreprendre</strong></td><td>Réseau Entreprendre Alsace</td><td>50 000 €</td><td>0% / 5 ans</td><td>833 €/mois</td><td>Sans garantie. Différé 18 mois possible. Accompagnement chef d'entreprise senior inclus</td></tr>
+      <tr><td><strong>Prêt bancaire professionnel</strong></td><td>Banque pro + Bpifrance (60% garanti)</td><td>245 000 €</td><td>4,5% / 10 ans</td><td>~2 540 €/mois</td><td>Bpifrance garantit 60% → réduit drastiquement la caution personnelle. Présenter les 65 K€ de prêts d'honneur comme apport</td></tr>
+      <tr><td><strong>Leasing simulateurs TrackMan ×4</strong></td><td>TrackMan Financial Services ou Grenke</td><td>100 000 €</td><td>~5% / 5 ans</td><td>~1 900 €/mois</td><td>Location avec option d'achat. Préserve la trésorerie. Les simulateurs restent propriété du bailleur → pas de caution sur ce poste</td></tr>
+      <tr><td><strong>Prêt TDR / Start PME</strong></td><td>Total Dév. Régional — Grand Est</td><td>40 000 €</td><td>0% / 5 ans</td><td>667 €/mois</td><td>Prêt à taux 0, filières innovantes. En complément obligatoire d'un prêt bancaire. Via CCI Alsace</td></tr>
+      <tr><td><strong>ACRE (exonération charges)</strong></td><td>URSSAF</td><td>~7 000 €</td><td>Éco. an 1–2</td><td>—</td><td>Exonération totale an 1, partielle an 2–3. À demander impérativement à l'immatriculation</td></tr>
+      <tr><td><strong>ARCE (capital chômage)</strong></td><td>France Travail</td><td>~25 000 €</td><td>Capital versé ×2</td><td>—</td><td>Si porteur est demandeur d'emploi : 60% des droits ARE restants versés en capital (montant estimé à valider)</td></tr>
+      <tr><td><strong>Aide Jeunes Entrepreneurs Grand Est</strong></td><td>Région Grand Est</td><td>Jusqu'à 8 000 €</td><td>Subvention</td><td>—</td><td>Si porteur &lt; 30 ans. 50% des dépenses éligibles. Projet innovant et durable</td></tr>
+      <tr><td><strong>France Active Alsace</strong></td><td>France Active</td><td>Garantie bancaire</td><td>—</td><td>~150 €/an</td><td>Garantit jusqu'à 50% du prêt bancaire si profil atypique. Réduit encore la caution personnelle</td></tr>
+      <tr class="total"><td colspan="2"><strong>TOTAL PLAN DE FINANCEMENT</strong></td><td><strong>524 000 €</strong></td><td>—</td><td><strong>~6 190 €/mois</strong></td><td>Coût total de la dette</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="ok">✅ <strong>Le raisonnement bancaire :</strong> Grâce aux 65 K€ de prêts d'honneur à 0%, l'apport total présenté à la banque est de <strong>83 000 €</strong> (18 K€ perso + 65 K€ honneur), soit <strong>15,8% du besoin</strong>. Avec la garantie Bpifrance à 60% sur le prêt bancaire, le risque résiduel pour la banque descend à <strong>~100 000 €</strong> — un niveau tout à fait finançable sur un projet solide avec un marché identifié.</div>
+
+  <h3>Apport effectif présenté à la banque</h3>
+  <div class="stats">
+    <div class="stat r"><div class="stat-v">18 K€</div><div class="stat-l">Apport personnel réel</div></div>
+    <div class="stat"><div class="stat-v">+ 65 K€</div><div class="stat-l">Prêts d'honneur (assimilés apport)</div></div>
+    <div class="stat go"><div class="stat-v">= 83 K€</div><div class="stat-l">Apport présenté à la banque</div></div>
+    <div class="stat b"><div class="stat-v">15,8%</div><div class="stat-l">Taux d'apport effectif</div></div>
+    <div class="stat p"><div class="stat-v">~98 K€</div><div class="stat-l">Risque résiduel banque (après Bpifrance)</div></div>
+  </div>
+</div>
+
+<!-- S4 CAPEX -->
+<div class="sec" id="s4">
+  <div class="sec-hd"><div class="sec-n">4</div><div><div class="sec-title">CAPEX — Plan d'investissement détaillé</div><div class="sec-sub">Toutes les dépenses d'investissement, poste par poste</div></div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Qté</th><th>P.U. estimé</th><th>Total</th><th>Amort.</th><th>Mode financement</th></tr></thead>
+    <tbody>
+      <tr class="cat"><td colspan="6">🏢 IMMOBILIER &amp; TRAVAUX</td></tr>
+      <tr><td>Droit au bail</td><td>1</td><td>35 000 €</td><td>35 000 €</td><td>10 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Dépôt de garantie (3 mois)</td><td>1</td><td>18 000 €</td><td>18 000 €</td><td>Non amort.</td><td>Prêt bancaire (récupérable)</td></tr>
+      <tr><td>Travaux gros œuvre (cloisonnement, isolation acoustique, électricité renforcée)</td><td>1</td><td>65 000 €</td><td>65 000 €</td><td>10 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Second œuvre (plomberie, ventilation, faux-plafond)</td><td>1</td><td>28 000 €</td><td>28 000 €</td><td>10 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Décoration &amp; ambiance (bar design, éclairage LED)</td><td>1</td><td>28 000 €</td><td>28 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Mobilier de salle (tables, chaises, banquettes)</td><td>1</td><td>14 000 €</td><td>14 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Signalétique intérieure &amp; enseigne extérieure</td><td>1</td><td>5 000 €</td><td>5 000 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total Immobilier</strong></td><td><strong>193 000 €</strong></td><td></td><td></td></tr>
+
+      <tr class="cat"><td colspan="6">⛳ SIMULATEURS GOLF (4 BAYS)</td></tr>
+      <tr><td>Monitor TrackMan iO</td><td>4</td><td>18 000 €</td><td>72 000 €</td><td>5 ans</td><td>Leasing TrackMan</td></tr>
+      <tr><td>Impact screen (écran de frappe 3×2,7m)</td><td>4</td><td>2 000 €</td><td>8 000 €</td><td>5 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Projecteur 4K court foyer</td><td>4</td><td>3 500 €</td><td>14 000 €</td><td>5 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>PC gaming (RTX 4070+, 32 Go RAM)</td><td>4</td><td>2 000 €</td><td>8 000 €</td><td>4 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Tapis synthétique golf (fairway + rough)</td><td>4</td><td>1 500 €</td><td>6 000 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Enclosure + filets sécurité + isolation</td><td>4</td><td>5 000 €</td><td>20 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Licences logiciels golf (E6 Connect / TrackMan Platform)</td><td>4</td><td>1 000 €</td><td>4 000 €</td><td>1 an</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total Golf</strong></td><td><strong>132 000 €</strong></td><td></td><td></td></tr>
+
+      <tr class="cat"><td colspan="6">🎯 FLÉCHETTES CONNECTÉES (6 PISTES)</td></tr>
+      <tr><td>Cible connectée Granboard 3S / Vdarts H4L</td><td>6</td><td>1 200 €</td><td>7 200 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>TV 55&quot; 4K dédiée affichage scores</td><td>6</td><td>1 100 €</td><td>6 600 €</td><td>4 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Aménagement pistes (LED, sol spécifique, protection murs)</td><td>6</td><td>1 500 €</td><td>9 000 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total Fléchettes</strong></td><td><strong>22 800 €</strong></td><td></td><td></td></tr>
+
+      <tr class="cat"><td colspan="6">🍽️ BAR &amp; RESTAURATION</td></tr>
+      <tr><td>Équipement bar (tireuses, frigos, machine café)</td><td>1</td><td>15 000 €</td><td>15 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Cuisine légère (frigos pro, plancha, lave-vaisselle)</td><td>1</td><td>24 000 €</td><td>24 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td>Vaisselle, verrerie, service de table</td><td>1</td><td>5 000 €</td><td>5 000 €</td><td>3 ans</td><td>Apport / prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total F&amp;B</strong></td><td><strong>44 000 €</strong></td><td></td><td></td></tr>
+
+      <tr class="cat"><td colspan="6">📲 DIGITAL &amp; ADMINISTRATIF</td></tr>
+      <tr><td>Logiciel caisse + réservation en ligne</td><td>1</td><td>4 000 €</td><td>4 000 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Réseau informatique + Wi-Fi 6</td><td>1</td><td>4 000 €</td><td>4 000 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Site web + SEO local + app mobile</td><td>1</td><td>5 000 €</td><td>5 000 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Campagne marketing lancement (shooting, ads, RP)</td><td>1</td><td>12 000 €</td><td>12 000 €</td><td>1 an</td><td>Prêt d'honneur</td></tr>
+      <tr><td>Licences admin (Licence IV, permis exploitation, assurances)</td><td>1</td><td>7 000 €</td><td>7 000 €</td><td>—</td><td>Apport personnel</td></tr>
+      <tr><td>Frais création société + expertise comptable setup</td><td>1</td><td>4 000 €</td><td>4 000 €</td><td>—</td><td>Apport personnel</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total Digital + Admin</strong></td><td><strong>36 000 €</strong></td><td></td><td></td></tr>
+
+      <tr class="cat"><td colspan="6">💰 FONDS DE ROULEMENT</td></tr>
+      <tr><td>Fonds de roulement (3 mois de charges opérationnelles)</td><td>1</td><td>62 000 €</td><td>62 000 €</td><td>—</td><td>Prêt bancaire</td></tr>
+      <tr><td>Provision imprévus (3%)</td><td>1</td><td>14 200 €</td><td>14 200 €</td><td>—</td><td>Prêt bancaire</td></tr>
+      <tr class="subtot"><td colspan="3"><strong>Sous-total FDR + provision</strong></td><td><strong>76 200 €</strong></td><td></td><td></td></tr>
+
+      <tr class="total"><td colspan="3"><strong>TOTAL CAPEX + FDR</strong></td><td><strong>504 000 €</strong></td><td></td><td></td></tr>
+      <tr class="total"><td colspan="3"><strong>TOTAL AVEC LEASING (hors bilan)</strong></td><td><strong>504 000 €</strong><br><small>(dont 100K€ en leasing)</small></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn">📊 <strong>Dotations aux amortissements annuelles estimées :</strong> ~52 000 €/an les 3 premières années, puis ~44 000 €/an ensuite. Ces charges comptables non-décaissées améliorent la capacité d'autofinancement réelle par rapport au résultat net affiché.</div>
+</div>
+
+<!-- S5 OPEX CHARGES -->
+<div class="sec" id="s5">
+  <div class="sec-hd"><div class="sec-n">5</div><div><div class="sec-title">OPEX — Charges fixes &amp; variables</div><div class="sec-sub">Structure complète des coûts d'exploitation mensuels et annuels</div></div></div>
+
+  <h3>Charges fixes mensuelles (incompressibles)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Charge fixe</th><th>Mensuel</th><th>Annuel</th><th>% des charges totales</th><th>Nature</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Loyer + charges locatives (300 m²)</strong></td><td>6 300 €</td><td>75 600 €</td><td>17,8%</td><td>Fixe — contrat bail commercial</td></tr>
+      <tr><td><strong>Rémunération gérant</strong></td><td>3 000 €</td><td>36 000 €</td><td>8,5%</td><td>Fixe</td></tr>
+      <tr><td><strong>Barman / serveur (1 ETP, brut chargé)</strong></td><td>3 200 €</td><td>38 400 €</td><td>9,0%</td><td>Fixe</td></tr>
+      <tr><td><strong>Hôte(sse) accueil &amp; golf (1 ETP, brut chargé)</strong></td><td>3 200 €</td><td>38 400 €</td><td>9,0%</td><td>Fixe</td></tr>
+      <tr><td><strong>Cuisine / snacking (0,5 ETP)</strong></td><td>1 600 €</td><td>19 200 €</td><td>4,5%</td><td>Semi-fixe</td></tr>
+      <tr><td><strong>Remboursement prêt bancaire (245 K€ / 10 ans / 4,5%)</strong></td><td>2 540 €</td><td>30 480 €</td><td>7,2%</td><td>Fixe — mensualité constante</td></tr>
+      <tr><td><strong>Leasing simulateurs TrackMan ×4</strong></td><td>1 900 €</td><td>22 800 €</td><td>5,4%</td><td>Fixe — contrat 5 ans</td></tr>
+      <tr><td><strong>Remboursement prêt TDR (40 K€ / 5 ans)</strong></td><td>667 €</td><td>8 000 €</td><td>1,9%</td><td>Fixe</td></tr>
+      <tr><td><strong>Remboursement prêts d'honneur (65 K€ / 5 ans)</strong></td><td>1 083 €</td><td>13 000 €</td><td>3,1%</td><td>Fixe — différé 18 mois possible</td></tr>
+      <tr><td><strong>Assurances multirisque pro</strong></td><td>750 €</td><td>9 000 €</td><td>2,1%</td><td>Fixe</td></tr>
+      <tr><td><strong>Expert-comptable (mensualisation)</strong></td><td>450 €</td><td>5 400 €</td><td>1,3%</td><td>Fixe</td></tr>
+      <tr><td><strong>Énergie (électricité + eau)</strong></td><td>1 500 €</td><td>18 000 €</td><td>4,2%</td><td>Semi-fixe</td></tr>
+      <tr><td><strong>Licences logiciels golf (TrackMan/E6)</strong></td><td>450 €</td><td>5 400 €</td><td>1,3%</td><td>Fixe</td></tr>
+      <tr><td><strong>Abonnement réservation + caisse SaaS</strong></td><td>220 €</td><td>2 640 €</td><td>0,6%</td><td>Fixe</td></tr>
+      <tr><td><strong>Internet + téléphonie pro</strong></td><td>250 €</td><td>3 000 €</td><td>0,7%</td><td>Fixe</td></tr>
+      <tr><td><strong>SACEM (droits musicaux)</strong></td><td>150 €</td><td>1 800 €</td><td>0,4%</td><td>Fixe</td></tr>
+      <tr class="subtot"><td><strong>TOTAL CHARGES FIXES MENSUELLES</strong></td><td><strong>27 260 €</strong></td><td><strong>327 120 €</strong></td><td><strong>77%</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Charges variables mensuelles (indexées sur l'activité)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Charge variable</th><th>Base de calcul</th><th>Mensuel (scén. médian)</th><th>Annuel</th><th>% des charges totales</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Achats boissons (bar)</strong></td><td>~30% du CA bar mensuel (9 000 €)</td><td>2 700 €</td><td>32 400 €</td><td>7,6%</td></tr>
+      <tr><td><strong>Achats food (planches, snacking)</strong></td><td>~38% du CA food mensuel (5 000 €)</td><td>1 900 €</td><td>22 800 €</td><td>5,4%</td></tr>
+      <tr><td><strong>Pro golf freelance (commissions)</strong></td><td>~30% du CA cours</td><td>900 €</td><td>10 800 €</td><td>2,5%</td></tr>
+      <tr><td><strong>Extras weekends + soirées</strong></td><td>Renfort variable</td><td>1 200 €</td><td>14 400 €</td><td>3,4%</td></tr>
+      <tr><td><strong>Maintenance simulateurs + fléchettes</strong></td><td>Provision usage intensif</td><td>650 €</td><td>7 800 €</td><td>1,8%</td></tr>
+      <tr><td><strong>Consommables (verrerie casse, pointes…)</strong></td><td>Usage</td><td>300 €</td><td>3 600 €</td><td>0,8%</td></tr>
+      <tr><td><strong>Marketing récurrent (ads, créations)</strong></td><td>Budget communication</td><td>1 000 €</td><td>12 000 €</td><td>2,8%</td></tr>
+      <tr class="subtot"><td><strong>TOTAL CHARGES VARIABLES</strong></td><td></td><td><strong>8 650 €</strong></td><td><strong>103 800 €</strong></td><td><strong>23%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Récapitulatif charges</th><th>Mensuel</th><th>Annuel</th><th>Part</th></tr></thead>
+    <tbody>
+      <tr><td>Charges fixes</td><td>27 260 €</td><td>327 120 €</td><td>77%</td></tr>
+      <tr><td>Charges variables (scén. médian)</td><td>8 650 €</td><td>103 800 €</td><td>23%</td></tr>
+      <tr class="total"><td><strong>TOTAL CHARGES OPÉRATIONNELLES</strong></td><td><strong>35 910 €</strong></td><td><strong>430 920 €</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="ok">✅ <strong>Point clé investisseurs :</strong> Avec 77% de charges fixes, le modèle est sensible au niveau d'activité. La bonne nouvelle : une fois le seuil atteint (~36 000 €/mois de CA), chaque euro supplémentaire de CA génère ~0,77 € d'EBE additionnel car les charges variables ne représentent que 23% des coûts.</div>
+</div>
+
+<!-- S6 REVENUS -->
+<div class="sec" id="s6">
+  <div class="sec-hd"><div class="sec-n">6</div><div><div class="sec-title">Projections de revenus</div><div class="sec-sub">Hypothèses, grille tarifaire, mix CA mensuel</div></div></div>
+
+  <h3>Hypothèses d'occupation et de fréquentation</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Taux occupation simulateurs golf</strong></td><td>35%</td><td>55%</td><td>65%</td><td>72%</td><td>78%</td></tr>
+      <tr><td><strong>Heures vendues / bay / mois</strong></td><td>~55h</td><td>~85h</td><td>~100h</td><td>~112h</td><td>~120h</td></tr>
+      <tr><td><strong>Taux occupation fléchettes</strong></td><td>35%</td><td>55%</td><td>65%</td><td>70%</td><td>75%</td></tr>
+      <tr><td><strong>Sessions fléchettes / piste / mois</strong></td><td>~42</td><td>~66</td><td>~78</td><td>~84</td><td>~90</td></tr>
+      <tr><td><strong>Clients bar estimés / semaine</strong></td><td>~170</td><td>~290</td><td>~360</td><td>~400</td><td>~430</td></tr>
+      <tr><td><strong>Ticket moyen bar (boissons)</strong></td><td>20 €</td><td>21 €</td><td>22 €</td><td>22 €</td><td>23 €</td></tr>
+      <tr><td><strong>Événements corporate / mois</strong></td><td>3</td><td>6</td><td>8</td><td>9</td><td>10</td></tr>
+      <tr><td><strong>Panier moyen corporate</strong></td><td>700 €</td><td>800 €</td><td>850 €</td><td>900 €</td><td>900 €</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Détail des revenus mensuels par source — scénario réaliste (an 2)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Source de revenus</th><th>Base de calcul</th><th>CA mensuel</th><th>CA annuel</th><th>% du CA</th><th>Marge brute</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Simulateurs golf — location horaire</strong></td><td>4 bays × 85h/mois × 43 €/h moy.</td><td>14 620 €</td><td>175 440 €</td><td>40%</td><td>~85%</td></tr>
+      <tr><td><strong>Cours golf avec pro</strong></td><td>30 sessions × 100 €</td><td>3 000 €</td><td>36 000 €</td><td>8%</td><td>~45%</td></tr>
+      <tr><td><strong>Abonnements mensuels golf</strong></td><td>50 abonnés × 179 €</td><td>8 950 €</td><td>107 400 €</td><td>—</td><td>~75%</td></tr>
+      <tr><td><strong>Fléchettes — location piste</strong></td><td>6 pistes × 66 sessions × 22 €</td><td>8 712 €</td><td>104 544 €</td><td>24%</td><td>~80%</td></tr>
+      <tr><td><strong>Bar &amp; boissons</strong></td><td>290 clients/sem × 21 € × 4,3 sem.</td><td>26 229 €</td><td>314 748 €</td><td>—</td><td>~68%</td></tr>
+      <tr><td><strong>Food (planches, snacking)</strong></td><td>~40% des clients commandent food</td><td>5 200 €</td><td>62 400 €</td><td>—</td><td>~38%</td></tr>
+      <tr><td><strong>Corporate &amp; privatisations</strong></td><td>6 événements × 800 €</td><td>4 800 €</td><td>57 600 €</td><td>—</td><td>~60%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL CA MENSUEL (an 2)</strong></td><td><strong>71 511 €</strong></td><td><strong>858 132 €</strong></td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn">⚠️ <strong>Note sur les abonnements :</strong> Les 50 abonnements mensuels à 179 € génèrent 8 950 €/mois de CA récurrent garanti. Ils sont comptabilisés séparément dans le tableau ci-dessus mais leur CA est inclus dans les heures de simulateurs. L'objectif est d'atteindre 50 abonnés actifs en an 2. Le CA total hors double-comptage est de <strong>39 000–44 000 € / mois en an 2</strong>.</div>
+
+  <h3>Projection CA annuel consolidé — scénario réaliste</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Source</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Golf (location + cours + abonnements)</strong></td><td>88 K€</td><td>152 K€</td><td>182 K€</td><td>202 K€</td><td>214 K€</td></tr>
+      <tr><td><strong>Fléchettes connectées</strong></td><td>34 K€</td><td>66 K€</td><td>80 K€</td><td>90 K€</td><td>96 K€</td></tr>
+      <tr><td><strong>Bar &amp; boissons</strong></td><td>68 K€</td><td>108 K€</td><td>124 K€</td><td>134 K€</td><td>141 K€</td></tr>
+      <tr><td><strong>Food</strong></td><td>36 K€</td><td>60 K€</td><td>70 K€</td><td>76 K€</td><td>80 K€</td></tr>
+      <tr><td><strong>Corporate &amp; privatisations</strong></td><td>28 K€</td><td>54 K€</td><td>65 K€</td><td>72 K€</td><td>76 K€</td></tr>
+      <tr class="subtot"><td><strong>CHIFFRE D'AFFAIRES TOTAL</strong></td><td><strong>254 K€</strong></td><td><strong>440 K€</strong></td><td><strong>521 K€</strong></td><td><strong>574 K€</strong></td><td><strong>607 K€</strong></td></tr>
+      <tr><td>Croissance annuelle</td><td>—</td><td>+73%</td><td>+18%</td><td>+10%</td><td>+6%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S7 COMPTE DE RÉSULTAT -->
+<div class="sec" id="s7">
+  <div class="sec-hd"><div class="sec-n">7</div><div><div class="sec-title">Compte de résultat prévisionnel</div><div class="sec-sub">P&amp;L détaillé sur 5 ans — scénario réaliste</div></div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur (en K€)</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chiffre d'affaires</strong></td><td>254</td><td>440</td><td>521</td><td>574</td><td>607</td></tr>
+      <tr><td>— Achats consommables (F&amp;B)</td><td>-58</td><td>-99</td><td>-116</td><td>-128</td><td>-135</td></tr>
+      <tr class="subtot"><td><strong>MARGE BRUTE</strong></td><td><strong>196</strong></td><td><strong>341</strong></td><td><strong>405</strong></td><td><strong>446</strong></td><td><strong>472</strong></td></tr>
+      <tr><td><em>Taux de marge brute</em></td><td><em>77%</em></td><td><em>77%</em></td><td><em>78%</em></td><td><em>78%</em></td><td><em>78%</em></td></tr>
+      <tr class="cat"><td colspan="6">CHARGES D'EXPLOITATION</td></tr>
+      <tr><td>Charges de personnel (RH + pro golf)</td><td>-118</td><td>-142</td><td>-154</td><td>-162</td><td>-167</td></tr>
+      <tr><td>Loyer + charges locatives</td><td>-76</td><td>-76</td><td>-76</td><td>-76</td><td>-76</td></tr>
+      <tr><td>Énergie + maintenance + technique</td><td>-37</td><td>-37</td><td>-39</td><td>-39</td><td>-39</td></tr>
+      <tr><td>Marketing + communication</td><td>-20</td><td>-12</td><td>-12</td><td>-12</td><td>-12</td></tr>
+      <tr><td>Assurances + compta + frais généraux</td><td>-14</td><td>-15</td><td>-15</td><td>-16</td><td>-16</td></tr>
+      <tr class="subtot"><td><strong>EBE (EBITDA)</strong></td><td><strong>-69</strong></td><td><strong>+59</strong></td><td><strong>+109</strong></td><td><strong>+141</strong></td><td><strong>+162</strong></td></tr>
+      <tr><td><em>Marge EBE</em></td><td><em>—</em></td><td><em>13,4%</em></td><td><em>20,9%</em></td><td><em>24,6%</em></td><td><em>26,7%</em></td></tr>
+      <tr><td>— Dotations amortissements</td><td>-52</td><td>-52</td><td>-48</td><td>-44</td><td>-44</td></tr>
+      <tr class="subtot"><td><strong>RÉSULTAT D'EXPLOITATION (EBIT)</strong></td><td><strong>-121</strong></td><td><strong>+7</strong></td><td><strong>+61</strong></td><td><strong>+97</strong></td><td><strong>+118</strong></td></tr>
+      <tr><td>— Charges financières (intérêts prêts)</td><td>-22</td><td>-19</td><td>-16</td><td>-13</td><td>-10</td></tr>
+      <tr class="subtot"><td><strong>RÉSULTAT AVANT IMPÔT</strong></td><td><strong>-143</strong></td><td><strong>-12</strong></td><td><strong>+45</strong></td><td><strong>+84</strong></td><td><strong>+108</strong></td></tr>
+      <tr><td>— IS (25% des bénéfices, report déficit an 1–2)</td><td>0</td><td>0</td><td>-8</td><td>-21</td><td>-27</td></tr>
+      <tr class="total"><td><strong>RÉSULTAT NET</strong></td><td><strong>-143 K€</strong></td><td><strong>-12 K€</strong></td><td><strong>+37 K€</strong></td><td><strong>+63 K€</strong></td><td><strong>+81 K€</strong></td></tr>
+      <tr><td><em>Marge nette</em></td><td><em>—</em></td><td><em>—</em></td><td><em>7,1%</em></td><td><em>11%</em></td><td><em>13,3%</em></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="info">📊 <strong>Note comptable importante :</strong> Le résultat net de l'an 1 (-143 K€) est principalement composé d'amortissements (-52 K€) et de charges financières (-22 K€) — soit <strong>74 K€ de charges non-décaissées</strong>. Le <strong>cash-out réel en an 1 est donc de -69 K€</strong> (EBE négatif), qui est intégralement couvert par le fonds de roulement constitué dans le plan de financement (62 K€ + provision 14 K€ = 76 K€).</div>
+</div>
+
+<!-- S8 CASH FLOW -->
+<div class="sec" id="s8">
+  <div class="sec-hd"><div class="sec-n">8</div><div><div class="sec-title">Plan de trésorerie — Cash Flow</div><div class="sec-sub">Flux de trésorerie mensuel an 1, puis annuel 5 ans</div></div></div>
+
+  <div class="danger">🔴 <strong>Point de vigilance prioritaire :</strong> L'an 1 est la période critique. Les 3 premiers mois suivant l'ouverture (montée en charge) représentent le pic de risque de trésorerie. Le fonds de roulement de 76 K€ est dimensionné pour couvrir cette période. Une sous-estimation du délai d'ouverture ou un retard dans les travaux doit être anticipé.</div>
+
+  <h3>Cash flow mensuel estimé — An 1 (post-ouverture)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Mois post-ouverture</th><th>CA estimé</th><th>Charges décaissées</th><th>Cash Flow mensuel</th><th>Trésorerie cumulée</th><th>Situation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>M1 (ouverture)</strong></td><td>12 000 €</td><td>35 910 €</td><td>-23 910 €</td><td>52 090 €</td><td><span class="b bo">FDR consommé</span></td></tr>
+      <tr><td><strong>M2</strong></td><td>16 000 €</td><td>35 910 €</td><td>-19 910 €</td><td>32 180 €</td><td><span class="b bo">Tension</span></td></tr>
+      <tr><td><strong>M3</strong></td><td>19 000 €</td><td>35 910 €</td><td>-16 910 €</td><td>15 270 €</td><td><span class="b br2">Critique</span></td></tr>
+      <tr><td><strong>M4</strong></td><td>22 000 €</td><td>35 910 €</td><td>-13 910 €</td><td>1 360 €</td><td><span class="b br2">Très critique</span></td></tr>
+      <tr><td><strong>M5</strong></td><td>26 000 €</td><td>35 910 €</td><td>-9 910 €</td><td>-8 550 €</td><td><span class="b br2">Dépassement</span></td></tr>
+      <tr><td><strong>M6</strong></td><td>30 000 €</td><td>35 910 €</td><td>-5 910 €</td><td>-14 460 €</td><td><span class="b br2">Découvert</span></td></tr>
+      <tr><td><strong>M7</strong></td><td>34 000 €</td><td>35 910 €</td><td>-1 910 €</td><td>-16 370 €</td><td><span class="b br2">Pic négatif</span></td></tr>
+      <tr><td><strong>M8</strong></td><td>37 000 €</td><td>35 910 €</td><td>+1 090 €</td><td>-15 280 €</td><td><span class="b bo">Inflexion</span></td></tr>
+      <tr><td><strong>M9</strong></td><td>39 000 €</td><td>35 910 €</td><td>+3 090 €</td><td>-12 190 €</td><td><span class="b bo">Remontée</span></td></tr>
+      <tr><td><strong>M10</strong></td><td>40 000 €</td><td>35 910 €</td><td>+4 090 €</td><td>-8 100 €</td><td><span class="b bo">Remontée</span></td></tr>
+      <tr><td><strong>M11</strong></td><td>41 000 €</td><td>35 910 €</td><td>+5 090 €</td><td>-3 010 €</td><td><span class="b bo">Quasi-équilibre</span></td></tr>
+      <tr><td><strong>M12</strong></td><td>42 000 €</td><td>35 910 €</td><td>+6 090 €</td><td>+3 080 €</td><td><span class="b bg">Tréso positive</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn">⚠️ <strong>Le creux de trésorerie atteint ~-16 400 € en M7.</strong> Ce montant doit être couvert par une ligne de découvert bancaire négociée à l'avance (demander 20–25 K€ de ligne de crédit court terme à la banque). Sans cette ligne, risque de cessation de paiement malgré une activité en croissance.</div>
+
+  <div class="ok">✅ <strong>À partir du mois 8 (soit ~15 mois après l'ouverture)</strong>, le cash flow mensuel devient structurellement positif. La trésorerie se reconstitue progressivement. En an 2, la trésorerie nette mensuelle est de +4 000 à +6 000 €/mois.</div>
+
+  <h3>Plan de trésorerie annuel — 5 ans (en K€)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>EBE (recettes - charges d'exploitation décaissées)</strong></td><td>-69 K€</td><td>+59 K€</td><td>+109 K€</td><td>+141 K€</td><td>+162 K€</td></tr>
+      <tr><td>— Remboursement capital emprunts (prêt bancaire + TDR)</td><td>-34 K€</td><td>-34 K€</td><td>-34 K€</td><td>-34 K€</td><td>-34 K€</td></tr>
+      <tr><td>— Loyers leasing simulateurs</td><td>-23 K€</td><td>-23 K€</td><td>-23 K€</td><td>-23 K€</td><td>-23 K€</td></tr>
+      <tr><td>— Remboursement prêts d'honneur</td><td>-5 K€</td><td>-13 K€</td><td>-13 K€</td><td>-13 K€</td><td>-13 K€</td></tr>
+      <tr><td>— IS (impôt sur les sociétés)</td><td>0</td><td>0</td><td>-8 K€</td><td>-21 K€</td><td>-27 K€</td></tr>
+      <tr class="subtot"><td><strong>CASH FLOW LIBRE ANNUEL</strong></td><td><strong>-131 K€</strong></td><td><strong>-11 K€</strong></td><td><strong>+31 K€</strong></td><td><strong>+50 K€</strong></td><td><strong>+65 K€</strong></td></tr>
+      <tr><td>Trésorerie de départ (FDR)</td><td>76 K€</td><td>-55 K€</td><td>-66 K€</td><td>-35 K€</td><td>+15 K€</td></tr>
+      <tr class="total"><td><strong>TRÉSORERIE CUMULÉE FIN D'ANNÉE</strong></td><td><strong>-55 K€</strong></td><td><strong>-66 K€</strong></td><td><strong>-35 K€</strong></td><td><strong>+15 K€</strong></td><td><strong>+80 K€</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="info">💡 <strong>Lecture :</strong> La trésorerie cumulée redevient positive en <strong>an 4</strong> (+15 K€). En an 5, la société dispose de 80 K€ de trésorerie disponible — base pour financer une extension (5e simulateur, upgrade fléchettes, boutique golf). Le solde négatif an 1–3 est structurel dans ce type de projet à fort CAPEX initial ; il est couvert par le fonds de roulement et la ligne de découvert.</div>
+</div>
+
+<!-- S9 ROI -->
+<div class="sec" id="s9">
+  <div class="sec-hd"><div class="sec-n">9</div><div><div class="sec-title">ROI &amp; seuil de rentabilité</div><div class="sec-sub">Retour sur investissement, break-even, analyse de sensibilité</div></div></div>
+
+  <h3>Seuil de rentabilité mensuel</h3>
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">35 910 €</div><div class="stat-l">Charges mensuelles totales (médian)</div></div>
+    <div class="stat go"><div class="stat-v">36 500 €</div><div class="stat-l">CA seuil mensuel (break-even)</div></div>
+    <div class="stat b"><div class="stat-v">1 462 €</div><div class="stat-l">CA minimum / jour (6j/7)</div></div>
+    <div class="stat"><div class="stat-v">~M8</div><div class="stat-l">Mois où le CA dépasse les charges</div></div>
+  </div>
+
+  <h3>Retour sur investissement par scénario</h3>
+  <div class="scenario-row">
+    <div class="sc sc-p">
+      <div class="sc-label">📉 Pessimiste</div>
+      <div class="sc-ca">190 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 2</div>
+      <div class="sc-d">Occ. golf : 25% · Occ. fléchettes : 30%<br>~130 clients/semaine<br>Corporate : 2 events/mois<br>Abonnements : 20</div>
+      <div class="sc-roi">EBE An 2 : -40 K€<br>Break-even : An 6+<br>ROI : non atteint sur 5 ans<br>⚠️ Risque élevé</div>
+    </div>
+    <div class="sc sc-b">
+      <div class="sc-label">📊 Réaliste</div>
+      <div class="sc-ca">440 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 2</div>
+      <div class="sc-d">Occ. golf : 55% · Occ. fléchettes : 55%<br>~290 clients/semaine<br>Corporate : 6 events/mois<br>Abonnements : 50</div>
+      <div class="sc-roi">EBE An 2 : +59 K€<br>Résultat net + : An 3<br>Break-even tréso : An 4<br>ROI 524 K€ : 4–5 ans</div>
+    </div>
+    <div class="sc sc-o">
+      <div class="sc-label">🚀 Optimiste</div>
+      <div class="sc-ca">607 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 3</div>
+      <div class="sc-d">Occ. golf : 72% · Occ. fléchettes : 72%<br>~420 clients/semaine<br>Corporate : 10 events/mois<br>Abonnements : 90+</div>
+      <div class="sc-roi">EBE An 2 : +100 K€+<br>Résultat net + : An 2<br>Break-even tréso : An 3<br>ROI : 3–4 ans</div>
+    </div>
+  </div>
+
+  <h3>Analyse de sensibilité — impact sur l'EBE An 2</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Variable</th><th>Valeur de base</th><th>Si –10%</th><th>Si +10%</th><th>Sensibilité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Taux occupation simulateurs</strong></td><td>55%</td><td>EBE : +44 K€ (–25%)</td><td>EBE : +74 K€ (+25%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>Tarif horaire golf</strong></td><td>43 €/h moy.</td><td>EBE : +43 K€ (–27%)</td><td>EBE : +75 K€ (+27%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>Masse salariale totale</strong></td><td>142 K€/an</td><td>EBE : +73 K€ (+24%)</td><td>EBE : +45 K€ (–24%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>CA bar &amp; boissons</strong></td><td>108 K€/an</td><td>EBE : +51 K€ (–14%)</td><td>EBE : +66 K€ (+12%)</td><td><span class="b bo">Élevée</span></td></tr>
+      <tr><td><strong>Loyer</strong></td><td>76 K€/an</td><td>EBE : +66 K€ (+12%)</td><td>EBE : +51 K€ (–14%)</td><td><span class="b bo">Élevée</span></td></tr>
+      <tr><td><strong>CA fléchettes</strong></td><td>66 K€/an</td><td>EBE : +52 K€ (–12%)</td><td>EBE : +66 K€ (+12%)</td><td><span class="b bo">Élevée</span></td></tr>
+      <tr><td><strong>CA corporate</strong></td><td>54 K€/an</td><td>EBE : +56 K€ (–5%)</td><td>EBE : +62 K€ (+5%)</td><td><span class="b bg">Modérée</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="ok">✅ <strong>Conclusion ROI :</strong> Sur le scénario réaliste, le projet génère un retour sur investissement total (~524 K€) en <strong>4 à 5 ans</strong>. La valeur actualisée nette (VAN) à 5 ans, avec un taux d'actualisation de 8%, est estimée à <strong>+45 à +80 K€</strong> selon la vitesse de montée en charge. Le TRI (Taux de Rendement Interne) est estimé à <strong>12–16% sur 5 ans</strong>.</div>
+</div>
+
+<!-- S10 LEVIER & GARANTIES -->
+<div class="sec" id="s10">
+  <div class="sec-hd"><div class="sec-n">10</div><div><div class="sec-title">Stratégie de levier &amp; garanties</div><div class="sec-sub">Comment convaincre avec un apport limité — arguments financiers clés</div></div></div>
+
+  <div class="callout">
+    <div class="callout-icon">🏦</div>
+    <div>
+      <h4>Message aux financeurs</h4>
+      <p>Un apport personnel de 18 K€ sur un projet de 524 K€ est faible mais pas rédhibitoire. La stratégie repose sur 3 piliers : (1) empiler les dispositifs publics pour constituer un apport crédible, (2) sortir les simulateurs du bilan via le leasing, (3) démontrer que le risque résiduel pour la banque est limité par Bpifrance et France Active. Le projet est solide : marché vierge, modèle validé à Paris, potentiel de CA démontrable.</p>
+    </div>
+  </div>
+
+  <h3>Les 7 leviers pour convaincre malgré un faible apport</h3>
+  <div class="lever-grid">
+    <div class="lever">
+      <div class="lever-icon">🤝</div>
+      <div class="lever-title">Prêts d'honneur empilés</div>
+      <div class="lever-val">+65 K€</div>
+      <div class="lever-sub">Initiative Stg (15K) + Réseau Entreprendre (50K) → transforme 18K d'apport en 83K aux yeux de la banque</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">🛡️</div>
+      <div class="lever-title">Garantie Bpifrance 60%</div>
+      <div class="lever-val">–147 K€</div>
+      <div class="lever-sub">Réduit le risque banque de 245K à ~98K. Transforme un dossier difficile en dossier finançable</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">📋</div>
+      <div class="lever-title">Leasing simulateurs</div>
+      <div class="lever-val">–100 K€</div>
+      <div class="lever-sub">Sort 100K du bilan. La banque ne finance pas les simulateurs → son exposition baisse drastiquement</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">🌍</div>
+      <div class="lever-title">Prêt TDR Grand Est</div>
+      <div class="lever-val">+40 K€</div>
+      <div class="lever-sub">40K à taux 0% via la Région. Réduit d'autant le besoin de prêt bancaire à taux plein</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">💶</div>
+      <div class="lever-title">ARCE (si éligible)</div>
+      <div class="lever-val">+25 K€</div>
+      <div class="lever-sub">60% des droits chômage restants en capital. Renforce l'apport personnel de façon significative</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">🔒</div>
+      <div class="lever-title">France Active</div>
+      <div class="lever-val">Garantie 50%</div>
+      <div class="lever-sub">Garantit 50% du prêt bancaire en complément de Bpifrance. Filet de sécurité supplémentaire pour le prêteur</div>
+    </div>
+    <div class="lever">
+      <div class="lever-icon">📅</div>
+      <div class="lever-title">Différé de remboursement</div>
+      <div class="lever-val">18 mois</div>
+      <div class="lever-sub">Demander un différé de 18 mois sur les prêts d'honneur et possiblement sur le TDR → protège la trésorerie en phase de lancement</div>
+    </div>
+  </div>
+
+  <h3>Tableau des garanties proposées aux financeurs</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Garantie / Sûreté</th><th>Pour quel financeur</th><th>Valeur</th><th>Commentaire</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Garantie Bpifrance (60% du prêt)</strong></td><td>Banque principale</td><td>~147 000 €</td><td>Mécanisme standard — banque sollicite Bpifrance directement. Réduit l'exposition nette banque à ~98K</td></tr>
+      <tr><td><strong>Garantie France Active (50%)</strong></td><td>Banque principale</td><td>Jusqu'à 122 500 €</td><td>Cumulable avec Bpifrance. Double filet de sécurité</td></tr>
+      <tr><td><strong>Nantissement du fonds de commerce</strong></td><td>Banque principale</td><td>Valeur du fonds</td><td>Le fonds de commerce (licence IV incluse) constitue une garantie réelle pour la banque</td></tr>
+      <tr><td><strong>Caution personnelle partielle</strong></td><td>Banque principale</td><td>Négocier 30–50K max</td><td>Avec Bpifrance + France Active, la caution personnelle peut être limitée à 30–50K€ au lieu de 100%</td></tr>
+      <tr><td><strong>Nantissement du matériel (hors leasing)</strong></td><td>Banque principale</td><td>~100–120 K€</td><td>Équipements bar, cuisine, installation fléchettes = gage matériel</td></tr>
+      <tr><td><strong>Transparence financière totale</strong></td><td>Tous financeurs</td><td>—</td><td>Reporting mensuel proposé aux prêteurs + accès aux comptes via expert-comptable</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Arguments de conviction pour les investisseurs privés</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Argument</th><th>Données chiffrées</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Marché vierge à Strasbourg</strong></td><td>0 concurrent direct sur 500 000 habitants — premier arrivé = avantage concurrentiel durable</td></tr>
+      <tr><td><strong>Modèle validé à Paris</strong></td><td>Matchplay Society (golf + fléchettes + F&B) : ouvert 2024, complet le weekend dans les 3 mois. Réplication strasbourgeoise à moindre coût</td></tr>
+      <tr><td><strong>CA diversifié, 6 sources</strong></td><td>Golf (35%) + Fléchettes (15%) + Bar (25%) + Food (14%) + Corporate (11%) = résilience face à la variabilité d'une seule activité</td></tr>
+      <tr><td><strong>Potentiel corporate exceptionnel</strong></td><td>Zone Wacken : 30 000+ salariés dans un rayon de 1 km. Institutions européennes = budget team-building élevés et récurrents</td></tr>
+      <tr><td><strong>Barrière à l'entrée après An 1</strong></td><td>Une fois la notoriété et les abonnements établis, un concurrent mettrait 18–24 mois à ouvrir et rattraper la base client</td></tr>
+      <tr><td><strong>Valorisation à la revente</strong></td><td>Un fonds de commerce avec licence IV, équipements, clientèle et CA de 500K+/an se valorise 1,5–2× le CA annuel = 750K–1M€ à terme</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S11 RISQUES -->
+<div class="sec" id="s11">
+  <div class="sec-hd"><div class="sec-n">11</div><div><div class="sec-title">Analyse des risques</div><div class="sec-sub">Identification, probabilité, mitigation</div></div></div>
+
+  <div class="risk-grid">
+    <div class="risk risk-r">
+      <div class="risk-label">🔴 Risques critiques</div>
+      <ul>
+        <li>Local sans hauteur suffisante (bloquant)</li>
+        <li>Impossibilité d'obtenir Licence IV</li>
+        <li>Retard travaux &gt; 3 mois (trésorerie)</li>
+        <li>Refus de financement bancaire</li>
+        <li>Montée en charge trop lente (CA an 1 &lt; prévisions)</li>
+      </ul>
+    </div>
+    <div class="risk risk-o">
+      <div class="risk-label">🟡 Risques modérés</div>
+      <ul>
+        <li>Concurrence d'un concept similaire (padel-bar)</li>
+        <li>Hausse des loyers commerciaux</li>
+        <li>Panne technique simulateurs (coût maintenance)</li>
+        <li>Turn-over du personnel clé</li>
+        <li>Effets de mode (désaffection fléchettes)</li>
+      </ul>
+    </div>
+    <div class="risk risk-g">
+      <div class="risk-label">🟢 Risques faibles / mitigés</div>
+      <ul>
+        <li>Conjoncture économique (loisirs résistent)</li>
+        <li>Saisonnalité (golf + fléchettes = complémentaires)</li>
+        <li>Obsolescence technologique (mise à jour logiciels)</li>
+        <li>Météo (100% indoor, non concerné)</li>
+        <li>Réglementation ERP (anticipée dès le départ)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Mesures de mitigation des risques critiques</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Risque</th><th>Probabilité</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hauteur plafond insuffisante</strong></td><td><span class="b bo">Élevée si non anticipé</span></td><td>Critère n°1 dans la recherche de local. Refuser tout local &lt;3m sans possibilité d'adaptation. Faire mesurer avant signature.</td></tr>
+      <tr><td><strong>Licence IV introuvable</strong></td><td><span class="b bo">Modérée</span></td><td>Rechercher en priorité un local avec Licence IV existante. Mandater un cabinet spécialisé en cessions de fonds. Budget : 15–25K€.</td></tr>
+      <tr><td><strong>Retard de travaux</strong></td><td><span class="b bo">Modérée</span></td><td>Fonds de roulement prévu pour 3 mois de charges (62K€) + provision imprévus (14K€). Négocier franchise de loyer (2–3 mois) dans le bail.</td></tr>
+      <tr><td><strong>Refus bancaire</strong></td><td><span class="b bg">Faible si dossier structuré</span></td><td>Présenter en priorité les prêts d'honneur obtenus. Solliciter 3 banques en parallèle (CIC, Crédit Agricole Alsace, Banque Pop. Alsace). Mobiliser France Active en garantie complémentaire.</td></tr>
+      <tr><td><strong>CA an 1 sous les prévisions</strong></td><td><span class="b bo">Modérée</span></td><td>Ligne de découvert 20–25K€ négociée à l'ouverture du compte pro. Abonnements lancés avant ouverture (pré-ventes). Corporate démarchée 3 mois avant ouverture (devis signés).</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S12 ENGAGEMENTS -->
+<div class="sec" id="s12">
+  <div class="sec-hd"><div class="sec-n">12</div><div><div class="sec-title">Engagements &amp; conditions demandées</div><div class="sec-sub">Ce que le porteur s'engage à faire — ce qu'il demande aux financeurs</div></div></div>
+
+  <h3>Engagements du porteur de projet</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Engagement</th><th>Modalité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Investissement personnel total</strong></td><td>Apport de 18 000 € en fonds propres + engagement de l'ensemble du patrimoine personnel disponible</td></tr>
+      <tr><td><strong>Implication opérationnelle à 100%</strong></td><td>Le porteur sera le gérant opérationnel à temps plein dès la phase de travaux. Pas de société de gestion intermédiaire.</td></tr>
+      <tr><td><strong>Reporting financier mensuel</strong></td><td>Tableau de bord mensuel communiqué à tous les financeurs : CA, trésorerie, taux d'occupation, nombre d'abonnements</td></tr>
+      <tr><td><strong>Expert-comptable spécialisé CHR</strong></td><td>Mission confiée à un cabinet expert CHR dès la création — bilans et liasses fiscales à disposition des prêteurs</td></tr>
+      <tr><td><strong>Respect du business plan</strong></td><td>Notification immédiate aux financeurs de tout écart &gt; 15% sur le CA prévisionnel ou sur les charges</td></tr>
+      <tr><td><strong>Non-distribution des bénéfices an 1–2</strong></td><td>Les bénéfices éventuels des 2 premières années sont intégralement réinvestis en trésorerie ou remboursement anticipé de dette</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Ce qui est demandé aux financeurs</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Financeur</th><th>Montant demandé</th><th>Conditions souhaitées</th><th>Contrepartie</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Initiative Strasbourg</strong></td><td>15 000 €</td><td>Prêt d'honneur 0% / 5 ans / sans garantie</td><td>Présentation au comité, rapport d'activité semestriel</td></tr>
+      <tr><td><strong>Réseau Entreprendre Alsace</strong></td><td>50 000 €</td><td>Prêt d'honneur 0% / 5 ans / différé 18 mois</td><td>Accompagnement par un chef d'entreprise mentor accepté</td></tr>
+      <tr><td><strong>Banque professionnelle</strong></td><td>245 000 €</td><td>Taux max 5% / 10 ans / caution perso plafonnée à 50K€ max</td><td>Domiciliation bancaire complète (compte courant, TPE, épargne entreprise)</td></tr>
+      <tr><td><strong>Bpifrance</strong></td><td>Garantie 60% du prêt bancaire</td><td>Via banque (procédure standard)</td><td>Dossier complet fourni, scoring &gt; 4/10 estimé</td></tr>
+      <tr><td><strong>Société de leasing (TrackMan)</strong></td><td>100 000 € en LLD</td><td>~1 900 €/mois / 5 ans / option d'achat à la valeur résiduelle</td><td>Maintenance incluse dans le contrat souhaitée</td></tr>
+      <tr><td><strong>Région Grand Est / TDR</strong></td><td>40 000 €</td><td>Prêt 0% / 5 ans / en complément prêt bancaire</td><td>Création d'emplois (3–5 ETP an 1), ancrage territorial Strasbourg</td></tr>
+      <tr><td><strong>France Travail (ARCE)</strong></td><td>~25 000 €</td><td>Capital ARE en 2 versements</td><td>Création d'entreprise déclarée, cessation de recherche d'emploi</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout">
+    <div class="callout-icon">📌</div>
+    <div>
+      <h4>Synthèse investisseurs</h4>
+      <p>Le projet de golf indoor + fléchettes connectées + bar/restaurant à Strasbourg présente un ratio risque/rendement attractif : marché vierge identifié, modèle répliqué avec succès à Paris, CA diversifié sur 6 sources, EBE positif dès an 2. L'apport personnel de 18 K€ est compensé par un plan de financement multi-sources structuré (prêts d'honneur, leasing, garanties publiques) qui ramène le risque résiduel des financeurs à un niveau raisonnable. Le porteur s'engage à une transparence totale et une implication opérationnelle à 100%. Ce projet a vocation à devenir la référence du divertissement actif premium en Alsace.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--w);border:1px solid var(--br);border-radius:9px;padding:18px 20px;margin:20px 0;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);margin-bottom:12px;">Documents annexes disponibles sur demande</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;font-size:13px;color:var(--t2);">
+      <div>📄 Étude de marché complète (25 pages)</div>
+      <div>📊 Tableaux financiers Excel détaillés</div>
+      <div>🗺️ Analyse des locaux prospectés</div>
+      <div>📍 Devis simulateurs TrackMan (en cours)</div>
+      <div>⚖️ Statuts SAS (version projet)</div>
+      <div>🤝 Lettre d'intention partenaire corporaté</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:32px 0 8px;font-size:11px;color:var(--mu);border-top:1px solid var(--brl);margin-top:36px;">
+    Dossier Financier Investisseurs v1.0 · Juin 2026 · Confidentiel<br>
+    Strasbourg, Eurométropole d'Alsace, France<br>
+    Toutes les projections financières sont des estimations basées sur des données de marché et des benchmarks sectoriels. Non contractuel.
+  </div>
+</div>
+
+</body></html>

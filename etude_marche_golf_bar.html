@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Étude de Marché — Bar / Restaurant & Simulateurs de Golf Indoor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --green-dark: #0F6E56;
+    --green-mid: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-xlight: #F0FAF6;
+    --gold: #BA7517;
+    --gold-light: #FAEEDA;
+    --gold-xlight: #FEF9EF;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #888780;
+    --border: #D3D1C7;
+    --border-light: #E8E6DF;
+    --surface: #FAFAF8;
+    --white: #ffffff;
+    --red: #A32D2D;
+    --red-light: #FCEBEB;
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--surface);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ---- COVER ---- */
+  .cover {
+    background: var(--green-dark);
+    color: white;
+    padding: 60px 48px;
+    margin: 0 -24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 160px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    margin-bottom: 14px;
+  }
+  .cover p {
+    font-size: 15px;
+    opacity: 0.8;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+  .cover-meta-item strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    opacity: 1;
+    color: white;
+    margin-bottom: 2px;
+  }
+
+  /* ---- TOC ---- */
+  .toc {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .toc-item:hover { background: var(--green-xlight); color: var(--green-dark); }
+  .toc-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section { margin-bottom: 56px; }
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--green-light);
+  }
+  .section-num {
+    width: 36px; height: 36px;
+    background: var(--green-dark);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 24px 0 12px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin: 16px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  p { margin-bottom: 12px; color: var(--text-secondary); }
+
+  /* ---- STAT CARDS ---- */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--green-dark);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .stat-card.gold .stat-value { color: var(--gold); }
+  .stat-card.red .stat-value { color: var(--red); }
+  .stat-card.blue .stat-value { color: var(--blue); }
+
+  /* ---- TABLES ---- */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  thead th {
+    background: var(--green-dark);
+    color: white;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(even) { background: var(--green-xlight); }
+  tbody tr:hover { background: var(--green-light); }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+  td strong { color: var(--text-primary); font-weight: 600; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-green { background: var(--green-light); color: var(--green-dark); }
+  .badge-gold { background: var(--gold-light); color: var(--gold); }
+  .badge-red { background: var(--red-light); color: var(--red); }
+  .badge-blue { background: var(--blue-light); color: var(--blue); }
+  .badge-gray { background: #F1EFE8; color: #5F5E5A; }
+  td .star { color: var(--gold); font-size: 12px; }
+
+  /* ---- FICHES ---- */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .fiche {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .fiche-header {
+    background: var(--green-dark);
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fiche-icon {
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .fiche-name { font-weight: 600; font-size: 14px; }
+  .fiche-loc { font-size: 11px; opacity: 0.75; margin-top: 1px; }
+  .fiche-body { padding: 16px 18px; }
+  .fiche-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 13px;
+  }
+  .fiche-row:last-child { border-bottom: none; }
+  .fiche-key { color: var(--text-muted); }
+  .fiche-val { font-weight: 500; color: var(--text-primary); }
+
+  .fiche-alt .fiche-header { background: var(--gold); }
+  .fiche-blue .fiche-header { background: var(--blue); }
+  .fiche-coral .fiche-header { background: #993C1D; }
+  .fiche-purple .fiche-header { background: #534AB7; }
+
+  /* ---- INFO BOXES ---- */
+  .info-box {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--blue);
+  }
+  .warn-box {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--gold);
+  }
+  .success-box {
+    background: var(--green-light);
+    border-left: 3px solid var(--green-dark);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--green-dark);
+  }
+  .danger-box {
+    background: var(--red-light);
+    border-left: 3px solid var(--red);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: var(--red);
+  }
+
+  /* ---- CHART WRAPPER ---- */
+  .chart-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .chart-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  /* ---- SWOT ---- */
+  .swot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .swot-card {
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .swot-s { background: var(--green-light); }
+  .swot-w { background: var(--gold-light); }
+  .swot-o { background: var(--blue-light); }
+  .swot-t { background: var(--red-light); }
+  .swot-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .swot-s .swot-label { color: var(--green-dark); }
+  .swot-w .swot-label { color: var(--gold); }
+  .swot-o .swot-label { color: var(--blue); }
+  .swot-t .swot-label { color: var(--red); }
+  .swot-card ul { padding-left: 16px; font-size: 13px; line-height: 1.8; }
+  .swot-s ul { color: var(--green-dark); }
+  .swot-w ul { color: #633806; }
+  .swot-o ul { color: var(--blue); }
+  .swot-t ul { color: var(--red); }
+
+  /* ---- INVEST TABLE ---- */
+  .invest-section { font-size: 13px; }
+  .invest-cat {
+    background: var(--green-xlight);
+    font-weight: 600;
+    color: var(--green-dark);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .total-row td {
+    background: var(--green-dark) !important;
+    color: white !important;
+    font-weight: 600;
+  }
+
+  /* ---- ROI SCENARIOS ---- */
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scenario::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .scenario-pess::before { background: var(--red); }
+  .scenario-base::before { background: var(--gold); }
+  .scenario-opt::before { background: var(--green-mid); }
+  .scenario-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .scenario-pess .scenario-label { color: var(--red); }
+  .scenario-base .scenario-label { color: var(--gold); }
+  .scenario-opt .scenario-label { color: var(--green-dark); }
+  .scenario-ca {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .scenario-pess .scenario-ca { color: var(--red); }
+  .scenario-base .scenario-ca { color: var(--gold); }
+  .scenario-opt .scenario-ca { color: var(--green-dark); }
+  .scenario-detail { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+  .scenario-detail span { display: block; padding: 2px 0; }
+  .scenario-roi {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ---- CALLOUT ---- */
+  .callout {
+    background: var(--green-dark);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 28px; flex-shrink: 0; }
+  .callout-title { font-weight: 600; font-size: 16px; margin-bottom: 6px; }
+  .callout-text { font-size: 13.5px; opacity: 0.85; line-height: 1.6; }
+
+  /* ---- TIMELINE ---- */
+  .timeline { margin: 20px 0; }
+  .tl-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .tl-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--green-dark);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    z-index: 1;
+  }
+  .tl-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 34px;
+    bottom: -16px;
+    width: 2px;
+    background: var(--green-light);
+  }
+  .tl-content { flex: 1; }
+  .tl-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .tl-sub { font-size: 12.5px; color: var(--text-muted); }
+
+  /* ---- CHECKLIST ---- */
+  .checklist { list-style: none; margin: 12px 0; }
+  .checklist li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 6px 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .checklist li:last-child { border: none; }
+  .checklist li::before {
+    content: '✓';
+    width: 18px; height: 18px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ---- DIVIDER ---- */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 32px 0;
+  }
+
+  /* ---- LEGEND ---- */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 28px; }
+    .swot-grid { grid-template-columns: 1fr; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-badge">Étude de Marché — Juin 2026</div>
+  <h1>Bar · Restaurant<br>& Golf Indoor</h1>
+  <p>Analyse complète du marché, benchmarks concurrentiels, modélisation financière et projections de retour sur investissement pour l'ouverture d'un espace hybride en France.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>~600K€</strong>Investissement estimé</div>
+    <div class="cover-meta-item"><strong>3–4 ans</strong>Retour sur invest.</div>
+    <div class="cover-meta-item"><strong>+15,6%</strong>Croissance marché mondial/an</div>
+    <div class="cover-meta-item"><strong>7 sections</strong>dans ce document</div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">Sommaire</div>
+  <div class="toc-grid">
+    <a href="#s1" class="toc-item"><div class="toc-num">1</div>Analyse du marché</a>
+    <a href="#s2" class="toc-item"><div class="toc-num">2</div>Concurrence & Benchmarks</a>
+    <a href="#s3" class="toc-item"><div class="toc-num">3</div>Fiches exemples</a>
+    <a href="#s4" class="toc-item"><div class="toc-num">4</div>Tarifs & offres</a>
+    <a href="#s5" class="toc-item"><div class="toc-num">5</div>Équipement & technologie</div>
+    <a href="#s6" class="toc-item"><div class="toc-num">6</div>Investissements</a>
+    <a href="#s7" class="toc-item"><div class="toc-num">7</div>ROI & scénarios</a>
+  </div>
+</div>
+
+<!-- S1 — MARCHÉ -->
+<div class="section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div>
+      <div class="section-title">Analyse du marché</div>
+      <div class="section-sub">Dynamiques globales, tendances et potentiel en France</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-value">1,86 Md$</div>
+      <div class="stat-label">Marché mondial simulateurs golf indoor (2024)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">4,6 Md$</div>
+      <div class="stat-label">Projection 2033 (TCAC +10,5%/an)</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-value">+15,6%</div>
+      <div class="stat-label">Croissance annuelle estimée (autre source : +15,6%)</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-value">~780K</div>
+      <div class="stat-label">Licenciés golf en France (FFGolf)</div>
+    </div>
+  </div>
+
+  <h3>Pourquoi le golf indoor décolle maintenant ?</h3>
+  <p>Le golf indoor en bar/restaurant bénéficie d'une convergence de tendances structurelles : démocratisation du golf (effet JO Paris 2024), appétit pour les "entertainment venues" mixant activité et restauration (Topgolf, padel-bar, bowling-restaurant…), et évolution technologique des simulateurs vers une précision et un réalisme quasi-professionnels.</p>
+
+  <div class="info-box">
+    💡 <strong>Facteur déclencheur français :</strong> Les Jeux Olympiques de Paris 2024 (golf au parcours du UGOLF Paris) ont généré un regain d'intérêt massif pour le golf en France, avec une augmentation notable des inscriptions en clubs et des recherches pour "golf indoor Paris".
+  </div>
+
+  <h3>Cibles et clientèles</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Segment</th><th>Profil</th><th>Motivations</th><th>Panier moyen estimé</th><th>Fréquence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Golfeurs confirmés</strong></td><td>35–60 ans, CSP+, licenciés</td><td>Entraînement hors-saison, analyse de swing</td><td>80–120 €/visite</td><td>2–4x/mois</td></tr>
+        <tr><td><strong>Débutants curieux</strong></td><td>25–45 ans, urbains</td><td>Découverte, sortie originale</td><td>60–90 €/visite</td><td>1–2x/mois</td></tr>
+        <tr><td><strong>CSE / Corporate</strong></td><td>Entreprises</td><td>Team-building, événements</td><td>300–1200 €/événement</td><td>Trimestriel</td></tr>
+        <tr><td><strong>Amis / familles</strong></td><td>Groupes 3–6 pers.</td><td>Soirée fun, après-travail</td><td>120–200 €/groupe</td><td>Mensuel</td></tr>
+        <tr><td><strong>Apprenants</strong></td><td>Débutants avec coach</td><td>Cours assistés technologie</td><td>80–150 €/session</td><td>Hebdo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Saisonnalité</h3>
+  <div class="chart-card">
+    <div class="chart-card-title">Fréquentation estimée par mois (indice 100 = moyenne)</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#1D9E75"></div>Simulateurs</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#BA7517"></div>Bar/Restauration</div>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="chartSaiso" role="img" aria-label="Saisonnalité mensuelle estimée pour simulateurs et restauration">Voir données en tableau.</canvas>
+    </div>
+  </div>
+
+  <div class="success-box">
+    ✅ <strong>Avantage clé du concept :</strong> contrairement au golf extérieur, les simulateurs sont <em>météo-indépendants</em>. La haute saison des simulateurs (oct–mars) correspond précisément à la basse saison du golf outdoor, créant une complémentarité idéale avec la restauration.
+  </div>
+</div>
+
+<!-- S2 — CONCURRENCE -->
+<div class="section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div>
+      <div class="section-title">Concurrence & Benchmarks</div>
+      <div class="section-sub">Panorama des acteurs existants en France et à l'international</div>
+    </div>
+  </div>
+
+  <h3>Carte des concurrents directs en France</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Établissement</th><th>Ville</th><th>Type</th><th>Simulateurs</th><th>Techno.</th><th>Tarif/h</th><th>Restauration</th><th>Éval.</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Swing City</strong></td>
+          <td>Paris 14e</td>
+          <td><span class="badge badge-green">Bar + Golf</span></td>
+          <td>4 à 6 cabs.</td>
+          <td>TrackMan 4</td>
+          <td>30–60 €</td>
+          <td>Tapas, planches, cocktails</td>
+          <td class="star">★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>Chill &amp; Golf</strong></td>
+          <td>Paris 17e</td>
+          <td><span class="badge badge-green">Bar + Golf</span></td>
+          <td>~4 cabs.</td>
+          <td>TrackMan</td>
+          <td>45–80 €</td>
+          <td>Bar, snacking, restaurant</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>Indoor Golf Lyon</strong></td>
+          <td>Lyon</td>
+          <td><span class="badge badge-gold">Golf seul</span></td>
+          <td>2–3</td>
+          <td>Foresight GC3</td>
+          <td>30–45 €</td>
+          <td>Aucune</td>
+          <td class="star">★★★☆☆</td>
+        </tr>
+        <tr>
+          <td><strong>HereWeGolf</strong></td>
+          <td>Toulouse</td>
+          <td><span class="badge badge-gold">Golf seul</span></td>
+          <td>3–4</td>
+          <td>Skytrak, Mevo+</td>
+          <td>25–40 €</td>
+          <td>Aucune</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>Golf 3000</strong></td>
+          <td>Bordeaux</td>
+          <td><span class="badge badge-gold">Golf seul</span></td>
+          <td>2</td>
+          <td>Uneekor</td>
+          <td>25–35 €</td>
+          <td>Petite boutique</td>
+          <td class="star">★★★☆☆</td>
+        </tr>
+        <tr>
+          <td><strong>Topgolf</strong></td>
+          <td>Non implanté FR</td>
+          <td><span class="badge badge-blue">Concept US</span></td>
+          <td>100+ bays</td>
+          <td>Propriétaire</td>
+          <td>~40 €/bay/h</td>
+          <td>Restaurant complet</td>
+          <td class="star">★★★★★</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Concurrents indirects (loisirs actifs + restauration)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Concept</th><th>Exemples FR</th><th>Investissement typique</th><th>Panier moyen</th><th>Niveau de menace</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Padel-bar</strong></td><td>Padel All In, Five Paris</td><td>300–600 K€</td><td>25–50 €/pers.</td><td><span class="badge badge-red">Élevé</span></td></tr>
+        <tr><td><strong>Bowling-restaurant</strong></td><td>Bowlmaster, Bowling Morangis</td><td>500 K€–2 M€</td><td>30–60 €/pers.</td><td><span class="badge badge-gold">Moyen</span></td></tr>
+        <tr><td><strong>Fléchettes électroniques</strong></td><td>Flight Club, Dart'Bar Paris</td><td>150–300 K€</td><td>30–60 €/pers.</td><td><span class="badge badge-gold">Moyen</span></td></tr>
+        <tr><td><strong>Axe throwing + bar</strong></td><td>Bûcheron Paris, L'Arène</td><td>150–250 K€</td><td>35–55 €/pers.</td><td><span class="badge badge-green">Faible</span></td></tr>
+        <tr><td><strong>E-sport bar</strong></td><td>Meltdown, Omeganet Café</td><td>100–250 K€</td><td>20–40 €/pers.</td><td><span class="badge badge-green">Faible</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Analyse SWOT du positionnement</h3>
+  <div class="swot-grid">
+    <div class="swot-card swot-s">
+      <div class="swot-label">✅ Forces</div>
+      <ul>
+        <li>Concept différenciant et premium</li>
+        <li>Clientèle CSP+ à fort pouvoir d'achat</li>
+        <li>Double flux de revenus (golf + F&B)</li>
+        <li>Fonctionnement toute l'année, météo-indépendant</li>
+        <li>Forte valeur ajoutée corporate/événementiel</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-w">
+      <div class="swot-label">⚠️ Faiblesses</div>
+      <ul>
+        <li>Investissement initial élevé</li>
+        <li>Compétences requises : golf + restauration + techno</li>
+        <li>Surface minimale importante (150+ m²)</li>
+        <li>Méconnaissance du golf dans certaines zones</li>
+        <li>Maintenance technique des simulateurs</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-o">
+      <div class="swot-label">🚀 Opportunités</div>
+      <ul>
+        <li>Marché naissant en France (peu de concurrents)</li>
+        <li>Engouement post-JO 2024 pour le golf</li>
+        <li>Boom des "expérience venues" en restauration</li>
+        <li>Partenariats clubs de golf traditionnels</li>
+        <li>Réservations en ligne, abonnements récurrents</li>
+      </ul>
+    </div>
+    <div class="swot-card swot-t">
+      <div class="swot-label">⛔ Menaces</div>
+      <ul>
+        <li>Arrivée de Topgolf ou franchises US en France</li>
+        <li>Loyers commerciaux en hausse dans les grandes villes</li>
+        <li>Coût de remplacement des équipements (5–7 ans)</li>
+        <li>Concurrence loisirs actifs (padel en plein essor)</li>
+        <li>Effet de mode : fidélisation indispensable</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- S3 — FICHES -->
+<div class="section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div>
+      <div class="section-title">Fiches exemples</div>
+      <div class="section-sub">Études de cas concrets en France et à l'international</div>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="fiche">
+      <div class="fiche-header">
+        <div class="fiche-icon">⛳</div>
+        <div>
+          <div class="fiche-name">Swing City</div>
+          <div class="fiche-loc">Paris 14e — Rue de l'Ouest</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Superficie</span><span class="fiche-val">~250 m²</span></div>
+        <div class="fiche-row"><span class="fiche-key">Simulateurs</span><span class="fiche-val">4–6 TrackMan 4</span></div>
+        <div class="fiche-row"><span class="fiche-key">Tarif</span><span class="fiche-val">30–60 €/h</span></div>
+        <div class="fiche-row"><span class="fiche-key">Horaires</span><span class="fiche-val">Lun–Ven 12h–23h / WE 10h–23h</span></div>
+        <div class="fiche-row"><span class="fiche-key">Restauration</span><span class="fiche-val">Tapas, planches, cocktails</span></div>
+        <div class="fiche-row"><span class="fiche-key">Spécialité</span><span class="fiche-val">Cours avec pro, privatisations</span></div>
+        <div class="fiche-row"><span class="fiche-key">Points forts</span><span class="fiche-val badge badge-green">Pionnier Paris</span></div>
+      </div>
+    </div>
+
+    <div class="fiche fiche-alt">
+      <div class="fiche-header">
+        <div class="fiche-icon">🍸</div>
+        <div>
+          <div class="fiche-name">Chill & Golf</div>
+          <div class="fiche-loc">Paris 17e — Avenue Niel</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Capacité</span><span class="fiche-val">50 pers. + 20 terrasse</span></div>
+        <div class="fiche-row"><span class="fiche-key">Simulateurs</span><span class="fiche-val">~4 cabines</span></div>
+        <div class="fiche-row"><span class="fiche-key">Tarif</span><span class="fiche-val">À partir de 45 €/h</span></div>
+        <div class="fiche-row"><span class="fiche-key">Horaires</span><span class="fiche-val">Lun–Sam 9h–00h / Dim 10h–00h</span></div>
+        <div class="fiche-row"><span class="fiche-key">Restauration</span><span class="fiche-val">Restaurant complet</span></div>
+        <div class="fiche-row"><span class="fiche-key">Âge min.</span><span class="fiche-val">8 ans</span></div>
+        <div class="fiche-row"><span class="fiche-key">Ouverture</span><span class="fiche-val badge badge-gold">Juin 2025</span></div>
+      </div>
+    </div>
+
+    <div class="fiche fiche-blue">
+      <div class="fiche-header">
+        <div class="fiche-icon">🇨🇦</div>
+        <div>
+          <div class="fiche-name">Muni Golf</div>
+          <div class="fiche-loc">Montréal, Canada</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Concept</span><span class="fiche-val">Simulateurs + resto + boutique</span></div>
+        <div class="fiche-row"><span class="fiche-key">Simulateurs</span><span class="fiche-val">4 (max 16 joueurs)</span></div>
+        <div class="fiche-row"><span class="fiche-key">Horaires</span><span class="fiche-val">7j/7 — 9h à 23h</span></div>
+        <div class="fiche-row"><span class="fiche-key">Restauration</span><span class="fiche-val">Menu à partager, bières, cocktails</span></div>
+        <div class="fiche-row"><span class="fiche-key">Extra</span><span class="fiche-val">Boutique + ajustement clubs</span></div>
+        <div class="fiche-row"><span class="fiche-key">Modèle</span><span class="fiche-val badge badge-blue">Référence internationale</span></div>
+      </div>
+    </div>
+
+    <div class="fiche fiche-coral">
+      <div class="fiche-header">
+        <div class="fiche-icon">🏆</div>
+        <div>
+          <div class="fiche-name">Topgolf (US / UK)</div>
+          <div class="fiche-loc">Modèle international</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Format</span><span class="fiche-val">Driving range + technologie</span></div>
+        <div class="fiche-row"><span class="fiche-key">Surface</span><span class="fiche-val">5 000–15 000 m²</span></div>
+        <div class="fiche-row"><span class="fiche-key">Bays</span><span class="fiche-val">100+ postes</span></div>
+        <div class="fiche-row"><span class="fiche-key">CA moyen</span><span class="fiche-val">>5 M$/site/an</span></div>
+        <div class="fiche-row"><span class="fiche-key">Restauration</span><span class="fiche-val">Restaurant multi-niveaux</span></div>
+        <div class="fiche-row"><span class="fiche-key">Note</span><span class="fiche-val badge badge-red">Non implanté FR (2026)</span></div>
+      </div>
+    </div>
+
+    <div class="fiche fiche-purple">
+      <div class="fiche-header">
+        <div class="fiche-icon">🎯</div>
+        <div>
+          <div class="fiche-name">19e Trou</div>
+          <div class="fiche-loc">Rosemère, Québec</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Concept</span><span class="fiche-val">Golf indoor TrackMan + resto-bar</span></div>
+        <div class="fiche-row"><span class="fiche-key">Spécialité</span><span class="fiche-val">Événements sportifs live</span></div>
+        <div class="fiche-row"><span class="fiche-key">Atout</span><span class="fiche-val">Ouverture toute l'année</span></div>
+        <div class="fiche-row"><span class="fiche-key">Clientèle</span><span class="fiche-val">Familles + amateurs</span></div>
+        <div class="fiche-row"><span class="fiche-key">Modèle</span><span class="fiche-val badge badge-gray">Inspiration brasserie sport</span></div>
+      </div>
+    </div>
+
+    <div class="fiche">
+      <div class="fiche-header" style="background:#444441;">
+        <div class="fiche-icon">🇬🇧</div>
+        <div>
+          <div class="fiche-name">Flight Club</div>
+          <div class="fiche-loc">Londres, UK — Concept fléchettes</div>
+        </div>
+      </div>
+      <div class="fiche-body">
+        <div class="fiche-row"><span class="fiche-key">Concept similaire</span><span class="fiche-val">Darts + cocktails bar</span></div>
+        <div class="fiche-row"><span class="fiche-key">CA estimé</span><span class="fiche-val">>3 M£/an/site</span></div>
+        <div class="fiche-row"><span class="fiche-key">Marge F&B</span><span class="fiche-val">~65–70%</span></div>
+        <div class="fiche-row"><span class="fiche-key">Leçon</span><span class="fiche-val">La boisson = 50%+ du CA</span></div>
+        <div class="fiche-row"><span class="fiche-key">Note</span><span class="fiche-val badge badge-gray">Modèle hybride à suivre</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4 — TARIFS -->
+<div class="section" id="s4">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div>
+      <div class="section-title">Tarifs & offres du marché</div>
+      <div class="section-sub">Grille tarifaire comparative et recommandations de positionnement</div>
+    </div>
+  </div>
+
+  <h3>Grille tarifaire simulateurs — marché France (2025–2026)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Créneau</th><th>Entrée de gamme</th><th>Mid-range</th><th>Premium</th><th>Paris premium</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Heure semaine (off-peak)</strong></td>
+          <td>25–30 €/h</td>
+          <td>35–40 €/h</td>
+          <td>45–55 €/h</td>
+          <td>45–60 €/h</td>
+        </tr>
+        <tr>
+          <td><strong>Heure semaine (peak)</strong></td>
+          <td>30–35 €/h</td>
+          <td>40–50 €/h</td>
+          <td>55–70 €/h</td>
+          <td>60–80 €/h</td>
+        </tr>
+        <tr>
+          <td><strong>Samedi/Dimanche</strong></td>
+          <td>35–45 €/h</td>
+          <td>45–60 €/h</td>
+          <td>60–80 €/h</td>
+          <td>70–90 €/h</td>
+        </tr>
+        <tr>
+          <td><strong>Cours particulier (1h)</strong></td>
+          <td>60–80 €</td>
+          <td>80–100 €</td>
+          <td>100–130 €</td>
+          <td>120–160 €</td>
+        </tr>
+        <tr>
+          <td><strong>Privatisation (soirée 3h)</strong></td>
+          <td>250–400 €</td>
+          <td>400–600 €</td>
+          <td>600–900 €</td>
+          <td>800–1500 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Offres et packages recommandés</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Offre</th><th>Contenu</th><th>Prix cible</th><th>Cible</th><th>Marge estimée</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🎯 "Découverte"</strong></td>
+          <td>1h simulateur (2 pers.) + 2 consommations</td>
+          <td>69 € / duo</td>
+          <td>Curieux, premiers contacts</td>
+          <td><span class="badge badge-green">~55%</span></td>
+        </tr>
+        <tr>
+          <td><strong>🍺 "After-Work"</strong></td>
+          <td>1h30 simu (4 pers.) + planche + 1 verre/pers.</td>
+          <td>149 € / groupe</td>
+          <td>Actifs 25–45 ans</td>
+          <td><span class="badge badge-green">~52%</span></td>
+        </tr>
+        <tr>
+          <td><strong>🏌️ "Entraîneur"</strong></td>
+          <td>1h cours avec pro + analyse data</td>
+          <td>120 €</td>
+          <td>Golfeurs confirmés</td>
+          <td><span class="badge badge-gold">~45%</span></td>
+        </tr>
+        <tr>
+          <td><strong>🎉 "Soirée privatisée"</strong></td>
+          <td>3h simulateurs exclusifs + catering personnalisé</td>
+          <td>800–1500 €</td>
+          <td>Corporate, anniversaires</td>
+          <td><span class="badge badge-green">~60%</span></td>
+        </tr>
+        <tr>
+          <td><strong>📅 Abonnement mensuel</strong></td>
+          <td>8h de simulateur/mois, priorité réservation</td>
+          <td>199 €/mois</td>
+          <td>Habitués, golfeurs réguliers</td>
+          <td><span class="badge badge-green">~58%</span></td>
+        </tr>
+        <tr>
+          <td><strong>🎁 Carte cadeau</strong></td>
+          <td>Crédits prépayés (–10–20%)</td>
+          <td>100 / 200 / 500 €</td>
+          <td>Tous</td>
+          <td><span class="badge badge-green">Trésorerie +</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    💡 <strong>Stratégie de prix recommandée :</strong> Positionner le simulateur comme une expérience premium (min. 50 €/h en semaine) pour attirer une clientèle solvable, mais intégrer un package "découverte" accessible (~35 €/pers.) pour élargir la base client. La restauration doit représenter 40–50% du CA total : ne pas sous-estimer sa contribution aux marges.
+  </div>
+
+  <h3>Benchmark restauration : ticket moyen marché</h3>
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-value">18–25 €</div>
+      <div class="stat-label">Ticket boissons moyen par visite</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-value">25–45 €</div>
+      <div class="stat-label">Ticket food moyen (planches, snacking)</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-value">65–70%</div>
+      <div class="stat-label">Marge brute boissons (cocktails)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">30–45%</div>
+      <div class="stat-label">Marge brute food (tapas/planches)</div>
+    </div>
+  </div>
+</div>
+
+<!-- S5 — ÉQUIPEMENTS -->
+<div class="section" id="s5">
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div>
+      <div class="section-title">Équipement & technologie</div>
+      <div class="section-sub">Comparatif des solutions simulateurs et coûts d'installation</div>
+    </div>
+  </div>
+
+  <h3>Comparatif des technologies simulateurs</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Solution</th><th>Technologie</th><th>Précision</th><th>Prix unitaire</th><th>Abonnement/an</th><th>Usage recommandé</th><th>Note marché</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TrackMan 4</strong></td>
+          <td>Double radar + caméra</td>
+          <td><span class="badge badge-green">Pro / Référence</span></td>
+          <td>20–24 K€</td>
+          <td>~800–1000 $/an</td>
+          <td>Commercial premium</td>
+          <td class="star">★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>TrackMan iO</strong></td>
+          <td>Caméra haute vitesse (indoor)</td>
+          <td><span class="badge badge-green">Très bonne</span></td>
+          <td>15–20 K€</td>
+          <td>~800 $/an</td>
+          <td>Indoor dédié, commercial</td>
+          <td class="star">★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>Installation complète TrackMan</strong></td>
+          <td>Cabine + écran + PC + logiciel</td>
+          <td><span class="badge badge-green">Pro</span></td>
+          <td><strong>35–55 K€/bay</strong></td>
+          <td>inclus</td>
+          <td>Clé en main commercial</td>
+          <td class="star">★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>Foresight GCQuad</strong></td>
+          <td>Photométrique (4 caméras)</td>
+          <td><span class="badge badge-gold">Très bonne</span></td>
+          <td>26 K€</td>
+          <td>~500 €/an</td>
+          <td>Commercial / fitting</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>Foresight GC3</strong></td>
+          <td>Photométrique 3 caméras</td>
+          <td><span class="badge badge-gold">Bonne</span></td>
+          <td>10–12 K€</td>
+          <td>~500 €/an</td>
+          <td>Entrée commercial</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>Uneekor</strong></td>
+          <td>Caméra overhead</td>
+          <td><span class="badge badge-gold">Bonne</span></td>
+          <td>8–15 K€</td>
+          <td>~400 €/an</td>
+          <td>Rapport qualité/prix</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>FlightScope X3</strong></td>
+          <td>Radar</td>
+          <td><span class="badge badge-gold">Bonne</span></td>
+          <td>17 K€</td>
+          <td>inclus</td>
+          <td>Entraînement pro</td>
+          <td class="star">★★★★☆</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info-box">
+    🏌️ <strong>Recommandation technologie :</strong> Pour un positionnement bar/restaurant premium, privilégier <strong>TrackMan iO</strong> ou <strong>Foresight GCQuad</strong>. Le TrackMan est la référence reconnue dans l'industrie et un argument marketing fort ("Joue sur le même simulateur que les pros"). Budget à prévoir : <strong>40–55 K€ par cabine complète installée</strong>.
+  </div>
+
+  <h3>Espace et aménagement nécessaire par cabine</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Élément</th><th>Dimensions / spec</th><th>Coût estimé</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Superficie par bay</strong></td><td>Min. 5m L × 4m l × 3m H (idéal 3,5m H)</td><td>Inclus dans loyer</td></tr>
+        <tr><td><strong>Écran de frappe</strong></td><td>3m × 2,7m (heavy-duty)</td><td>1 500–3 000 €</td></tr>
+        <tr><td><strong>Projecteur HD</strong></td><td>4K, court foyer</td><td>2 000–5 000 €</td></tr>
+        <tr><td><strong>Tapis de synthétique golf</strong></td><td>Fairway + rough</td><td>500–1 500 €</td></tr>
+        <tr><td><strong>PC gaming dédié</strong></td><td>RTX 4070+, 32 Go RAM</td><td>1 500–2 500 €</td></tr>
+        <tr><td><strong>Enclosure / cloisons</strong></td><td>Filets de sécurité, cloisons acoustiques</td><td>3 000–8 000 €</td></tr>
+        <tr><td><strong>Logiciel (licences)</strong></td><td>250+ parcours, multi-joueurs</td><td>800–1 500 €/an</td></tr>
+        <tr><td><strong>Total installation / bay</strong></td><td>Hors monitor</td><td><strong>~10–20 K€</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S6 — INVESTISSEMENTS -->
+<div class="section" id="s6">
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div>
+      <div class="section-title">Plan d'investissement</div>
+      <div class="section-sub">Estimation détaillée pour un espace de 250–350 m², 4 simulateurs, Paris / grande ville</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-value">250 m²</div>
+      <div class="stat-label">Surface cible (min. viable)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">4 bays</div>
+      <div class="stat-label">Simulateurs (scénario de base)</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-value">~580 K€</div>
+      <div class="stat-label">Investissement total estimé</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-value">175 K€</div>
+      <div class="stat-label">Apport personnel recommandé (30%)</div>
+    </div>
+  </div>
+
+  <h3>Détail des postes d'investissement (scénario Paris / grande ville)</h3>
+  <div class="table-wrap invest-section">
+    <table>
+      <thead>
+        <tr><th>Poste</th><th>Détail</th><th>Scénario bas</th><th>Scénario médian</th><th>Scénario haut</th></tr>
+      </thead>
+      <tbody>
+        <tr class="invest-cat"><td colspan="5">🏢 IMMOBILIER & AMÉNAGEMENT</td></tr>
+        <tr>
+          <td>Droit au bail / pas-de-porte</td>
+          <td>Zone semi-centrale grande ville</td>
+          <td>30 K€</td>
+          <td>60 K€</td>
+          <td>120 K€</td>
+        </tr>
+        <tr>
+          <td>Dépôt de garantie loyer</td>
+          <td>3 mois de loyer</td>
+          <td>12 K€</td>
+          <td>20 K€</td>
+          <td>40 K€</td>
+        </tr>
+        <tr>
+          <td>Travaux gros œuvre</td>
+          <td>Cloisonnement, insonorisation, hauteur</td>
+          <td>40 K€</td>
+          <td>70 K€</td>
+          <td>130 K€</td>
+        </tr>
+        <tr>
+          <td>Décoration & mobilier</td>
+          <td>Bar, tables, éclairage ambiance</td>
+          <td>25 K€</td>
+          <td>50 K€</td>
+          <td>80 K€</td>
+        </tr>
+        <tr class="invest-cat"><td colspan="5">⛳ SIMULATEURS GOLF</td></tr>
+        <tr>
+          <td>4 × TrackMan iO ou Foresight GCQ</td>
+          <td>Monitor seul × 4</td>
+          <td>60 K€</td>
+          <td>80 K€</td>
+          <td>104 K€</td>
+        </tr>
+        <tr>
+          <td>Installation × 4 bays complets</td>
+          <td>Écran, projecteur, PC, enclosure, tapis</td>
+          <td>40 K€</td>
+          <td>60 K€</td>
+          <td>80 K€</td>
+        </tr>
+        <tr>
+          <td>Logiciels & licences (1ère année)</td>
+          <td>E6 Connect, FSX Play, etc.</td>
+          <td>5 K€</td>
+          <td>6 K€</td>
+          <td>8 K€</td>
+        </tr>
+        <tr class="invest-cat"><td colspan="5">🍽️ BAR / RESTAURATION</td></tr>
+        <tr>
+          <td>Équipement cuisine professionnelle</td>
+          <td>Piano, frigos, lave-vaisselle pro</td>
+          <td>25 K€</td>
+          <td>40 K€</td>
+          <td>60 K€</td>
+        </tr>
+        <tr>
+          <td>Matériel bar</td>
+          <td>Tireuses, verrerie, équipements cocktails</td>
+          <td>8 K€</td>
+          <td>15 K€</td>
+          <td>25 K€</td>
+        </tr>
+        <tr>
+          <td>Vaisselle, petits équipements</td>
+          <td>Service de table complet</td>
+          <td>3 K€</td>
+          <td>6 K€</td>
+          <td>10 K€</td>
+        </tr>
+        <tr class="invest-cat"><td colspan="5">📲 DIGITAL, ADMIN & DIVERS</td></tr>
+        <tr>
+          <td>Système de réservation online</td>
+          <td>Logiciel caisse + booking</td>
+          <td>3 K€</td>
+          <td>5 K€</td>
+          <td>8 K€</td>
+        </tr>
+        <tr>
+          <td>Signalétique, site web, lancement</td>
+          <td>Marketing d'ouverture</td>
+          <td>10 K€</td>
+          <td>20 K€</td>
+          <td>35 K€</td>
+        </tr>
+        <tr>
+          <td>Licences (IV, ERP), assurances</td>
+          <td>Administratif, frais de création</td>
+          <td>5 K€</td>
+          <td>8 K€</td>
+          <td>12 K€</td>
+        </tr>
+        <tr>
+          <td>Fonds de roulement (3 mois)</td>
+          <td>Loyer + salaires + stock</td>
+          <td>40 K€</td>
+          <td>60 K€</td>
+          <td>90 K€</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2"><strong>TOTAL ESTIMÉ</strong></td>
+          <td><strong>306 K€</strong></td>
+          <td><strong>500 K€</strong></td>
+          <td><strong>802 K€</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    ⚠️ <strong>Points d'attention :</strong> Le poste "droit au bail" varie considérablement selon la ville et le quartier. À Paris intra-muros, prévoir 80–150 K€ minimum. En ville secondaire (Bordeaux, Nantes, Lyon périphérie), on peut descendre à 20–50 K€. La hauteur sous plafond est non-négociable : <strong>minimum 3m absolus, idéal 3,5m</strong>.
+  </div>
+
+  <h3>Charges opérationnelles mensuelles estimées</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Poste</th><th>Hypothèse basse</th><th>Hypothèse médiane</th><th>Hypothèse haute</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Loyer (250–350 m²)</strong></td><td>3 500 €/mois</td><td>6 000 €/mois</td><td>12 000 €/mois</td></tr>
+        <tr><td><strong>Masse salariale</strong></td><td>8 000 € (2–3 ETP)</td><td>14 000 € (4–5 ETP)</td><td>22 000 € (7 ETP)</td></tr>
+        <tr><td><strong>Achats boissons/food</strong></td><td>3 000 €</td><td>6 000 €</td><td>10 000 €</td></tr>
+        <tr><td><strong>Charges (énergie, eau)</strong></td><td>800 €</td><td>1 500 €</td><td>2 500 €</td></tr>
+        <tr><td><strong>Maintenance simulateurs</strong></td><td>300 €</td><td>600 €</td><td>1 200 €</td></tr>
+        <tr><td><strong>Abonnements logiciels</strong></td><td>400 €</td><td>600 €</td><td>800 €</td></tr>
+        <tr><td><strong>Marketing récurrent</strong></td><td>500 €</td><td>1 500 €</td><td>3 000 €</td></tr>
+        <tr><td><strong>Assurances, compta, divers</strong></td><td>800 €</td><td>1 200 €</td><td>2 000 €</td></tr>
+        <tr style="background:#F0FAF6; font-weight:600;"><td><strong>TOTAL CHARGES/MOIS</strong></td><td><strong>17 300 €</strong></td><td><strong>31 400 €</strong></td><td><strong>53 500 €</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S7 — ROI -->
+<div class="section" id="s7">
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div>
+      <div class="section-title">ROI & scénarios financiers</div>
+      <div class="section-sub">Projections sur 5 ans, seuil de rentabilité et scénarios</div>
+    </div>
+  </div>
+
+  <h3>Hypothèses de chiffre d'affaires</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Source de revenus</th><th>Base calcul</th><th>CA/mois pessimiste</th><th>CA/mois réaliste</th><th>CA/mois optimiste</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Simulateurs (location/h)</strong></td>
+          <td>4 bays × heures d'occupation</td>
+          <td>6 400 €<br><small style="color:var(--text-muted)">~40 h/bay/mois × 40€</small></td>
+          <td>12 800 €<br><small style="color:var(--text-muted)">~80 h/bay/mois × 40€</small></td>
+          <td>20 000 €<br><small style="color:var(--text-muted)">~100 h/bay/mois × 50€</small></td>
+        </tr>
+        <tr>
+          <td><strong>Cours avec professeur</strong></td>
+          <td>Sessions individuelles</td>
+          <td>1 200 €</td>
+          <td>3 000 €</td>
+          <td>5 000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Bar & boissons</strong></td>
+          <td>Ticket moyen 20 € × visiteurs</td>
+          <td>4 000 €</td>
+          <td>9 000 €</td>
+          <td>15 000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Restauration (food)</strong></td>
+          <td>Planches, tapas, plats</td>
+          <td>2 500 €</td>
+          <td>5 500 €</td>
+          <td>9 000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Corporate & privatisations</strong></td>
+          <td>~4–8 événements/mois</td>
+          <td>2 000 €</td>
+          <td>5 000 €</td>
+          <td>9 000 €</td>
+        </tr>
+        <tr>
+          <td><strong>Abonnements récurrents</strong></td>
+          <td>Cartes membres × 199 €</td>
+          <td>1 000 €</td>
+          <td>3 000 €</td>
+          <td>6 000 €</td>
+        </tr>
+        <tr style="background:#F0FAF6; font-weight:600;">
+          <td><strong>TOTAL CA MENSUEL</strong></td>
+          <td></td>
+          <td><strong>17 100 €</strong></td>
+          <td><strong>38 300 €</strong></td>
+          <td><strong>64 000 €</strong></td>
+        </tr>
+        <tr style="font-weight:600;">
+          <td><strong>TOTAL CA ANNUEL</strong></td>
+          <td></td>
+          <td><strong>205 K€</strong></td>
+          <td><strong>460 K€</strong></td>
+          <td><strong>768 K€</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Trois scénarios financiers sur 5 ans</h3>
+  <div class="scenario-grid">
+    <div class="scenario scenario-pess">
+      <div class="scenario-label">📉 Scénario pessimiste</div>
+      <div class="scenario-ca">205 K€</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">CA annuel an 1</div>
+      <div class="scenario-detail">
+        <span>Taux d'occupation simulateurs : 25–35%</span>
+        <span>100–150 clients/semaine</span>
+        <span>Zone secondaire ou faible notoriété</span>
+        <span>Charges mensuelles : ~17 000 €</span>
+      </div>
+      <div class="scenario-roi" style="color:var(--red);">
+        Résultat net : déficitaire an 1–2<br>
+        Break-even : ~an 4–5<br>
+        ROI investissement : &gt; 5 ans
+      </div>
+    </div>
+    <div class="scenario scenario-base">
+      <div class="scenario-label">📊 Scénario réaliste</div>
+      <div class="scenario-ca">460 K€</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">CA annuel an 2 (post-lancement)</div>
+      <div class="scenario-detail">
+        <span>Taux d'occupation : 50–65%</span>
+        <span>250–350 clients/semaine</span>
+        <span>Bonne zone urbaine, 4 simulateurs</span>
+        <span>Charges mensuelles : ~31 000 €</span>
+      </div>
+      <div class="scenario-roi" style="color:var(--gold);">
+        EBE an 2 : ~50–80 K€<br>
+        Break-even : ~an 2–3<br>
+        ROI : 3–4 ans sur invest. 500 K€
+      </div>
+    </div>
+    <div class="scenario scenario-opt">
+      <div class="scenario-label">🚀 Scénario optimiste</div>
+      <div class="scenario-ca">768 K€</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">CA annuel an 2–3</div>
+      <div class="scenario-detail">
+        <span>Taux d'occupation : 75–85%</span>
+        <span>450+ clients/semaine</span>
+        <span>Paris / Lyon, forte notoriété</span>
+        <span>5–6 simulateurs, privatisations ×</span>
+      </div>
+      <div class="scenario-roi" style="color:var(--green-dark);">
+        EBE : 150–200 K€/an<br>
+        Break-even : fin an 1–2<br>
+        ROI : 2,5–3 ans sur 600 K€
+      </div>
+    </div>
+  </div>
+
+  <h3>Projection sur 5 ans — scénario réaliste</h3>
+  <div class="chart-card">
+    <div class="chart-card-title">CA annuel projeté et EBE cumulé (scénario réaliste, en K€)</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#1D9E75;"></div>Chiffre d'affaires</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#BA7517;"></div>EBE (résultat avant intérêts, taxes, amort.)</div>
+    </div>
+    <div style="position:relative;width:100%;height:260px;">
+      <canvas id="chartROI" role="img" aria-label="Projection CA et EBE sur 5 ans">CA : 280K, 460K, 520K, 570K, 610K. EBE : -30K, 55K, 90K, 115K, 130K.</canvas>
+    </div>
+  </div>
+
+  <h3>Seuil de rentabilité mensuel</h3>
+  <div class="chart-card">
+    <div class="chart-card-title">Break-even : CA seuil vs charges mensuelles estimées</div>
+    <div style="position:relative;width:100%;height:200px;">
+      <canvas id="chartBE" role="img" aria-label="Break-even mensuel selon scénarios">Seuil charges : 31K. CA pessmiste 17K, réaliste 38K, optimiste 64K.</canvas>
+    </div>
+  </div>
+
+  <h3>Répartition estimée du CA (scénario réaliste)</h3>
+  <div class="chart-card">
+    <div class="chart-card-title">Mix revenus — part en % du CA total</div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#1D9E75;"></div>Simulateurs 33%</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#BA7517;"></div>Bar 23%</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#185FA5;"></div>Food 14%</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#534AB7;"></div>Corporate/Priv. 13%</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#993C1D;"></div>Cours 8%</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#888780;"></div>Abonnements 8%</div>
+    </div>
+    <div style="position:relative;width:100%;height:240px;">
+      <canvas id="chartMix" role="img" aria-label="Répartition du CA par source">Simulateurs 33%, Bar 23%, Food 14%, Corporate 13%, Cours 8%, Abonnements 8%.</canvas>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h3>Facteurs clés de succès</h3>
+  <ul class="checklist">
+    <li>Emplacement avec fort passage, bonne desserte transports (M°, parking)</li>
+    <li>Hauteur sous plafond ≥ 3m (idéal 3,5m) — critère non-négociable</li>
+    <li>Technologie TrackMan ou Foresight pour crédibilité et marketing</li>
+    <li>Système de réservation en ligne fluide (Planity, Reservio, développement propriétaire)</li>
+    <li>Animation régulière : tournois internes, soirées thématiques, diffusion des Majors</li>
+    <li>Offre corporate forte dès l'ouverture (CSE, team building, séminaires)</li>
+    <li>Chef/responsable cuisine + manager golf : binôme compétences indispensable</li>
+    <li>Présence réseaux sociaux forte (Instagram, TikTok) — capital visuel énorme</li>
+    <li>Programme fidélité (abonnements, cartes prépayées) pour stabiliser la trésorerie</li>
+    <li>Partenariats avec clubs de golf traditionnel (cours collectifs, clients licenciés)</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-icon">⛳</div>
+    <div>
+      <div class="callout-title">Synthèse et recommandation</div>
+      <div class="callout-text">Le concept bar/restaurant + simulateurs de golf est un marché naissant en France avec peu de concurrents directs (2–3 acteurs à Paris, quasiment aucun en province) et une demande en forte croissance. Le timing est idéal post-JO 2024. Le modèle est viable à partir de 250 m² et 4 simulateurs avec un budget de 450–600 K€. Le scénario réaliste projette un break-even en 2–3 ans avec un EBE annuel de 50–120 K€ à maturité. La clé : ne pas sous-investir sur la qualité des simulateurs (TrackMan) et construire l'offre F&B avec la même ambition que l'activité golf.</div>
+    </div>
+  </div>
+
+  <h3>Calendrier de lancement recommandé</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">M1</div>
+      <div class="tl-content">
+        <div class="tl-title">Étude & business plan complet</div>
+        <div class="tl-sub">Affinage localisation, validation concept, recherche associés/investisseurs</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">M2</div>
+      <div class="tl-content">
+        <div class="tl-title">Financement & local</div>
+        <div class="tl-sub">Dossier bancaire, signature bail, négociation simulateurs</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">M3–5</div>
+      <div class="tl-content">
+        <div class="tl-title">Travaux & installation</div>
+        <div class="tl-sub">Aménagement, installation simulateurs, cuisine, décoration</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">M6</div>
+      <div class="tl-content">
+        <div class="tl-title">Pré-ouverture & marketing</div>
+        <div class="tl-sub">Recrutement, formation équipe, pré-réservations, influenceurs golf</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">M7</div>
+      <div class="tl-content">
+        <div class="tl-title">Ouverture officielle</div>
+        <div class="tl-sub">Event de lancement, presse, réseaux sociaux, objectif 50% d'occupation dès M1</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">M12</div>
+      <div class="tl-content">
+        <div class="tl-title">Bilan an 1 & extension</div>
+        <div class="tl-sub">Analyse des flux, optimisation tarifs, potentielle extension (5e simulateur, boutique)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:32px 0 8px; font-size:12px; color:var(--text-muted);">
+    Document généré en juin 2026 — Sources : GolfindoorFrance, BusinessResearchInsights, Sortiraparis, GolfPlus, données sites concurrents, estimations sectorielles restauration France.
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const mois = ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Aoû','Sep','Oct','Nov','Déc'];
+const simuIdx = [115,110,95,75,65,60,55,50,80,105,120,125];
+const restaIdx = [80,85,90,100,105,115,120,110,105,95,90,85];
+
+new Chart(document.getElementById('chartSaiso'), {
+  type: 'line',
+  data: {
+    labels: mois,
+    datasets: [
+      {
+        label: 'Simulateurs',
+        data: simuIdx,
+        borderColor: '#1D9E75',
+        backgroundColor: 'rgba(29,158,117,0.08)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 3,
+        pointBorderDash: []
+      },
+      {
+        label: 'Bar/Restauration',
+        data: restaIdx,
+        borderColor: '#BA7517',
+        backgroundColor: 'rgba(186,117,23,0.07)',
+        borderWidth: 2,
+        borderDash: [5,3],
+        fill: true,
+        tension: 0.4,
+        pointRadius: 3
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        min: 40,
+        max: 135,
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 }, color: '#888780', callback: v => v }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 }, color: '#888780' }
+      }
+    }
+  }
+});
+
+const years = ['An 1','An 2','An 3','An 4','An 5'];
+const ca = [280, 460, 520, 570, 610];
+const ebe = [-30, 55, 90, 115, 130];
+
+new Chart(document.getElementById('chartROI'), {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: 'CA (K€)',
+        data: ca,
+        backgroundColor: '#1D9E75',
+        borderRadius: 5,
+        yAxisID: 'y'
+      },
+      {
+        label: 'EBE (K€)',
+        data: ebe,
+        type: 'line',
+        borderColor: '#BA7517',
+        backgroundColor: 'transparent',
+        borderWidth: 2.5,
+        pointRadius: 5,
+        pointBackgroundColor: '#BA7517',
+        yAxisID: 'y2',
+        borderDash: [4,2]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        position: 'left',
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 }, color: '#888780', callback: v => v + ' K' }
+      },
+      y2: {
+        position: 'right',
+        grid: { drawOnChartArea: false },
+        ticks: { font: { size: 11 }, color: '#BA7517', callback: v => v + ' K' }
+      },
+      x: {
+        grid: { display: false },
+        ticks: { font: { size: 11 }, color: '#888780' }
+      }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartBE'), {
+  type: 'bar',
+  data: {
+    labels: ['Charges mensuelles (scén. médian)', 'CA mensuel — Pessimiste', 'CA mensuel — Réaliste', 'CA mensuel — Optimiste'],
+    datasets: [{
+      data: [31400, 17100, 38300, 64000],
+      backgroundColor: ['#D3D1C7', '#E24B4A', '#1D9E75', '#1D9E75'],
+      borderRadius: 5
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 }, color: '#888780', callback: v => Math.round(v/1000) + ' K€' }
+      },
+      y: {
+        grid: { display: false },
+        ticks: { font: { size: 11 }, color: '#888780' }
+      }
+    }
+  }
+});
+
+new Chart(document.getElementById('chartMix'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Simulateurs', 'Bar/boissons', 'Food', 'Corporate/Priv.', 'Cours', 'Abonnements'],
+    datasets: [{
+      data: [33, 23, 14, 13, 8, 8],
+      backgroundColor: ['#1D9E75','#BA7517','#185FA5','#534AB7','#993C1D','#888780'],
+      borderWidth: 2,
+      borderColor: '#ffffff'
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: ctx => ctx.label + ' : ' + ctx.raw + '%'
+        }
+      }
+    },
+    cutout: '55%'
+  }
+});
+</script>
+</body>
+</html>
