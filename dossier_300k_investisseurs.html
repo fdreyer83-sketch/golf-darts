@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dossier de Présentation — Golf Indoor & Fléchettes | 300K€ | Strasbourg 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#0F6E56;--gm:#1D9E75;--gl:#E1F5EE;--gxl:#F0FAF6;--go:#BA7517;--gol:#FAEEDA;--r:#A32D2D;--rl:#FCEBEB;--b:#185FA5;--bl:#E6F1FB;--p:#534AB7;--pl:#EEEDF9;--navy:#0D1B3E;--t:#1a1a1a;--t2:#4a4a4a;--mu:#888780;--br:#D3D1C7;--brl:#E8E6DF;--sur:#FAFAF8;--w:#fff;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"DM Sans",sans-serif;font-size:14px;line-height:1.7;color:var(--t);background:var(--sur);max-width:980px;margin:0 auto;padding:0 24px 80px;}
+
+/* COVER */
+.cover{background:linear-gradient(150deg,#06302A 0%,#0F6E56 50%,#167A60 100%);color:white;padding:64px 52px;margin:0 -24px 0;position:relative;overflow:hidden;}
+.cover::before{content:"";position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);}
+.cover::after{content:"";position:absolute;bottom:-80px;left:240px;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.025);}
+.cv-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px;}
+.cv-badge{background:rgba(255,255,255,.15);padding:4px 14px;border-radius:20px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+.cv-conf{background:rgba(186,117,23,.35);border:1px solid rgba(186,117,23,.5);color:#FFD97A;padding:4px 12px;border-radius:4px;font-size:10.5px;font-weight:600;}
+.cover h1{font-family:"Playfair Display",serif;font-size:40px;font-weight:700;line-height:1.15;margin-bottom:8px;}
+.cover h2{font-family:"Playfair Display",serif;font-size:20px;font-weight:400;opacity:.7;margin-bottom:28px;}
+.cv-audience{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+.cv-aud-item{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 14px;font-size:12.5px;font-weight:500;}
+.cv-aud-item span{opacity:.8;}
+.cv-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:18px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15);}
+.cv-kpi strong{display:block;font-size:22px;font-weight:700;color:white;margin-bottom:2px;}
+.cv-kpi span{font-size:11px;opacity:.6;line-height:1.3;}
+
+/* CHAPEAU sections */
+.chapeau{background:var(--navy);color:white;padding:12px 52px;margin:0 -24px 48px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.chap-item{font-size:12px;display:flex;align-items:center;gap:6px;opacity:.8;}
+.chap-item strong{opacity:1;color:white;}
+.chap-sep{opacity:.3;font-size:16px;}
+
+/* TOC */
+.toc{background:var(--w);border:1px solid var(--br);border-radius:12px;padding:24px 28px;margin-bottom:48px;}
+.toc-h{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin-bottom:14px;}
+.toc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:4px;}
+.toc-a{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;text-decoration:none;color:var(--t2);font-size:12.5px;font-weight:500;}
+.toc-a:hover{background:var(--gxl);color:var(--g);}
+.toc-n{width:22px;height:22px;border-radius:5px;background:var(--g);color:white;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc-n.sp{background:var(--go);}
+.toc-a.sponsor-link{color:var(--go);}
+
+/* SECTIONS */
+.sec{margin-bottom:56px;}
+.sec-hd{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--gl);}
+.sec-hd.sponsor-hd{border-bottom-color:var(--gol);}
+.sn{width:38px;height:38px;background:var(--g);color:white;border-radius:9px;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.sn.sp{background:var(--go);}
+.sec-title{font-family:"Playfair Display",serif;font-size:24px;font-weight:600;}
+.sec-sub{font-size:12.5px;color:var(--mu);margin-top:2px;}
+h3{font-size:15px;font-weight:600;margin:22px 0 10px;}
+h4{font-size:12px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:.09em;margin:16px 0 8px;}
+p{color:var(--t2);margin-bottom:10px;font-size:13.5px;}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:16px 0;}
+.stat{background:var(--w);border:1px solid var(--br);border-radius:9px;padding:14px;text-align:center;}
+.stat-v{font-size:21px;font-weight:700;color:var(--g);line-height:1.2;margin-bottom:3px;}
+.stat-l{font-size:11px;color:var(--mu);line-height:1.4;}
+.stat.go .stat-v{color:var(--go);}
+.stat.r .stat-v{color:var(--r);}
+.stat.b .stat-v{color:var(--b);}
+.stat.p .stat-v{color:var(--p);}
+.stat.dark{background:var(--g);border-color:var(--g);}
+.stat.dark .stat-v{color:white;font-size:24px;}
+.stat.dark .stat-l{color:rgba(255,255,255,.7);}
+.stat.navy{background:var(--navy);border-color:var(--navy);}
+.stat.navy .stat-v{color:#FFD97A;font-size:24px;}
+.stat.navy .stat-l{color:rgba(255,255,255,.6);}
+
+/* TABLES */
+.tw{overflow-x:auto;margin:14px 0;border-radius:9px;border:1px solid var(--br);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:var(--g);color:white;padding:10px 13px;text-align:left;font-weight:500;font-size:11.5px;white-space:nowrap;}
+thead th.sp{background:var(--go);}
+tbody tr:nth-child(even){background:var(--gxl);}
+tbody tr:hover{background:var(--gl);}
+td{padding:9px 13px;border-bottom:1px solid var(--brl);color:var(--t2);vertical-align:middle;}
+td strong{color:var(--t);font-weight:600;}
+.total td{background:var(--g)!important;color:white!important;font-weight:700;font-size:13.5px;}
+.subtot td{background:var(--gl)!important;font-weight:600;color:var(--g)!important;}
+.cat td{background:#F3F1EB;font-weight:700;font-size:11px;color:var(--mu);letter-spacing:.07em;text-transform:uppercase;padding:7px 13px;}
+.total-sp td{background:var(--go)!important;color:white!important;font-weight:700;}
+.subtot-sp td{background:var(--gol)!important;font-weight:600;color:var(--go)!important;}
+
+/* BADGES */
+.b{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;}
+.bg{background:var(--gl);color:var(--g);}
+.bo{background:var(--gol);color:var(--go);}
+.br2{background:var(--rl);color:var(--r);}
+.bb{background:var(--bl);color:var(--b);}
+.bp{background:var(--pl);color:var(--p);}
+.bgr{background:#EEECE6;color:#666;}
+.bna{background:#E8EBF3;color:var(--navy);}
+
+/* CALLOUT BOXES */
+.info{background:var(--bl);border-left:3px solid var(--b);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#1a3a60;}
+.warn{background:var(--gol);border-left:3px solid var(--go);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#4a2e00;}
+.ok{background:var(--gl);border-left:3px solid var(--g);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--g);}
+.danger{background:var(--rl);border-left:3px solid var(--r);border-radius:0 7px 7px 0;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--r);}
+.callout{background:var(--g);color:white;border-radius:11px;padding:22px 26px;margin:20px 0;display:flex;gap:16px;align-items:flex-start;}
+.callout.sponsor{background:var(--go);}
+.callout.navy-bg{background:var(--navy);}
+.callout-icon{font-size:24px;flex-shrink:0;margin-top:2px;}
+.callout h4{color:rgba(255,255,255,.9);margin:0 0 5px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;}
+.callout p{color:rgba(255,255,255,.82);font-size:13px;margin:0;line-height:1.6;}
+
+/* FINANCEMENT STACK */
+.fin-stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.fi{border-radius:9px;padding:14px 16px;border:1px solid var(--br);background:var(--w);}
+.fi-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;}
+.fi-a{font-size:19px;font-weight:700;margin-bottom:2px;}
+.fi-p{font-size:11px;color:var(--mu);}
+.fi1 .fi-l,.fi1 .fi-a{color:var(--g);}
+.fi2 .fi-l,.fi2 .fi-a{color:var(--b);}
+.fi3 .fi-l,.fi3 .fi-a{color:var(--go);}
+.fi4 .fi-l,.fi4 .fi-a{color:var(--p);}
+.fi5 .fi-l,.fi5 .fi-a{color:var(--r);}
+.fi6 .fi-l,.fi6 .fi-a{color:#2D8A5C;}
+.fi7 .fi-l,.fi7 .fi-a{color:var(--navy);}
+
+/* PROGRESS BARS */
+.progress-bar{background:#E8E6DF;border-radius:6px;height:18px;overflow:hidden;margin:4px 0 12px;}
+.progress-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding:0 8px;font-size:10px;font-weight:700;color:white;min-width:30px;}
+
+/* SCÉNARIOS */
+.scenario-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;}
+.sc{background:var(--w);border:1px solid var(--br);border-radius:10px;padding:18px;position:relative;overflow:hidden;}
+.sc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;}
+.sc-p::before{background:var(--r);} .sc-b::before{background:var(--go);} .sc-o::before{background:var(--gm);}
+.sc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
+.sc-p .sc-label{color:var(--r);} .sc-b .sc-label{color:var(--go);} .sc-o .sc-label{color:var(--g);}
+.sc-ca{font-family:"Playfair Display",serif;font-size:26px;font-weight:700;margin-bottom:3px;}
+.sc-p .sc-ca{color:var(--r);} .sc-b .sc-ca{color:var(--go);} .sc-o .sc-ca{color:var(--g);}
+.sc-d{font-size:11.5px;color:var(--mu);line-height:1.7;}
+.sc-roi{margin-top:10px;padding-top:8px;border-top:1px solid var(--brl);font-size:12px;font-weight:600;}
+.sc-p .sc-roi{color:var(--r);} .sc-b .sc-roi{color:var(--go);} .sc-o .sc-roi{color:var(--g);}
+
+/* SPONSOR CARDS */
+.sp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0;}
+.sp-card{background:var(--w);border:1px solid var(--br);border-radius:10px;overflow:hidden;}
+.sp-card-head{padding:12px 16px;display:flex;align-items:center;gap:10px;}
+.sp-gold .sp-card-head{background:#B8950E;}
+.sp-silver .sp-card-head{background:#7A8899;}
+.sp-bronze .sp-card-head{background:#A0552A;}
+.sp-product .sp-card-head{background:var(--g);}
+.sp-local .sp-card-head{background:var(--navy);}
+.sp-card-head .sp-icon{font-size:20px;}
+.sp-card-head .sp-name{color:white;font-weight:700;font-size:13px;}
+.sp-card-head .sp-price{color:rgba(255,255,255,.85);font-size:11px;margin-top:1px;}
+.sp-card-body{padding:12px 16px;}
+.sp-card-body ul{list-style:none;font-size:12px;color:var(--t2);line-height:1.9;}
+.sp-card-body ul li::before{content:"✓ ";color:var(--g);font-weight:700;}
+
+/* RISK GRID */
+.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0;}
+.risk{border-radius:9px;padding:14px 16px;border:1px solid var(--br);}
+.risk-r{background:var(--rl);border-color:var(--r);}
+.risk-o{background:var(--gol);border-color:var(--go);}
+.risk-g{background:var(--gl);border-color:var(--g);}
+.risk-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.risk-r .risk-label{color:var(--r);}
+.risk-o .risk-label{color:var(--go);}
+.risk-g .risk-label{color:var(--g);}
+.risk ul{list-style:none;font-size:12px;line-height:1.8;}
+.risk ul li::before{content:"→ ";opacity:.6;}
+
+/* FLOOR PLAN VISUEL */
+.floor{background:var(--w);border:1px solid var(--br);border-radius:10px;padding:20px;margin:16px 0;font-size:12px;}
+.floor-title{font-weight:700;color:var(--g);margin-bottom:14px;font-size:13px;text-transform:uppercase;letter-spacing:.07em;}
+.floor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;}
+.floor-zone{border-radius:7px;padding:10px;text-align:center;}
+.fz-golf{background:#E1F5EE;border:2px solid #1D9E75;}
+.fz-dart{background:#E6F1FB;border:2px solid var(--b);}
+.fz-bar{background:#FAEEDA;border:2px solid var(--go);}
+.fz-lounge{background:#EEEDF9;border:2px solid var(--p);}
+.fz-cuisine{background:#F3F1EB;border:2px dashed #999;}
+.fz-san{background:#F9F9F9;border:2px dashed #ccc;}
+.fz-label{font-weight:700;font-size:11px;margin-bottom:3px;}
+.fz-size{font-size:10px;color:var(--mu);}
+.fz-golf .fz-label{color:#0F6E56;}
+.fz-dart .fz-label{color:var(--b);}
+.fz-bar .fz-label{color:var(--go);}
+.fz-lounge .fz-label{color:var(--p);}
+
+hr{border:none;border-top:1px solid var(--brl);margin:28px 0;}
+@media(max-width:600px){.cover{padding:36px 20px;}.cover h1{font-size:28px;}.scenario-row{grid-template-columns:1fr;}}
+</style></head><body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cv-eyebrow">
+    <div class="cv-badge">Dossier de Présentation · Juin 2026</div>
+    <div class="cv-conf">CONFIDENTIEL</div>
+  </div>
+  <h1>Golf Indoor &amp; Fléchettes</h1>
+  <h2>Bar · Restauration légère · Entertainment — Strasbourg</h2>
+  <div class="cv-audience">
+    <div class="cv-aud-item">🏦 <span>Banques &amp; organismes de financement</span></div>
+    <div class="cv-aud-item">💼 <span>Investisseurs privés</span></div>
+    <div class="cv-aud-item">🤝 <span>Partenaires &amp; sponsors</span></div>
+  </div>
+  <div class="cv-kpis">
+    <div class="cv-kpi"><strong>300 K€</strong><span>Financement total cible</span></div>
+    <div class="cv-kpi"><strong>18 K€</strong><span>Apport personnel</span></div>
+    <div class="cv-kpi"><strong>3 simulateurs</strong><span>Golf indoor Foresight GC3</span></div>
+    <div class="cv-kpi"><strong>5 pistes</strong><span>Fléchettes connectées</span></div>
+    <div class="cv-kpi"><strong>~220 m²</strong><span>Surface cible</span></div>
+    <div class="cv-kpi"><strong>320 K€</strong><span>CA cible année 2</span></div>
+    <div class="cv-kpi"><strong>3–4 ans</strong><span>Retour sur invest.</span></div>
+  </div>
+</div>
+
+<!-- CHAPEAU -->
+<div class="chapeau">
+  <div class="chap-item">📍 <strong>Strasbourg, Eurométropole d'Alsace</strong></div>
+  <div class="chap-sep">|</div>
+  <div class="chap-item">📄 <strong>Version :</strong> Budget optimisé 300K€</div>
+  <div class="chap-sep">|</div>
+  <div class="chap-item">🏢 <strong>Forme juridique :</strong> SAS</div>
+  <div class="chap-sep">|</div>
+  <div class="chap-item">📅 <strong>Ouverture cible :</strong> T1 2027</div>
+  <div class="chap-sep">|</div>
+  <div class="chap-item">⛳ <strong>Concept :</strong> 3 bays golf + 5 pistes fléchettes + bar</div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-h">Sommaire — 14 sections</div>
+  <div class="toc-g">
+    <a href="#s1" class="toc-a"><div class="toc-n">1</div>Synthèse exécutive</a>
+    <a href="#s2" class="toc-a"><div class="toc-n">2</div>Le concept &amp; l'opportunité</a>
+    <a href="#s3" class="toc-a"><div class="toc-n">3</div>Arbitrages 300K€</a>
+    <a href="#s4" class="toc-a"><div class="toc-n">4</div>Plan de surface</a>
+    <a href="#s5" class="toc-a"><div class="toc-n">5</div>CAPEX — Détail bloc par bloc</a>
+    <a href="#s6" class="toc-a"><div class="toc-n">6</div>Plan de financement</a>
+    <a href="#s7" class="toc-a"><div class="toc-n">7</div>OPEX — Charges fixes</a>
+    <a href="#s8" class="toc-a"><div class="toc-n">8</div>OPEX — Charges variables</a>
+    <a href="#s9" class="toc-a"><div class="toc-n">9</div>Grille tarifaire &amp; revenus</a>
+    <a href="#s10" class="toc-a"><div class="toc-n">10</div>Compte de résultat 5 ans</a>
+    <a href="#s11" class="toc-a"><div class="toc-n">11</div>Plan de trésorerie</a>
+    <a href="#s12" class="toc-a"><div class="toc-n">12</div>ROI &amp; scénarios</a>
+    <a href="#s13" class="toc-a sponsor-link"><div class="toc-n sp">13</div>🤝 Dossier partenaires &amp; sponsors</a>
+    <a href="#s14" class="toc-a"><div class="toc-n">14</div>Risques &amp; engagements</a>
+  </div>
+</div>
+
+<!-- S1 SYNTHÈSE -->
+<div class="sec" id="s1">
+  <div class="sec-hd"><div class="sn">1</div><div><div class="sec-title">Synthèse exécutive</div><div class="sec-sub">Le projet en 60 secondes — chiffres clés et avantages concurrentiels</div></div></div>
+
+  <p>Ce dossier présente la création d'un <strong>espace de divertissement actif et connecté à Strasbourg</strong>, combinant 3 simulateurs de golf indoor de haute précision, 5 pistes de fléchettes connectées, et un bar/snacking qualitatif. Le projet vise un financement total de <strong>300 000 €</strong> avec un apport personnel de 18 000 €, grâce à une architecture financière multi-sources éprouvée.</p>
+
+  <div class="callout">
+    <div class="callout-icon">🚀</div>
+    <div>
+      <h4>Opportunité unique en Alsace</h4>
+      <p>Strasbourg (500 000 hab. avec l'Eurométropole) ne compte <strong>aucun concurrent direct</strong> sur ce concept en 2026. Le Matchplay Society à Paris (golf + fléchettes + F&B, ouvert 2024) valide le modèle — complet le weekend dès le 3e mois d'exploitation. Le timing post-JO Paris 2024 (golf) est idéal. Le concept est accessible à tous niveaux, toute l'année, quel que soit la météo.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">300 K€</div><div class="stat-l">Investissement total</div></div>
+    <div class="stat go"><div class="stat-v">320 K€</div><div class="stat-l">CA cible an 2</div></div>
+    <div class="stat b"><div class="stat-v">+52 K€</div><div class="stat-l">EBE an 2</div></div>
+    <div class="stat"><div class="stat-v">55%</div><div class="stat-l">Marge brute estimée</div></div>
+    <div class="stat p"><div class="stat-v">An 2</div><div class="stat-l">Résultat net positif</div></div>
+    <div class="stat go"><div class="stat-v">3–3,5 ans</div><div class="stat-l">ROI — le meilleur des 3 versions</div></div>
+  </div>
+
+  <h3>Les 6 atouts différenciants</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Atout</th><th>Détail</th><th>Impact financier</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Marché vierge à Strasbourg</strong></td><td>0 concurrent direct identifié en 2026 sur 500 000 habitants</td><td>Acquisition clientèle rapide, pas de guerre des prix</td></tr>
+      <tr><td><strong>Triple flux de revenus</strong></td><td>Golf (premium) + fléchettes (accessible) + F&B (marges élevées)</td><td>CA diversifié, risque dilué sur 5 sources</td></tr>
+      <tr><td><strong>Météo-indépendant, 365 jours/an</strong></td><td>Haute saison golf (oct–mars) = basse saison outdoor</td><td>Pas de creux saisonnier marqué</td></tr>
+      <tr><td><strong>Fort potentiel corporate (Wacken)</strong></td><td>30 000+ salariés dans un rayon de 2 km des institutions européennes</td><td>Privatisations 600–1 500 €/événement récurrents</td></tr>
+      <tr><td><strong>Modèle validé Paris</strong></td><td>Matchplay Society, Swing City, Chill &amp; Golf — tous rentables</td><td>Risque concept minimisé — réplication prouvée</td></tr>
+      <tr><td><strong>Budget optimisé = meilleur ROI</strong></td><td>300K€ vs 524K€ : économie de 43% pour un CA réduit de 27%</td><td>ROI de 3–3,5 ans — le meilleur ratio des 3 versions</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S2 CONCEPT -->
+<div class="sec" id="s2">
+  <div class="sec-hd"><div class="sn">2</div><div><div class="sec-title">Le concept &amp; l'opportunité</div><div class="sec-sub">Positionnement, clientèle, marché Strasbourg</div></div></div>
+
+  <h3>Trois piliers, une expérience unique</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Pilier</th><th>Équipement</th><th>Cible</th><th>Panier moyen</th><th>Fréquence</th></tr></thead>
+    <tbody>
+      <tr><td><strong>⛳ Golf Indoor</strong></td><td>3 simulateurs Foresight GC3<br>250+ parcours, analyse swing</td><td>Golfeurs licenciés + curieux 35–60 ans CSP+</td><td>80–120 €/visite</td><td>2–4×/mois</td></tr>
+      <tr><td><strong>🎯 Fléchettes Connect.</strong></td><td>5 pistes Granboard 3S<br>Scoring auto, jeux online</td><td>Groupes amis, collègues 25–45 ans</td><td>30–55 €/pers.</td><td>1–3×/mois</td></tr>
+      <tr><td><strong>🍸 Bar &amp; Snacking</strong></td><td>Bar cocktails, bières craft<br>Planches, tapas, finger food</td><td>Tous les visiteurs</td><td>18–30 €/visite</td><td>Systématique</td></tr>
+      <tr><td><strong>🏢 Corporate</strong></td><td>Privatisation totale ou partielle<br>Catering sur-mesure</td><td>CSE, RH, agences événementielles</td><td>600–1 500 €/event</td><td>4–8×/mois</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Comparaison des 3 versions — pourquoi 300K€ est le bon choix</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur</th><th>Version 524K€</th><th>Version 400K€</th><th style="background:#0F6E56;color:white;">Version 300K€ ✅</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Investissement</strong></td><td>524 000 €</td><td>400 000 €</td><td><strong>300 000 €</strong></td></tr>
+      <tr><td><strong>Simulateurs golf</strong></td><td>4 × TrackMan iO</td><td>4 × Foresight GC3</td><td><strong>3 × Foresight GC3</strong></td></tr>
+      <tr><td><strong>Pistes fléchettes</strong></td><td>6 pistes</td><td>6 pistes</td><td><strong>5 pistes</strong></td></tr>
+      <tr><td><strong>Surface locale</strong></td><td>300 m²</td><td>280 m²</td><td><strong>~220 m²</strong></td></tr>
+      <tr><td><strong>CA projeté an 2</strong></td><td>440 K€</td><td>390 K€</td><td><strong>320 K€</strong></td></tr>
+      <tr><td><strong>EBE an 2</strong></td><td>+59 K€</td><td>+65 K€</td><td><strong>+52 K€</strong></td></tr>
+      <tr><td><strong>Charges mensuelles</strong></td><td>35 910 €</td><td>30 300 €</td><td><strong>24 050 €</strong></td></tr>
+      <tr><td><strong>Seuil rentabilité / mois</strong></td><td>36 500 €</td><td>32 000 €</td><td><strong>25 500 €</strong></td></tr>
+      <tr><td><strong>Résultat net + dès</strong></td><td>An 3</td><td>An 2</td><td><strong>An 2</strong></td></tr>
+      <tr><td><strong>ROI estimé</strong></td><td>4–5 ans</td><td>3,5–4 ans</td><td><strong>3–3,5 ans</strong></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S3 ARBITRAGES -->
+<div class="sec" id="s3">
+  <div class="sec-hd"><div class="sn">3</div><div><div class="sec-title">Arbitrages budgétaires 300K€</div><div class="sec-sub">Les 5 choix stratégiques qui permettent de tenir dans l'enveloppe</div></div></div>
+  <div class="tw"><table>
+    <thead><tr><th>Arbitrage</th><th>Ce qu'on enlève vs 400K€</th><th>Économie</th><th>Impact réel sur l'expérience</th><th>Compensations</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. 3 simulateurs au lieu de 4</strong></td><td>1 bay golf Foresight GC3 complet</td><td><span class="b bg">–22 K€</span></td><td>Capacité max simultanée : 12 joueurs au lieu de 16. Taux d'occupation cible légèrement plus élevé (60% vs 55%)</td><td>Priorité réservation abonnés · Créneaux heure creuse à tarif réduit · Extension bay 4 différée an 2 sur autofinancement</td></tr>
+      <tr><td><strong>2. 5 pistes au lieu de 6</strong></td><td>1 piste fléchettes + TV + aménagement</td><td><span class="b bg">–3 K€</span></td><td>Capacité fléchettes : 30 joueurs simultanés au lieu de 36. Impact minimal sur l'expérience.</td><td>Rotation plus rapide · Accès libre en heure creuse sans réservation</td></tr>
+      <tr><td><strong>3. Zone B Strasbourg</strong></td><td>Wacken/Centre → Deux-Rives ou Krutenau</td><td><span class="b bg">–15 K€/an loyer</span></td><td>Légèrement moins de passage spontané en semaine</td><td>Marketing digital ciblé · Démarchage corporate · Transport en commun accessible</td></tr>
+      <tr><td><strong>4. Cuisine légère seulement</strong></td><td>Pas de vrai piano de cuisson ni de plonge pro complète</td><td><span class="b bg">–12 K€</span></td><td>Pas de plats cuisinés complexes. Planches froides, tapas, finger food assemblés.</td><td>Qualité produits premium (charcuteries, fromages fins) · Partenariat traiteur local pour les privatisations</td></tr>
+      <tr><td><strong>5. Déco minimaliste phase 1</strong></td><td>Finitions haut de gamme différées</td><td><span class="b bg">–8 K€</span></td><td>Ambiance industrielle chic — tendance qui fonctionne très bien en bar entertainment</td><td>Upgrade déco an 2 sur autofinancement · Style "work in progress" assumé</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>Bilan des arbitrages :</strong> On économise ~100K€ vs version 400K€ pour un CA an 2 réduit de seulement 70K€ (320K€ vs 390K€). Les charges mensuelles passent à <strong>24 050€</strong> — le seuil de rentabilité le plus bas des trois versions. C'est la version qui offre le <strong>meilleur ratio risque/rendement</strong> pour un premier projet.</div>
+</div>
+
+<!-- S4 PLAN DE SURFACE -->
+<div class="sec" id="s4">
+  <div class="sec-hd"><div class="sn">4</div><div><div class="sec-title">Plan de surface — ~220 m²</div><div class="sec-sub">Répartition des zones, contraintes techniques, critères de sélection du local</div></div></div>
+
+  <div class="floor">
+    <div class="floor-title">Répartition fonctionnelle des espaces</div>
+    <div class="floor-grid">
+      <div class="floor-zone fz-golf"><div class="fz-label">⛳ Golf Bay 1</div><div class="fz-size">20 m²</div><div class="fz-size">Foresight GC3</div></div>
+      <div class="floor-zone fz-golf"><div class="fz-label">⛳ Golf Bay 2</div><div class="fz-size">20 m²</div><div class="fz-size">Foresight GC3</div></div>
+      <div class="floor-zone fz-golf"><div class="fz-label">⛳ Golf Bay 3</div><div class="fz-size">20 m²</div><div class="fz-size">Foresight GC3</div></div>
+      <div class="floor-zone fz-dart"><div class="fz-label">🎯 Fléchettes ×5</div><div class="fz-size">50 m²</div><div class="fz-size">5 pistes Granboard</div></div>
+      <div class="floor-zone fz-bar"><div class="fz-label">🍸 Bar &amp; service</div><div class="fz-size">20 m²</div><div class="fz-size">Bar + prépa</div></div>
+      <div class="floor-zone fz-cuisine"><div class="fz-label">🍽️ Cuisine légère</div><div class="fz-size">12 m²</div><div class="fz-size">Planches &amp; snacking</div></div>
+      <div class="floor-zone fz-lounge"><div class="fz-label">💺 Lounge / attente</div><div class="fz-size">22 m²</div><div class="fz-size">Tables, canapés</div></div>
+      <div class="floor-zone fz-san"><div class="fz-label">🚻 Sanitaires</div><div class="fz-size">16 m²</div><div class="fz-size">PMR inclus</div></div>
+      <div class="floor-zone fz-san"><div class="fz-label">📦 Stockage/tech</div><div class="fz-size">10 m²</div><div class="fz-size">Cave + serveurs</div></div>
+    </div>
+    <div style="margin-top:14px;font-size:11px;color:var(--mu);text-align:right;">Total : ~190 m² utiles + ~30 m² circulation = <strong>220 m²</strong></div>
+  </div>
+
+  <h3>Critères de sélection du local — non-négociables</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Critère</th><th>Valeur requise</th><th>Pourquoi</th><th>Priorité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Hauteur sous plafond</strong></td><td>≥ 3,0 m (idéal 3,5 m)</td><td>Swing golf = trajectoire haute. En dessous de 3m : simulateurs inutilisables</td><td><span class="b br2">BLOQUANT</span></td></tr>
+      <tr><td><strong>Surface brute</strong></td><td>200–240 m²</td><td>Minimum viable pour le plan de surface ci-dessus</td><td><span class="b br2">Obligatoire</span></td></tr>
+      <tr><td><strong>Licence IV</strong></td><td>Disponible avec le local ou à racheter</td><td>Indispensable pour servir de l'alcool — peut bloquer l'ouverture 3–6 mois</td><td><span class="b br2">Critique</span></td></tr>
+      <tr><td><strong>Accès ERP</strong></td><td>Classement ERP 4e cat. possible</td><td>Établissement recevant du public — commission sécurité obligatoire</td><td><span class="b bo">Prioritaire</span></td></tr>
+      <tr><td><strong>Loyer</strong></td><td>≤ 4 000 €/mois</td><td>Maintenir les charges fixes sous 24 500€/mois</td><td><span class="b bo">Prioritaire</span></td></tr>
+      <tr><td><strong>Accès transports</strong></td><td>Tram ou bus à &lt; 5 min</td><td>Clientèle soirée = peu de voiture · Accessibilité = fréquentation</td><td><span class="b bo">Important</span></td></tr>
+      <tr><td><strong>Parking proche</strong></td><td>Parking public à &lt; 200 m</td><td>Clientèle corporate arrive souvent en voiture</td><td><span class="b bg">Souhaitable</span></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S5 CAPEX -->
+<div class="sec" id="s5">
+  <div class="sec-hd"><div class="sn">5</div><div><div class="sec-title">CAPEX — Plan d'investissement détaillé bloc par bloc</div><div class="sec-sub">Chaque dépense justifiée, chaque poste sourcé, amortissement précisé</div></div></div>
+
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">300 K€</div><div class="stat-l">Budget total</div></div>
+    <div class="stat r"><div class="stat-v">18 K€</div><div class="stat-l">Apport personnel (6%)</div></div>
+    <div class="stat b"><div class="stat-v">282 K€</div><div class="stat-l">À financer via partenaires</div></div>
+    <div class="stat go"><div class="stat-v">~38 K€/an</div><div class="stat-l">Dotations aux amortissements</div></div>
+  </div>
+
+  <!-- BLOC A -->
+  <h3>🏢 Bloc A — Immobilier &amp; travaux</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Montant HT</th><th>Amort.</th><th>Source financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A1 — Droit au bail</strong></td><td>Rachat droit entrée local commercial 220 m², zone Strasbourg B (Deux-Rives, Krutenau, Neuhof)</td><td>15 000 €</td><td>10 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>A2 — Dépôt de garantie</strong></td><td>3 mois de loyer × 3 500 €/mois = 10 500 €. Somme récupérable en fin de bail</td><td>10 500 €</td><td>Non amort.</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>A3 — Travaux gros œuvre</strong></td><td>Cloisonnement zones golf (3 cabines), isolation acoustique renforcée (golf), mise aux normes électricité renforcée (simulateurs 16A/bay), câblage structuré</td><td>32 000 €</td><td>10 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>A4 — Second œuvre</strong></td><td>Plomberie (bar + sanitaires), ventilation/VMC, faux-plafond partiel, revêtements sols (résine époxy zone fléchettes, parquet stratifié lounge)</td><td>18 000 €</td><td>10 ans</td><td>Prêt TDR</td></tr>
+      <tr><td><strong>A5 — Décoration &amp; ambiance</strong></td><td>Peinture murale industrielle chic, éclairage LED scénique (spots, strips), végétation décorative, éléments graphiques mur golf</td><td>11 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>A6 — Mobilier de salle</strong></td><td>6 tables hautes + tabourets, 4 tables basses + canapés lounge, 8 tabourets bar. Style industriel cohérent.</td><td>7 000 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>A7 — Signalétique</strong></td><td>Enseigne extérieure LED, panneau vitrine, signalétique intérieure (zones, règles, prix), stickers sol</td><td>3 500 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL BLOC A — IMMOBILIER &amp; TRAVAUX</strong></td><td><strong>97 000 €</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- BLOC B -->
+  <h3>⛳ Bloc B — Simulateurs de golf (3 bays)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Amort.</th><th>Financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>B1 — Monitor Foresight GC3</strong></td><td>Launch monitor photométrique 3 caméras. Précision professionnelle (spin, vitesse, trajectoire). Utilisé dans 500+ venues commerciales en Europe. Inclus : câbles, support, calibration initiale</td><td>3</td><td>10 000 €</td><td>30 000 €</td><td>5 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>B2 — Impact screen</strong></td><td>Écran de frappe 3m L × 2,7m H, tissu heavy-duty anti-déchirure, cadre aluminium anodisé. Résiste 10 000+ impacts/jour</td><td>3</td><td>1 800 €</td><td>5 400 €</td><td>5 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>B3 — Projecteur 4K court foyer</strong></td><td>Optoma ou BenQ 4K, courte focale (ratio 0,5:1), luminosité 3 500+ lumens, mode HDR. Adapté aux locaux avec recul limité</td><td>3</td><td>2 800 €</td><td>8 400 €</td><td>5 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>B4 — PC gaming dédié</strong></td><td>Config : Intel i7-13700K, RTX 4070 12Go, 32 Go DDR5, SSD 1To NVMe. Coffret verrouillé antivol, ventilation renforcée</td><td>3</td><td>1 800 €</td><td>5 400 €</td><td>4 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>B5 — Tapis synthétique golf</strong></td><td>Tapis 3 zones : fairway (herbe courte), rough (herbe longue), hitting mat antichoc. Surface totale ~8 m²/bay</td><td>3</td><td>1 200 €</td><td>3 600 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>B6 — Enclosure &amp; sécurité</strong></td><td>Filets latéraux et arrière Knotted Nylon 2,5mm, bâche de fond noir mat anti-reflet, cloisons acoustiques absorbantes latérales (Rockwool + placo BA13). Réduit le bruit de frappe de 85%</td><td>3</td><td>3 200 €</td><td>9 600 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>B7 — Logiciels &amp; licences golf (an 1)</strong></td><td>FSX Play (Foresight officiel) + E6 Connect : 250 parcours HD, multi-joueurs, tournois, statistiques. Renouvellement annuel ensuite ~3 500€/an pour 3 bays</td><td>3</td><td>875 €</td><td>2 625 €</td><td>1 an</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>B8 — TV 43" in-bay</strong></td><td>Écran Samsung 43" 4K in-bay pour affichage stats, scores, logos sponsors. Fixation murale sécurisée</td><td>3</td><td>400 €</td><td>1 200 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="4"><strong>TOTAL BLOC B — GOLF (3 BAYS)</strong></td><td><strong>66 225 €</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="info">💡 <strong>Pourquoi Foresight GC3 ?</strong> Précision photométrique 3 caméras mesurée à ±1% sur la vitesse de balle, ±0,5° sur la direction. Suffisant pour 99% des clients bar. Maintenance quasi-nulle (pas de pièces mobiles). Le logiciel FSX Play est reconnu comme LA référence du marché commercial. Upgrade vers GCQuad ou TrackMan possible en an 3 sur autofinancement.</div>
+
+  <!-- BLOC C -->
+  <h3>🎯 Bloc C — Fléchettes connectées (5 pistes)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Qté</th><th>P.U.</th><th>Total</th><th>Amort.</th><th>Financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>C1 — Cible Granboard 3S</strong></td><td>Cible électronique 45 cm, 82 segments, connectivité Bluetooth + Wi-Fi. Jeux : 501, 301, Cricket, Bermuda Triangle, Count-Up. Communauté mondiale 500K+ joueurs online. Résistance : 100 000+ impacts</td><td>5</td><td>950 €</td><td>4 750 €</td><td>4 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>C2 — TV 55" 4K dédiée</strong></td><td>Samsung ou LG 55" 4K, fixation murale orientable, câblage HDMI gainé mural, affichage : scores, animations, classements, publicité sponsors</td><td>5</td><td>950 €</td><td>4 750 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>C3 — Aménagement pistes</strong></td><td>Délimitation au sol (incrustations résine), éclairage LED downlight par piste (2 spots orientables), protection murale autour cible (MDF peint + mousse anti-rebond), séparateurs pistes en Plexiglas fumé. Distance réglementaire 2,37 m + zone sécurité 1 m</td><td>5</td><td>1 200 €</td><td>6 000 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>C4 — Fléchettes &amp; consommables stock initial</strong></td><td>50 sets de fléchettes soft-tip 18g + 500 pointes rechange + porte-fléchettes muraux × 10. Stock 6 mois estimé</td><td>1</td><td>600 €</td><td>600 €</td><td>1 an</td><td>Apport personnel</td></tr>
+      <tr class="subtot"><td colspan="4"><strong>TOTAL BLOC C — FLÉCHETTES (5 PISTES)</strong></td><td><strong>16 100 €</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- BLOC D -->
+  <h3>🍸 Bloc D — Bar &amp; cuisine légère</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Montant</th><th>Amort.</th><th>Financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>D1 — Équipement bar complet</strong></td><td>2 tireuses bière (Heineken + craft), réfrigérateur à bouteilles 600L (Liebherr pro), machine expresso professionnelle Jura Z10, shakers + verrerie complète (100 verres, 50 coupes), bac à glaçons, seau réfrigérant comptoir. Plan de travail inox 3m.</td><td>9 500 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>D2 — Cuisine légère (petites préparations)</strong></td><td>Réfrigérateur professionnel 400L (GN 2/1), plan de travail inox 2m avec dosseret, table réfrigérée pour planches, microondes professionnel 1900W, réchaud électrique 2 feux (réchauffage uniquement), mini lave-vaisselle 45cm professionnel, hotte aspirante murale. NB : pas de piano de cuisson ni de friteuse — uniquement assemblage et service.</td><td>9 500 €</td><td>7 ans</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>D3 — Vaisselle &amp; arts de la table</strong></td><td>80 ardoises (planches individuelles), 60 verreries à eau, 40 planches bois apéro, 20 seaux à bière, 40 sous-verres cuir, couteaux fromage × 20, service complet. Style "bar à planches" cohérent avec le concept</td><td>3 000 €</td><td>3 ans</td><td>Apport / prêt honneur</td></tr>
+      <tr><td><strong>D4 — Café-restaurant &amp; mobilier service</strong></td><td>Distributeur boissons chaudes, borne commande tablette × 3 (prises commandes en bay + piste), imprimante tickets cuisine, badge lecteur CB sans contact, terminal CB ×2</td><td>2 500 €</td><td>4 ans</td><td>Prêt d'honneur</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL BLOC D — BAR &amp; CUISINE LÉGÈRE</strong></td><td><strong>24 500 €</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>Cuisine légère = choix stratégique :</strong> La marge sur les boissons (65–70%) est bien supérieure à la marge food (30–40%). En concentrant la restauration sur des planches premium (charcuterie ibérique, fromages AOP, tartines, finger food), on maintient un ticket food moyen de 15–20€ sans les contraintes d'une vraie cuisine (ERP cuisine, chef qualifié, stocks lourds). Partenariat traiteur local pour les privatisations.</div>
+
+  <!-- BLOC E -->
+  <h3>📲 Bloc E — Digital, informatique &amp; communication</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Montant</th><th>Amort.</th><th>Financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>E1 — Logiciel caisse (POS) + réservation online</strong></td><td>Lightspeed Restaurant ou Zelty : caisse tactile, gestion stocks boissons, réservation en ligne intégrée (bays golf + pistes fléchettes), module abonnements, statistiques CA. Abonnement mensuel ~180€ après an 1</td><td>2 500 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>E2 — Infrastructure réseau</strong></td><td>Switch gigabit 24 ports Netgear Pro, 4 bornes Wi-Fi 6 Ubiquiti UniFi, câblage RJ45 catégorie 6A pour 3 bays golf + 5 pistes + bar + caisse. Réseau isolé invités / exploitation. Fibre pro 600 Mb/s symétrique</td><td>2 500 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>E3 — TV lounge + sonorisation</strong></td><td>2 × TV 65" pour lounge (diffusion sports, stats live, contenu sponsor), système sonorisation Sonos Pro 4 enceintes + ampli, câblage audio sous plafond. Contrôle volume par zone</td><td>3 000 €</td><td>5 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>E4 — Site web + référencement local</strong></td><td>Site WordPress sur mesure : présentation, réservation intégrée (API Lightspeed), galerie photos, blog, Google My Business optimisé, campagne Google Ads lancement (500€ crédit inclus), 3 fiches annuaires (TripAdvisor, Yelp, Pages Jaunes)</td><td>2 500 €</td><td>3 ans</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>E5 — Marketing de lancement</strong></td><td>Shooting photo/vidéo professionnel (500 clichés, 3 vidéos Reels), création identité visuelle complète (logo, charte, templates RS), 3 mois de community management externalisé, partenariat 3 influenceurs alsaciens (sport + lifestyle + food), RP presse locale (DNA, Rue89 Stg, L'Alsace)</td><td>5 000 €</td><td>1 an</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>E6 — Licences &amp; administrative</strong></td><td>Licence IV (achat ou mutation, fourchette basse zone B) + formation permis exploitation (CCI, 2,5j) + formation HACCP (1j) + assurances an 1 (RC pro + local + équipements) + SACEM déclaration + frais de dossier organismes financement</td><td>6 000 €</td><td>—</td><td>Apport personnel</td></tr>
+      <tr><td><strong>E7 — Frais création société + expert-comptable setup</strong></td><td>Création SAS (Greffe + frais notaire) + expert-comptable spécialisé CHR : mission setup (statuts, plan comptable, paramétrage logiciel paie) + 1er trimestre accompagnement</td><td>3 500 €</td><td>—</td><td>Apport personnel</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL BLOC E — DIGITAL &amp; ADMIN</strong></td><td><strong>25 000 €</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- BLOC F -->
+  <h3>💰 Bloc F — Fonds de roulement &amp; provision</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Poste</th><th>Description détaillée</th><th>Montant</th><th>Financement</th></tr></thead>
+    <tbody>
+      <tr><td><strong>F1 — Fonds de roulement (2 mois de charges)</strong></td><td>Couverture 2 × 24 050€ de charges mensuelles totales (fixes + variables) pour la phase de lancement avant que le CA soit suffisant. Inclut : loyer M1+M2, salaires M1+M2, remboursements dettes, achats stock initial boissons (1 200€) + planches (600€)</td><td>40 000 €</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>F2 — Provision imprévus (3%)</strong></td><td>Réserve sur le total CAPEX pour travaux supplémentaires, délais équipements, surcoûts installation, frais juridiques imprévus. Seuil minimum recommandé par tous les experts CHR</td><td>9 000 €</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>F3 — Stock initial boissons &amp; consommables</strong></td><td>Stock de lancement bar : 30 références bières/vins/spiritueux pour 4 semaines d'exploitation. Planches + charcuteries + fromages semaine 1. Total stock initial estimé</td><td>2 175 €</td><td>Apport personnel</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL BLOC F — FDR &amp; PROVISION</strong></td><td><strong>51 175 €</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- RÉCAP CAPEX -->
+  <h3>Récapitulatif CAPEX — tous blocs</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Bloc</th><th>Libellé</th><th>Montant</th><th>% du total</th><th>Mode financement principal</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>Immobilier &amp; travaux</td><td>97 000 €</td><td>32,3%</td><td>Prêt bancaire + TDR</td></tr>
+      <tr><td><strong>B</strong></td><td>Simulateurs golf (3 bays Foresight GC3)</td><td>66 225 €</td><td>22,1%</td><td>Prêt bancaire + Prêt bancaire</td></tr>
+      <tr><td><strong>C</strong></td><td>Fléchettes connectées (5 pistes)</td><td>16 100 €</td><td>5,4%</td><td>Prêt d'honneur</td></tr>
+      <tr><td><strong>D</strong></td><td>Bar &amp; cuisine légère</td><td>24 500 €</td><td>8,2%</td><td>Prêt bancaire</td></tr>
+      <tr><td><strong>E</strong></td><td>Digital, admin &amp; marketing lancement</td><td>25 000 €</td><td>8,3%</td><td>Prêt d'honneur + Apport</td></tr>
+      <tr><td><strong>F</strong></td><td>Fonds de roulement + provision + stocks</td><td>51 175 €</td><td>17,1%</td><td>Prêt bancaire</td></tr>
+      <tr class="total"><td colspan="2"><strong>TOTAL CAPEX + FDR</strong></td><td><strong>280 000 €</strong></td><td><strong>93,3%</strong></td><td></td></tr>
+      <tr><td colspan="2">Marge de sécurité et arrondis</td><td>20 000 €</td><td>6,7%</td><td>Réserve</td></tr>
+      <tr class="total"><td colspan="2"><strong>BUDGET TOTAL ARRÊTÉ</strong></td><td><strong>300 000 €</strong></td><td><strong>100%</strong></td><td></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S6 PLAN FINANCEMENT -->
+<div class="sec" id="s6">
+  <div class="sec-hd"><div class="sn">6</div><div><div class="sec-title">Plan de financement</div><div class="sec-sub">Architecture multi-sources — 300K€ avec 18K€ d'apport</div></div></div>
+
+  <div class="callout">
+    <div class="callout-icon">🏦</div>
+    <div>
+      <h4>La stratégie en une phrase</h4>
+      <p>18K€ d'apport → 83K€ présentés à la banque grâce aux prêts d'honneur → 60% du prêt garanti par Bpifrance → risque résiduel banque de <strong>62K€ seulement</strong>. Avec le prêt bancaire des simulateurs hors bilan et le prêt TDR à 0%, le plan de financement est robuste et crédible.</p>
+    </div>
+  </div>
+
+  <div class="fin-stack">
+    <div class="fi fi1"><div class="fi-l">Apport personnel</div><div class="fi-a">18 000 €</div><div class="fi-p">6% du total</div></div>
+    <div class="fi fi6"><div class="fi-l">Prêts d'honneur ×2</div><div class="fi-a">65 000 €</div><div class="fi-p">Initiative Stg + Rés. Entreprendre</div></div>
+    <div class="fi fi2"><div class="fi-l">Prêt bancaire pro</div><div class="fi-a">185 000 €</div><div class="fi-p">Garanti Bpifrance 60% — inclut simulateurs</div></div>
+    <div class="fi fi3"><div class="fi-l">Prêt bancaire simulateurs</div><div class="fi-a">30 000 €</div><div class="fi-p">Foresight GC3 ×3 — hors bilan</div></div>
+    <div class="fi fi4"><div class="fi-l">Prêt TDR Grand Est</div><div class="fi-a">30 000 €</div><div class="fi-p">Taux 0% — Région Grand Est</div></div>
+    <div class="fi fi5"><div class="fi-l">ACRE + ARCE + aides</div><div class="fi-a">~32 000 €</div><div class="fi-p">Exonérations + capital chômage</div></div>
+  </div>
+
+  <h3>Visualisation de la structure</h3>
+  <div style="background:var(--w);border:1px solid var(--br);border-radius:9px;padding:18px 20px;margin:14px 0;">
+    <div style="margin-bottom:5px;"><span style="font-size:12px;font-weight:600;color:var(--g);">Apport personnel — 18 000 € (6%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:6%;background:var(--g);">6%</div></div>
+    <div style="margin-bottom:5px;"><span style="font-size:12px;font-weight:600;color:#2D8A5C;">Prêts d'honneur — 65 000 € (21,7%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:21.7%;background:#2D8A5C;">22%</div></div>
+    <div style="margin-bottom:5px;"><span style="font-size:12px;font-weight:600;color:var(--b);">Prêt bancaire pro — 155 000 € (51,7%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:51.7%;background:var(--b);">52%</div></div>
+    <div style="margin-bottom:5px;"><span style="font-size:12px;font-weight:600;color:var(--go);">Prêt bancaire simulateurs — 30 000 € (10%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--go);">10%</div></div>
+    <div style="margin-bottom:5px;"><span style="font-size:12px;font-weight:600;color:var(--p);">Prêt TDR — 30 000 € (10%)</span></div>
+    <div class="progress-bar"><div class="progress-fill" style="width:10%;background:var(--p);">10%</div></div>
+    <div style="text-align:right;font-size:11px;color:var(--mu);margin-top:4px;">Total : 300 000 €</div>
+  </div>
+
+  <h3>Détail ligne par ligne — conditions et démarches</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Source</th><th>Organisme</th><th>Montant</th><th>Taux / Durée</th><th>Mensualité</th><th>Conditions &amp; démarches</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Apport personnel</strong></td><td>Porteur de projet</td><td>18 000 €</td><td>—</td><td>—</td><td>Disponible immédiatement. Justificatif relevé bancaire fourni sur demande.</td></tr>
+      <tr><td><strong>Prêt d'honneur Initiative Strasbourg</strong></td><td>Initiative Strasbourg</td><td>15 000 €</td><td>0% / 5 ans</td><td>250 €/mois</td><td>Sans garantie personnelle. Dossier + comité mensuel. Délai : 6–8 semaines. Effet levier ×8–15 sur prêt bancaire.</td></tr>
+      <tr><td><strong>Prêt d'honneur Réseau Entreprendre Alsace</strong></td><td>Réseau Entreprendre</td><td>50 000 €</td><td>0% / 5 ans</td><td>833 €/mois</td><td>Sans garantie. Différé 18 mois possible. Accompagnement mentor chef d'entreprise inclus. Dossier complet requis.</td></tr>
+      <tr><td><strong>Prêt bancaire professionnel</strong></td><td>Banque pro + Bpifrance 60%</td><td>185 000 €</td><td>4,5% / 10 ans</td><td>~1 915 €/mois</td><td>Bpifrance garantit 60% (111K€) → risque résiduel banque : ~74K€. Inclut l'achat des 3 simulateurs Foresight GC3. Caution perso : négocier max 25–30K€.</td></tr>
+      <tr><td><strong>Prêt bancaire Foresight GC3 ×3</strong></td><td>Société prêt bancaire (Grenke, Siemens Financial)</td><td>30 000 €</td><td>~5% / 5 ans</td><td>~570 €/mois</td><td>LLD avec option d'achat à la valeur résiduelle. Monitors hors bilan → allège dossier banque. Maintenance incluse possible.</td></tr>
+      <tr><td><strong>Prêt TDR / Start PME Grand Est</strong></td><td>Total Développement Régional</td><td>30 000 €</td><td>0% / 5 ans</td><td>500 €/mois</td><td>Filières innovantes, en complément obligatoire d'un prêt bancaire. Via CCI Alsace. Création d'emplois requise (≥ 2 ETP).</td></tr>
+      <tr><td><strong>ACRE</strong></td><td>URSSAF</td><td>~7 000 €</td><td>Éco. an 1–3</td><td>—</td><td>Exonération totale charges sociales an 1 (porteur). À demander impérativement à l'immatriculation. Ne pas oublier !</td></tr>
+      <tr><td><strong>ARCE (si dem. d'emploi)</strong></td><td>France Travail</td><td>~20 000 €</td><td>Capital ×2</td><td>—</td><td>60% des droits ARE restants en capital. Versé en 2 fois (ouverture + 6 mois). Montant estimé à valider selon droits.</td></tr>
+      <tr><td><strong>France Active Alsace</strong></td><td>France Active</td><td>Garantie complémentaire</td><td>—</td><td>~100 €/an</td><td>Garantit 50% prêt bancaire en complément de Bpifrance. Dossier facile si profil atypique. Rassure fortement la banque.</td></tr>
+      <tr class="total"><td colspan="2"><strong>TOTAL PLAN DE FINANCEMENT</strong></td><td><strong>300 000 €</strong></td><td>—</td><td><strong>~3 758 €/mois</strong></td><td>Coût mensuel total de la dette</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Calcul apport effectif présenté banque</th><th>Montant</th></tr></thead>
+    <tbody>
+      <tr><td>Apport personnel</td><td>18 000 €</td></tr>
+      <tr><td>+ Prêts d'honneur (assimilés apport)</td><td>+ 65 000 €</td></tr>
+      <tr class="subtot"><td><strong>= Apport présenté à la banque</strong></td><td><strong>83 000 €</strong></td></tr>
+      <tr><td>Taux d'apport effectif</td><td><strong>27,7%</strong></td></tr>
+      <tr><td>Garantie Bpifrance 60% × 185K€</td><td>111 000 €</td></tr>
+      <tr class="subtot"><td><strong>Risque résiduel pour la banque</strong></td><td><strong>~74 000 €</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ Un risque résiduel de 62K€ pour une banque sur un dossier avec 27,7% d'apport effectif, un marché vierge identifié, et un concept validé à Paris : c'est un dossier très finançable.</div>
+</div>
+
+<!-- S7 OPEX CHARGES FIXES -->
+<div class="sec" id="s7">
+  <div class="sec-hd"><div class="sn">7</div><div><div class="sec-title">OPEX — Charges fixes mensuelles</div><div class="sec-sub">Détail exhaustif de chaque charge incompressible</div></div></div>
+  <div class="tw"><table>
+    <thead><tr><th>Charge</th><th>Détail &amp; justification</th><th>/mois</th><th>/an</th><th>% total charges</th></tr></thead>
+    <tbody>
+      <tr class="cat"><td colspan="5">RESSOURCES HUMAINES</td></tr>
+      <tr><td><strong>Gérant (porteur de projet)</strong></td><td>Rémunération nette + cotisations TNS ou assimilé salarié. Temps plein sur site (ouverture + gestion + développement commercial)</td><td>2 500 €</td><td>30 000 €</td><td>10,4%</td></tr>
+      <tr><td><strong>Barman / responsable bar (1 ETP)</strong></td><td>CDI 35h, SMIC + prime. Brut 1 900€ + charges patronales 42% = ~2 700€ chargé. Polyvalent : bar + service en bay + caisse</td><td>2 700 €</td><td>32 400 €</td><td>11,2%</td></tr>
+      <tr><td><strong>Hôte(sse) golf &amp; accueil (1 ETP)</strong></td><td>CDI 35h. Gestion réservations, accueil bays golf, initiation clients débutants, gestion planning. Brut 1 900€ + charges = ~2 700€ chargé</td><td>2 700 €</td><td>32 400 €</td><td>11,2%</td></tr>
+      <tr><td><strong>Aide snacking / plonge (0,5 ETP)</strong></td><td>CDI 17,5h ou CDD. Préparation planches, nettoyage, approvisionnement frigos. ~1 350€ brut chargé</td><td>1 100 €</td><td>13 200 €</td><td>4,6%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>S/T Ressources humaines</strong></td><td><strong>9 000 €</strong></td><td><strong>108 000 €</strong></td><td><strong>37,4%</strong></td></tr>
+      <tr class="cat"><td colspan="5">LOYER &amp; CHARGES IMMOBILIÈRES</td></tr>
+      <tr><td><strong>Loyer local commercial 220 m²</strong></td><td>Zone B Strasbourg (Deux-Rives, Krutenau, Neuhof). Estimation 15–18€/m²/mois × 220 m²</td><td>3 300 €</td><td>39 600 €</td><td>13,7%</td></tr>
+      <tr><td><strong>Charges locatives &amp; copropriété</strong></td><td>Entretien parties communes, poubelles, eau froide commune, assurance bâtiment (part locataire)</td><td>450 €</td><td>5 400 €</td><td>1,9%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>S/T Immobilier</strong></td><td><strong>3 750 €</strong></td><td><strong>45 000 €</strong></td><td><strong>15,6%</strong></td></tr>
+      <tr class="cat"><td colspan="5">REMBOURSEMENTS DETTES</td></tr>
+      <tr><td><strong>Prêt bancaire (185K€ / 10 ans / 4,5%)</strong></td><td>Mensualité constante sur 10 ans. Dont ~695€ intérêts + ~1 220€ capital an 1. Inclut achat des 3 simulateurs Foresight GC3.</td><td>1 915 €</td><td>22 980 €</td><td>7,6%</td></tr>
+      <tr><td><strong>Prêt bancaire Foresight GC3 ×3 (30K€ / 5 ans)</strong></td><td>Loyer LLD constant. Option d'achat à terme à valeur résiduelle ~15% = 4 500€</td><td>570 €</td><td>6 840 €</td><td>2,4%</td></tr>
+      <tr><td><strong>Prêt TDR Grand Est (30K€ / 5 ans)</strong></td><td>Remboursement taux 0% — mensualité pure capital</td><td>500 €</td><td>6 000 €</td><td>2,1%</td></tr>
+      <tr><td><strong>Prêts d'honneur (65K€ / 5 ans)</strong></td><td>Initiative 15K = 250€/mois + Réseau Entreprendre 50K = 833€/mois. Différé 18 mois possible sur Réseau Entreprendre → économie 833€/mois les 18 premiers mois</td><td>1 083 €</td><td>13 000 €</td><td>4,5%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>S/T Remboursements</strong></td><td><strong>3 498 €</strong></td><td><strong>41 980 €</strong></td><td><strong>15,2%</strong></td></tr>
+      <tr class="cat"><td colspan="5">CHARGES TECHNIQUES &amp; ABONNEMENTS</td></tr>
+      <tr><td><strong>Énergie (électricité + eau)</strong></td><td>3 simulateurs (800W/h chacun) + éclairage LED (faible conso) + bar réfrigération. Estimation 800€ électricité + 100€ eau</td><td>900 €</td><td>10 800 €</td><td>3,7%</td></tr>
+      <tr><td><strong>Licences logiciels golf (FSX Play)</strong></td><td>Abonnement annuel FSX Play pour 3 bays : ~3 600€/an = 300€/mois. Inclut mises à jour parcours et fonctionnalités</td><td>300 €</td><td>3 600 €</td><td>1,2%</td></tr>
+      <tr><td><strong>Logiciel caisse + réservation (Lightspeed)</strong></td><td>Abonnement SaaS mensuel, module restaurant + réservation + abonnements</td><td>180 €</td><td>2 160 €</td><td>0,7%</td></tr>
+      <tr><td><strong>Internet + téléphonie pro</strong></td><td>Fibre pro 600 Mb/s symétrique + ligne téléphone pro + backup 4G routeur</td><td>160 €</td><td>1 920 €</td><td>0,7%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>S/T Technique</strong></td><td><strong>1 540 €</strong></td><td><strong>18 480 €</strong></td><td><strong>6,4%</strong></td></tr>
+      <tr class="cat"><td colspan="5">FRAIS GÉNÉRAUX</td></tr>
+      <tr><td><strong>Assurances multirisque professionnelles</strong></td><td>RC pro (dommages causés aux clients) + assurance local + équipements simulateurs + pertes d'exploitation. Devis comparatif 3 assureurs spécialisés CHR</td><td>500 €</td><td>6 000 €</td><td>2,1%</td></tr>
+      <tr><td><strong>Expert-comptable (mensualisation)</strong></td><td>Mission complète : tenue comptable, TVA mensuelle, bilan annuel, liasses fiscales, conseil fiscal. Cabinet spécialisé CHR Strasbourg</td><td>380 €</td><td>4 560 €</td><td>1,6%</td></tr>
+      <tr><td><strong>SACEM (droits musicaux)</strong></td><td>Licence sonorisation fond musical établissement &lt; 300 m². Tarif forfaitaire bar/restaurant</td><td>110 €</td><td>1 320 €</td><td>0,5%</td></tr>
+      <tr><td><strong>Maintenance simulateurs + fléchettes</strong></td><td>Provision mensuelle : remplacement pointes fléchettes (×5/mois), nettoyage tapis golf, vérification capteurs, coûts de support technique Foresight</td><td>300 €</td><td>3 600 €</td><td>1,2%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>S/T Frais généraux</strong></td><td><strong>1 290 €</strong></td><td><strong>15 480 €</strong></td><td><strong>5,4%</strong></td></tr>
+      <tr class="total"><td colspan="2"><strong>TOTAL CHARGES FIXES MENSUELLES</strong></td><td><strong>19 068 €</strong></td><td><strong>228 820 €</strong></td><td><strong>80,0%</strong></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S8 OPEX VARIABLES -->
+<div class="sec" id="s8">
+  <div class="sec-hd"><div class="sn">8</div><div><div class="sec-title">OPEX — Charges variables mensuelles</div><div class="sec-sub">Charges indexées sur le niveau d'activité (scénario réaliste an 2)</div></div></div>
+  <div class="tw"><table>
+    <thead><tr><th>Charge variable</th><th>Base de calcul (an 2)</th><th>/mois</th><th>/an</th><th>% total charges</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Achats boissons (bar)</strong></td><td>30% du CA bar estimé 7 500€/mois. Inclut bières, vins, spiritueux, softs</td><td>2 250 €</td><td>27 000 €</td><td>9,3%</td></tr>
+      <tr><td><strong>Achats food (planches, snacking)</strong></td><td>35% du CA food estimé 3 500€/mois. Charcuteries, fromages, pain, accompagnements</td><td>1 225 €</td><td>14 700 €</td><td>5,1%</td></tr>
+      <tr><td><strong>Pro golf freelance (commissions)</strong></td><td>30% du CA cours estimé 1 800€/mois. Payé à la session ou forfait</td><td>540 €</td><td>6 480 €</td><td>2,2%</td></tr>
+      <tr><td><strong>Extras weekends &amp; soirées</strong></td><td>Renfort barman vendredi soir + samedi (2 × ~4h × SMIC + charges)</td><td>800 €</td><td>9 600 €</td><td>3,3%</td></tr>
+      <tr><td><strong>Consommables bar</strong></td><td>Casse verrerie (~3%/mois), serviettes, piques apéro, emballages take-away</td><td>200 €</td><td>2 400 €</td><td>0,8%</td></tr>
+      <tr><td><strong>Marketing récurrent</strong></td><td>Google Ads (200€) + Meta Ads (200€) + créations visuelles (100€) + cadeaux/jeux concours (100€)</td><td>600 €</td><td>7 200 €</td><td>2,5%</td></tr>
+      <tr class="subtot"><td colspan="2"><strong>TOTAL CHARGES VARIABLES (an 2)</strong></td><td><strong>5 615 €</strong></td><td><strong>67 380 €</strong></td><td><strong>23,4%</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Récapitulatif total charges</th><th>Mensuel</th><th>Annuel</th><th>Part</th></tr></thead>
+    <tbody>
+      <tr><td>Charges fixes</td><td>19 338 €</td><td>232 060 €</td><td>77,5%</td></tr>
+      <tr><td>Charges variables (scén. réaliste an 2)</td><td>5 615 €</td><td>67 380 €</td><td>22,5%</td></tr>
+      <tr class="total"><td><strong>TOTAL CHARGES OPÉRATIONNELLES</strong></td><td><strong>24 683 €</strong></td><td><strong>296 200 €</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>Seuil de rentabilité mensuel : ~25 200 €</strong> de CA (encore amélioré vs version leasing grâce à la mensualité bancaire plus faible). C'est le niveau le plus bas des trois versions du projet — atteignable dès le 7e mois post-ouverture avec un taux d'occupation simulateurs de ~48% et une fréquentation de 200 clients/semaine.</div>
+</div>
+
+<!-- S9 REVENUS -->
+<div class="sec" id="s9">
+  <div class="sec-hd"><div class="sn">9</div><div><div class="sec-title">Grille tarifaire &amp; projections de revenus</div><div class="sec-sub">Tarifs, packages, hypothèses d'occupation, CA par source</div></div></div>
+
+  <h3>Grille tarifaire</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Activité / Créneau</th><th>Tarif recommandé</th><th>Marché France</th><th>Capacité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Simulateur golf — off-peak semaine (9h–17h)</strong></td><td>30 €/h/bay</td><td>25–45 €/h</td><td>1–4 joueurs</td></tr>
+      <tr><td><strong>Simulateur golf — peak (17h–22h)</strong></td><td>42 €/h/bay</td><td>40–65 €/h</td><td>1–4 joueurs</td></tr>
+      <tr><td><strong>Simulateur golf — weekend</strong></td><td>48 €/h/bay</td><td>45–70 €/h</td><td>1–4 joueurs</td></tr>
+      <tr><td><strong>Cours golf avec pro (1h)</strong></td><td>85 €</td><td>80–130 €</td><td>1 joueur</td></tr>
+      <tr><td><strong>Abonnement golf mensuel</strong></td><td>155 €/mois</td><td>150–200 €</td><td>8h garanties</td></tr>
+      <tr><td><strong>Fléchettes — off-peak</strong></td><td>15 €/h/piste</td><td>14–26 €/h</td><td>2–6 joueurs</td></tr>
+      <tr><td><strong>Fléchettes — peak + weekend</strong></td><td>20 €/h/piste</td><td>18–36 €/h</td><td>2–6 joueurs</td></tr>
+      <tr><td><strong>Package Découverte (duo)</strong></td><td>49 € (1h golf ou fléchettes + 2 boissons)</td><td>—</td><td>2 pers.</td></tr>
+      <tr><td><strong>Package After-Work Group</strong></td><td>129 € (1h30 fléchettes 6 pers. + planche + 1 verre)</td><td>—</td><td>6 pers.</td></tr>
+      <tr><td><strong>Package Grand Slam</strong></td><td>249 € (1h golf + 1h fléchettes + repas partagé, 6 pers.)</td><td>—</td><td>6 pers.</td></tr>
+      <tr><td><strong>Privatisation soirée</strong></td><td>600–1 400 € (3h espace + catering)</td><td>500–2 000 €</td><td>Groupe</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Projection CA annuel — 5 ans (scénario réaliste)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Source</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Golf (location + cours + abonnements)</strong></td><td>63 K€</td><td>110 K€</td><td>132 K€</td><td>147 K€</td><td>157 K€</td></tr>
+      <tr><td><strong>Fléchettes connectées</strong></td><td>22 K€</td><td>45 K€</td><td>55 K€</td><td>62 K€</td><td>67 K€</td></tr>
+      <tr><td><strong>Bar &amp; boissons</strong></td><td>48 K€</td><td>90 K€</td><td>104 K€</td><td>112 K€</td><td>118 K€</td></tr>
+      <tr><td><strong>Food (planches, snacking)</strong></td><td>22 K€</td><td>42 K€</td><td>50 K€</td><td>55 K€</td><td>58 K€</td></tr>
+      <tr><td><strong>Corporate &amp; privatisations</strong></td><td>16 K€</td><td>33 K€</td><td>40 K€</td><td>45 K€</td><td>48 K€</td></tr>
+      <tr class="subtot"><td><strong>CHIFFRE D'AFFAIRES TOTAL</strong></td><td><strong>171 K€</strong></td><td><strong>320 K€</strong></td><td><strong>381 K€</strong></td><td><strong>421 K€</strong></td><td><strong>448 K€</strong></td></tr>
+      <tr><td>Croissance annuelle</td><td>—</td><td>+87%</td><td>+19%</td><td>+10,5%</td><td>+6%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S10 COMPTE DE RÉSULTAT -->
+<div class="sec" id="s10">
+  <div class="sec-hd"><div class="sn">10</div><div><div class="sec-title">Compte de résultat prévisionnel</div><div class="sec-sub">P&amp;L détaillé sur 5 ans — scénario réaliste</div></div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur (en K€)</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Chiffre d'affaires</strong></td><td>171</td><td>320</td><td>381</td><td>421</td><td>448</td></tr>
+      <tr><td>— Achats consommables (F&amp;B)</td><td>-39</td><td>-72</td><td>-86</td><td>-95</td><td>-101</td></tr>
+      <tr class="subtot"><td><strong>MARGE BRUTE</strong></td><td><strong>132</strong></td><td><strong>248</strong></td><td><strong>295</strong></td><td><strong>326</strong></td><td><strong>347</strong></td></tr>
+      <tr><td><em>Taux de marge brute</em></td><td><em>77%</em></td><td><em>78%</em></td><td><em>77%</em></td><td><em>77%</em></td><td><em>77%</em></td></tr>
+      <tr class="cat"><td colspan="6">CHARGES D'EXPLOITATION DÉCAISSÉES</td></tr>
+      <tr><td>— Charges de personnel (RH + pro golf + extras)</td><td>-97</td><td>-116</td><td>-126</td><td>-133</td><td>-137</td></tr>
+      <tr><td>— Loyer + charges locatives</td><td>-45</td><td>-45</td><td>-45</td><td>-45</td><td>-45</td></tr>
+      <tr><td>— Énergie + maintenance + technique</td><td>-25</td><td>-25</td><td>-26</td><td>-26</td><td>-26</td></tr>
+      <tr><td>— Marketing + communication</td><td>-14</td><td>-7</td><td>-7</td><td>-7</td><td>-7</td></tr>
+      <tr><td>— Assurances + compta + frais généraux</td><td>-11</td><td>-12</td><td>-12</td><td>-12</td><td>-13</td></tr>
+      <tr class="subtot"><td><strong>EBE (EBITDA)</strong></td><td><strong>-60</strong></td><td><strong>+43</strong></td><td><strong>+79</strong></td><td><strong>+103</strong></td><td><strong>+119</strong></td></tr>
+      <tr><td><em>Marge EBE</em></td><td><em>—</em></td><td><em>13,4%</em></td><td><em>20,7%</em></td><td><em>24,5%</em></td><td><em>26,6%</em></td></tr>
+      <tr><td>— Dotations amortissements</td><td>-38</td><td>-38</td><td>-34</td><td>-31</td><td>-31</td></tr>
+      <tr class="subtot"><td><strong>RÉSULTAT D'EXPLOITATION (EBIT)</strong></td><td><strong>-98</strong></td><td><strong>+5</strong></td><td><strong>+45</strong></td><td><strong>+72</strong></td><td><strong>+88</strong></td></tr>
+      <tr><td>— Charges financières (intérêts prêts)</td><td>-14</td><td>-12</td><td>-10</td><td>-8</td><td>-6</td></tr>
+      <tr class="subtot"><td><strong>RÉSULTAT AVANT IMPÔT</strong></td><td><strong>-112</strong></td><td><strong>-7</strong></td><td><strong>+35</strong></td><td><strong>+64</strong></td><td><strong>+82</strong></td></tr>
+      <tr><td>— IS (25%, avec report déficit an 1)</td><td>0</td><td>0</td><td>-7</td><td>-16</td><td>-21</td></tr>
+      <tr class="total"><td><strong>RÉSULTAT NET</strong></td><td><strong>-112 K€</strong></td><td><strong>-7 K€</strong></td><td><strong>+28 K€</strong></td><td><strong>+48 K€</strong></td><td><strong>+61 K€</strong></td></tr>
+      <tr><td><em>Marge nette</em></td><td><em>—</em></td><td><em>—</em></td><td><em>7,3%</em></td><td><em>11,4%</em></td><td><em>13,6%</em></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="info">📊 <strong>Note :</strong> Le résultat net an 1 (-112K€) est principalement composé d'amortissements (-38K€) et de charges financières (-14K€) = 52K€ non-décaissés. Le cash-out réel an 1 est de -60K€ (EBE négatif), couvert par le fonds de roulement de 40K€ + provision 9K€ = 49K€. La ligne de découvert bancaire de 20K€ couvre le solde.</div>
+  <div class="ok">✅ <strong>Avantage achat vs leasing :</strong> Les simulateurs (valeur 30K€) sont inscrits à l'actif du bilan dès l'an 1. Ils constituent une garantie réelle pour les financeurs. À terme, le fonds de commerce avec équipements propriétés se valorise mieux à la revente qu'un fonds avec équipements en leasing.</div>
+</div>
+
+<!-- S11 TRÉSORERIE -->
+<div class="sec" id="s11">
+  <div class="sec-hd"><div class="sn">11</div><div><div class="sec-title">Plan de trésorerie</div><div class="sec-sub">Cash flow mensuel an 1 + annuel 5 ans</div></div></div>
+
+  <div class="danger">🔴 <strong>Point de vigilance :</strong> Avec 2 mois de FDR (40K€), les 5 premiers mois sont tendus. Une ligne de découvert de 20K€ est indispensable, à négocier dès l'ouverture du compte pro. Avec l'achat des simulateurs (vs leasing), la mensualité bancaire est légèrement plus élevée mais le cash flow à 5 ans est meilleur car les monitors sont propriétés.</div>
+
+  <h3>Cash flow mensuel — An 1 (post-ouverture)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Mois</th><th>CA estimé</th><th>Charges décaissées</th><th>Cash Flow</th><th>Tréso cumulée</th><th>Situation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>M1</strong></td><td>8 500 €</td><td>24 683 €</td><td>–16 183 €</td><td>32 817 €</td><td><span class="b bo">FDR consommé</span></td></tr>
+      <tr><td><strong>M2</strong></td><td>12 000 €</td><td>24 683 €</td><td>–12 683 €</td><td>20 134 €</td><td><span class="b bo">Tension</span></td></tr>
+      <tr><td><strong>M3</strong></td><td>15 000 €</td><td>24 683 €</td><td>–9 683 €</td><td>10 451 €</td><td><span class="b br2">Critique</span></td></tr>
+      <tr><td><strong>M4</strong></td><td>18 000 €</td><td>24 683 €</td><td>–6 683 €</td><td>3 768 €</td><td><span class="b br2">Très tendu</span></td></tr>
+      <tr><td><strong>M5</strong></td><td>21 500 €</td><td>24 683 €</td><td>–3 183 €</td><td>585 €</td><td><span class="b br2">Quasi-dépassement</span></td></tr>
+      <tr><td><strong>M6</strong></td><td>24 000 €</td><td>24 683 €</td><td>–683 €</td><td>–98 €</td><td><span class="b br2">Découvert (ligne 20K)</span></td></tr>
+      <tr><td><strong>M7</strong></td><td>26 500 €</td><td>24 683 €</td><td>+1 817 €</td><td>+1 719 €</td><td><span class="b bg">Inflexion ✅</span></td></tr>
+      <tr><td><strong>M8</strong></td><td>28 000 €</td><td>24 683 €</td><td>+3 317 €</td><td>+5 036 €</td><td><span class="b bg">Remontée</span></td></tr>
+      <tr><td><strong>M9</strong></td><td>29 500 €</td><td>24 683 €</td><td>+4 817 €</td><td>+9 853 €</td><td><span class="b bg">Solide</span></td></tr>
+      <tr><td><strong>M10</strong></td><td>30 500 €</td><td>24 683 €</td><td>+5 817 €</td><td>+15 670 €</td><td><span class="b bg">Confortable</span></td></tr>
+      <tr><td><strong>M11</strong></td><td>31 500 €</td><td>24 683 €</td><td>+6 817 €</td><td>+22 487 €</td><td><span class="b bg">Tréso reconstituée</span></td></tr>
+      <tr><td><strong>M12</strong></td><td>32 500 €</td><td>24 683 €</td><td>+7 817 €</td><td>+30 304 €</td><td><span class="b bg">Forte position</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>Trésorerie positive dès M7</strong>. Le pic négatif est quasi-nul (–98€ en M6) — couvert par la ligne de découvert 20K€. En fin d'an 1, la trésorerie atteint +30K€ : position très confortable pour entamer l'an 2.</div>
+
+  <h3>Plan de trésorerie annuel — 5 ans (en K€)</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Indicateur</th><th>An 1</th><th>An 2</th><th>An 3</th><th>An 4</th><th>An 5</th></tr></thead>
+    <tbody>
+      <tr><td><strong>EBE</strong></td><td>-60</td><td>+43</td><td>+79</td><td>+103</td><td>+119</td></tr>
+      <tr><td>— Remboursement capital prêt bancaire (185K/10 ans)</td><td>-14</td><td>-14</td><td>-14</td><td>-14</td><td>-14</td></tr>
+      <tr><td>— Remboursement prêt TDR (30K/5 ans)</td><td>-6</td><td>-6</td><td>-6</td><td>-6</td><td>-6</td></tr>
+      <tr><td>— Remboursement prêts d'honneur (65K/5 ans)</td><td>-4</td><td>-13</td><td>-13</td><td>-13</td><td>-13</td></tr>
+      <tr><td>— IS (impôt sociétés)</td><td>0</td><td>0</td><td>-7</td><td>-16</td><td>-21</td></tr>
+      <tr class="subtot"><td><strong>CASH FLOW LIBRE ANNUEL</strong></td><td><strong>-84</strong></td><td><strong>+10</strong></td><td><strong>+39</strong></td><td><strong>+54</strong></td><td><strong>+65</strong></td></tr>
+      <tr><td>Trésorerie départ (FDR + fin an préc.)</td><td>49</td><td>-35</td><td>-25</td><td>+14</td><td>+68</td></tr>
+      <tr class="total"><td><strong>TRÉSORERIE CUMULÉE FIN D'ANNÉE</strong></td><td><strong>-35 K€</strong></td><td><strong>-25 K€</strong></td><td><strong>+14 K€</strong></td><td><strong>+68 K€</strong></td><td><strong>+133 K€</strong></td></tr>
+    </tbody>
+  </table></div>
+  <div class="info">💡 La trésorerie cumulée redevient positive en <strong>An 3</strong> (+14K€). En An 5 : <strong>133K€ disponibles</strong> — base solide pour financer un 4e simulateur (upgrade TrackMan), des cabines fléchettes premium, ou une 2e adresse.</div>
+</div>
+
+<!-- S12 ROI -->
+<div class="sec" id="s12">
+  <div class="sec-hd"><div class="sn">12</div><div><div class="sec-title">ROI &amp; scénarios</div><div class="sec-sub">Retour sur investissement, seuil de rentabilité, analyse de sensibilité</div></div></div>
+
+  <div class="stats">
+    <div class="stat dark"><div class="stat-v">25 200 €</div><div class="stat-l">CA seuil mensuel (break-even)</div></div>
+    <div class="stat go"><div class="stat-v">Mois 7</div><div class="stat-l">Cash flow mensuel positif</div></div>
+    <div class="stat b"><div class="stat-v">An 3</div><div class="stat-l">Trésorerie cumulée positive</div></div>
+    <div class="stat go"><div class="stat-v">3–3,5 ans</div><div class="stat-l">ROI estimé sur 300K€</div></div>
+  </div>
+
+  <div class="scenario-row">
+    <div class="sc sc-p">
+      <div class="sc-label">📉 Pessimiste</div>
+      <div class="sc-ca">140 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 2</div>
+      <div class="sc-d">Occ. golf : 20%<br>~100 clients/semaine<br>Corporate : 1 event/mois<br>Abonnements : 10</div>
+      <div class="sc-roi">EBE An 2 : négatif<br>Break-even : An 5+<br>⚠️ Risque élevé<br>ROI : non atteint</div>
+    </div>
+    <div class="sc sc-b">
+      <div class="sc-label">📊 Réaliste</div>
+      <div class="sc-ca">320 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 2</div>
+      <div class="sc-d">Occ. golf : 52%<br>Fléchettes : 52%<br>~230 clients/semaine<br>Corporate : 4 events/mois<br>Abonnements : 35</div>
+      <div class="sc-roi">EBE An 2 : +43K€<br>Résultat + : An 3<br>Tréso + : An 3<br>ROI 300K€ : <strong>3–3,5 ans</strong></div>
+    </div>
+    <div class="sc sc-o">
+      <div class="sc-label">🚀 Optimiste</div>
+      <div class="sc-ca">448 K€</div>
+      <div class="sc-d" style="color:#888;margin-bottom:6px;">CA annuel An 3</div>
+      <div class="sc-d">Occ. golf : 75%<br>Fléchettes : 70%<br>~380 clients/semaine<br>Corporate : 8 events/mois<br>Abonnements : 70+</div>
+      <div class="sc-roi">EBE An 2 : +75K€+<br>Résultat + : An 2<br>Tréso + : An 2<br>ROI : <strong>2,5–3 ans</strong></div>
+    </div>
+  </div>
+
+  <h3>Analyse de sensibilité — impact sur l'EBE An 2</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Variable</th><th>Base</th><th>Si –10%</th><th>Si +10%</th><th>Sensibilité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Taux occupation simulateurs (3 bays)</strong></td><td>52%</td><td>EBE : +32K€ (–26%)</td><td>EBE : +54K€ (+26%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>Tarif horaire golf moyen</strong></td><td>38€/h</td><td>EBE : +32K€ (–26%)</td><td>EBE : +54K€ (+26%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>Masse salariale</strong></td><td>116K€/an</td><td>EBE : +55K€ (+28%)</td><td>EBE : +31K€ (–28%)</td><td><span class="b br2">Très élevée</span></td></tr>
+      <tr><td><strong>CA bar &amp; boissons</strong></td><td>90K€/an</td><td>EBE : +36K€ (–16%)</td><td>EBE : +50K€ (+16%)</td><td><span class="b bo">Élevée</span></td></tr>
+      <tr><td><strong>Loyer</strong></td><td>45K€/an</td><td>EBE : +47K€ (+10%)</td><td>EBE : +39K€ (–10%)</td><td><span class="b bo">Élevée</span></td></tr>
+      <tr><td><strong>CA fléchettes</strong></td><td>45K€/an</td><td>EBE : +39K€ (–9%)</td><td>EBE : +47K€ (+9%)</td><td><span class="b bo">Modérée</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>TRI estimé :</strong> 15–20% sur 5 ans (scénario réaliste). VAN à 5 ans (taux 8%) : +40 à +75K€. Valorisation fonds de commerce à terme (CA 400K€ × 1,5) : ~600K€ — soit un multiple de 2× l'investissement initial.</div>
+</div>
+
+<!-- S13 SPONSORS -->
+<div class="sec" id="s13">
+  <div class="sec-hd sponsor-hd"><div class="sn sp">13</div><div><div class="sec-title">Dossier partenaires &amp; sponsors</div><div class="sec-sub">Pourquoi nous sponsoriser — audience, visibilité, formats de partenariat</div></div></div>
+
+  <div class="callout sponsor">
+    <div class="callout-icon">🤝</div>
+    <div>
+      <h4>Opportunité de sponsoring unique en Alsace</h4>
+      <p>En tant que <strong>premier bar golf + fléchettes de l'Eurométropole</strong>, nous offrons à nos partenaires une visibilité exclusive sur une clientèle premium introuvable ailleurs : CSP+ 25–55 ans, décideurs d'entreprise, licenciés golf, groupes d'actifs. Un cadre captif (1h+ de présence par visite) et une audience ciblée que les médias classiques n'atteignent pas.</p>
+    </div>
+  </div>
+
+  <h3>Notre audience — données clés</h3>
+  <div class="stats">
+    <div class="stat navy"><div class="stat-v">+230</div><div class="stat-l">Visiteurs/semaine (an 2)</div></div>
+    <div class="stat navy"><div class="stat-v">75 min</div><div class="stat-l">Durée moyenne de visite</div></div>
+    <div class="stat navy"><div class="stat-v">CSP+</div><div class="stat-l">Profil socio-éco dominant</div></div>
+    <div class="stat navy"><div class="stat-v">35–55 ans</div><div class="stat-l">Tranche d'âge principale</div></div>
+    <div class="stat navy"><div class="stat-v">40%</div><div class="stat-l">Golfeurs licenciés estimés</div></div>
+    <div class="stat navy"><div class="stat-v">25+</div><div class="stat-l">Events corporate/an (an 2)</div></div>
+  </div>
+
+  <h3>Packages de partenariat</h3>
+  <div class="sp-grid">
+    <div class="sp-card sp-gold">
+      <div class="sp-card-head">
+        <div class="sp-icon">🥇</div>
+        <div><div class="sp-name">Partenaire Gold</div><div class="sp-price">8 000–15 000 € / an</div></div>
+      </div>
+      <div class="sp-card-body"><ul>
+        <li>Naming d'un bay golf ("Bay Partenaire X")</li>
+        <li>Logo sur écrans simulateurs (100% du temps)</li>
+        <li>Logo sur enseigne extérieure</li>
+        <li>Bannière physique dans le lieu (6 m²)</li>
+        <li>Mention systématique dans tous les emailings</li>
+        <li>2 soirées privatisées/an (3h, jusqu'à 20 pers.)</li>
+        <li>Publication RS dédiée mensuelle (1 500+ followers)</li>
+        <li>Pack de 20 entrées offertes/an</li>
+        <li>Rapport d'impact trimestriel</li>
+      </ul></div>
+    </div>
+    <div class="sp-card sp-silver">
+      <div class="sp-card-head">
+        <div class="sp-icon">🥈</div>
+        <div><div class="sp-name">Partenaire Silver</div><div class="sp-price">3 500–7 000 € / an</div></div>
+      </div>
+      <div class="sp-card-body"><ul>
+        <li>Logo sur écrans simulateurs (30% du temps)</li>
+        <li>Logo sur le site web + réservation</li>
+        <li>Roll-up 2m dans le lieu</li>
+        <li>Mention dans les emailings (1×/mois)</li>
+        <li>1 soirée privatisée/an (2h, jusqu'à 12 pers.)</li>
+        <li>Publication RS dédiée trimestrielle</li>
+        <li>Pack de 10 entrées/an</li>
+      </ul></div>
+    </div>
+    <div class="sp-card sp-bronze">
+      <div class="sp-card-head">
+        <div class="sp-icon">🥉</div>
+        <div><div class="sp-name">Partenaire Bronze</div><div class="sp-price">1 200–3 000 € / an</div></div>
+      </div>
+      <div class="sp-card-body"><ul>
+        <li>Logo sur site web (footer partenaires)</li>
+        <li>Mention RS 1×/trimestre</li>
+        <li>Flyers/cartes de visite en présentoir bar</li>
+        <li>Pack de 5 entrées/an</li>
+        <li>Invitation soirée annuelle partenaires</li>
+      </ul></div>
+    </div>
+    <div class="sp-card sp-product">
+      <div class="sp-card-head">
+        <div class="sp-icon">🎁</div>
+        <div><div class="sp-name">Partenariat Produit</div><div class="sp-price">En nature (valorisé)</div></div>
+      </div>
+      <div class="sp-card-body"><ul>
+        <li>Fourniture boissons (bières, softs, spiritueux)</li>
+        <li>Équipement golf (clubs prêt, balles, accessoires)</li>
+        <li>Matériel (TV, PC, mobilier, décoration)</li>
+        <li>Services (comptable, juridique, assurance)</li>
+        <li>Contrepartie : visibilité équivalente Silver/Bronze selon valorisation</li>
+      </ul></div>
+    </div>
+    <div class="sp-card sp-local">
+      <div class="sp-card-head">
+        <div class="sp-icon">🏢</div>
+        <div><div class="sp-name">Partenariat Corporate</div><div class="sp-price">Convention annuelle</div></div>
+      </div>
+      <div class="sp-card-body"><ul>
+        <li>Tarif préférentiel -20% sur toutes privatisations</li>
+        <li>Réservation prioritaire créneaux premium</li>
+        <li>Facturation mensuelle centralisée (1 facture/mois)</li>
+        <li>Gestionnaire de compte dédié</li>
+        <li>Logo affiché "Nos partenaires entreprise"</li>
+        <li>Engagement minimum : 3 events/an</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <h3>Cibles de sponsoring prioritaires</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Secteur</th><th>Marques / acteurs cibles</th><th>Angle d'approche</th><th>Package conseillé</th><th>Pot. annuel</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Équipementiers golf</strong></td><td>Titleist, TaylorMade, Callaway, Ping, Cleveland</td><td>Visibilité auprès de golfeurs licenciés + curieux. Fitting gratuit proposé.</td><td>Gold ou produit</td><td>5–15 K€</td></tr>
+      <tr><td><strong>Logiciels simulateurs</strong></td><td>Foresight Sports, E6 Connect, FSX</td><td>Lieu vitrine commercial pour démo clientèle. Commission sur abonnements.</td><td>Produit (matériel)</td><td>2–8 K€ en nature</td></tr>
+      <tr><td><strong>Bières &amp; brasseries</strong></td><td>Kronenbourg, Heineken, Perle (locale), Brasseurs de Strasbourg</td><td>Exclusivité tireuse + visibilité clientèle CSP+ jeune. Très ciblé vs pub TV.</td><td>Produit + Silver</td><td>2–6 K€ + fourniture</td></tr>
+      <tr><td><strong>Spiritueux &amp; cocktails</strong></td><td>Bulleit Bourbon, Hendrick's Gin, Diplomatico Rum</td><td>Mise en avant cocktails signature. Soirées thématiques dégustation.</td><td>Silver ou Bronze</td><td>2–4 K€</td></tr>
+      <tr><td><strong>Banques &amp; assurances</strong></td><td>CIC, Crédit Agricole Alsace, AXA, Groupama</td><td>Clientèle idéale (chef d'entreprise, profession libérale). Parrainage local.</td><td>Silver ou corporate</td><td>3–7 K€</td></tr>
+      <tr><td><strong>Immobilier &amp; promoteurs</strong></td><td>Nexity, Bouygues Immo, Pitch Immo Strasbourg</td><td>Clientèle primo-accédants CSP+. Espace de networking naturel.</td><td>Silver</td><td>3–5 K€</td></tr>
+      <tr><td><strong>Tourisme &amp; institutionnels</strong></td><td>Visit Alsace, CRT Grand Est, Strasbourg Eurométropole</td><td>Label "loisir alsacien innovant". Subvention indirecte via mise en avant.</td><td>Bronze + partenariat</td><td>1–3 K€</td></tr>
+      <tr><td><strong>Tech &amp; startup</strong></td><td>Entreprises zone Wacken, incubateurs (SEMIA)</td><td>Team-building tech. Communauté innovation. Co-création événements.</td><td>Corporate</td><td>3–8 K€ en events</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Objectif revenus sponsoring</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Phase</th><th>Objectif</th><th>Mix visé</th><th>CA sponsoring annuel</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Lancement (An 1)</strong></td><td>2 partenaires Gold + 1 produit (bière)</td><td>Équipementier golf + brasserie locale + bière tireuse</td><td>15 000–20 000 €</td></tr>
+      <tr><td><strong>Croissance (An 2)</strong></td><td>2 Gold + 2 Silver + 3 Bronze + 2 corporate</td><td>Diversification secteurs</td><td>30 000–45 000 €</td></tr>
+      <tr><td><strong>Maturité (An 3+)</strong></td><td>Renouvellements + nouveaux partenaires</td><td>Programme fidélisation partenaires</td><td>40 000–60 000 €</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ok">✅ <strong>Impact sur la rentabilité :</strong> Les revenus de sponsoring (15–45K€/an selon la phase) sont du CA pur à très haute marge (~90%) — ils améliorent directement l'EBE et accélèrent le retour sur investissement. Sur le scénario réaliste, l'intégration du sponsoring ramène le ROI à <strong>2,5–3 ans</strong>.</div>
+
+  <h3>Ce que nous offrons aux partenaires</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Bénéfice</th><th>Détail</th><th>Valeur marché</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Audience captive premium</strong></td><td>230+ visiteurs/semaine, 75 min de présence moyenne, attention active (pas de scroll)</td><td>CPM équivalent : 8–15 € (vs 2–4 € display)</td></tr>
+      <tr><td><strong>Profil socio-démographique</strong></td><td>CSP+ 35–55 ans, pouvoir d'achat élevé, décideurs</td><td>Audience très ciblée, coûteuse à atteindre autrement</td></tr>
+      <tr><td><strong>Contexte positif</strong></td><td>Moment de loisir, détente, plaisir — association de marque favorable</td><td>Prime sur la pub contexte neutre</td></tr>
+      <tr><td><strong>Données &amp; rapport</strong></td><td>Fréquentation mensuelle, profil clients, taux de retour — rapport trimestriel</td><td>Mesure ROI sponsoring réel</td></tr>
+      <tr><td><strong>Exclusivité sectorielle</strong></td><td>1 seul partenaire par secteur d'activité (banque, assurance, bière…)</td><td>Pas de concurrence intra-lieu</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- S14 RISQUES & ENGAGEMENTS -->
+<div class="sec" id="s14">
+  <div class="sec-hd"><div class="sn">14</div><div><div class="sec-title">Risques &amp; engagements</div><div class="sec-sub">Analyse des risques, mitigation, engagements du porteur envers tous les financeurs</div></div></div>
+
+  <div class="risk-grid">
+    <div class="risk risk-r">
+      <div class="risk-label">🔴 Risques critiques</div>
+      <ul>
+        <li>Local sans hauteur ≥ 3m (bloquant total)</li>
+        <li>Licence IV introuvable dans la zone</li>
+        <li>Retard travaux &gt; 2 mois (trésorerie tendue)</li>
+        <li>Refus des 2 prêts d'honneur simultanément</li>
+        <li>CA an 1 &lt; 15 000 €/mois au-delà de M6</li>
+      </ul>
+    </div>
+    <div class="risk risk-o">
+      <div class="risk-label">🟡 Risques modérés</div>
+      <ul>
+        <li>Clientèle plus lente à venir (zone B)</li>
+        <li>Concurrence padel-bar en développement rapide</li>
+        <li>Panne technique Foresight GC3 en haute saison</li>
+        <li>Turn-over d'un employé clé</li>
+        <li>Sponsors long à signer (cash décalé)</li>
+      </ul>
+    </div>
+    <div class="risk risk-g">
+      <div class="risk-label">🟢 Risques faibles</div>
+      <ul>
+        <li>Saisonnalité (golf hiver + fléchettes printemps)</li>
+        <li>Météo (100% indoor, non concerné)</li>
+        <li>Réglementation ERP (anticipée dès départ)</li>
+        <li>Obsolescence logiciel (mise à jour FSX incluse)</li>
+        <li>Conjoncture (loisirs résistent bien en récession)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Plan de mitigation des risques critiques</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Risque</th><th>Probabilité</th><th>Mesure de mitigation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Local sans hauteur suffisante</strong></td><td><span class="b bo">Élevée si non anticipé</span></td><td>Critère absolu N°1 dans tout mandat de recherche. Faire mesurer avant toute visite sérieuse. Prévoir un architecte pour évaluer les possibilités de rehausse si besoin (budget 10–15K€).</td></tr>
+      <tr><td><strong>Licence IV introuvable</strong></td><td><span class="b bo">Modérée</span></td><td>Mandater un cabinet spécialisé cessions fonds dès le début. Rechercher en priorité un local avec licence IV existante. Budget achat : 8–20K€ (inclus dans le plan).</td></tr>
+      <tr><td><strong>Retard travaux</strong></td><td><span class="b bo">Modérée</span></td><td>FDR + provision = 49K€. Négocier franchise de loyer 2–3 mois dans le bail. Travailler avec artisans ayant des références CHR. Planning détaillé avec jalons contractuels.</td></tr>
+      <tr><td><strong>Refus prêts d'honneur</strong></td><td><span class="b bg">Faible si BP solide</span></td><td>Présenter dossiers Initiative + Réseau Entreprendre en parallèle. En cas de refus Initiative : majorer la demande Réseau Entreprendre à 65K€. Plan B : ARCE + France Active comme substituts partiels.</td></tr>
+      <tr><td><strong>CA an 1 sous les prévisions</strong></td><td><span class="b bo">Modérée</span></td><td>Ligne de découvert 20K€ négociée dès J1. Programme corporate pré-signé (objectif : 3 CSE conventions avant ouverture). Pré-vente abonnements 1 mois avant ouverture (objectif 20 abonnements). Ajustement tarifaire rapide si nécessaire.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Engagements formels du porteur de projet</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Engagement</th><th>Envers qui</th><th>Modalité de suivi</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Apport personnel de 18 000 €</strong></td><td>Tous les financeurs</td><td>Justificatif relevé bancaire fourni avant tout déblocage de fonds</td></tr>
+      <tr><td><strong>Gérance opérationnelle à 100%</strong></td><td>Banque + investisseurs</td><td>Présence quotidienne sur site. Pas de délégation de direction en an 1.</td></tr>
+      <tr><td><strong>Reporting mensuel transparent</strong></td><td>Banque + prêteurs d'honneur + sponsors</td><td>Dashboard partagé chaque 1er du mois : CA, trésorerie, taux d'occupation, abonnements, incidents techniques</td></tr>
+      <tr><td><strong>Expert-comptable spécialisé CHR</strong></td><td>Banque + URSSAF</td><td>Cabinet CHR mandaté dès la création. Bilans et liasses disponibles en 48h sur demande.</td></tr>
+      <tr><td><strong>Non-distribution bénéfices an 1–2</strong></td><td>Banque + investisseurs</td><td>Tout bénéfice réinvesti en trésorerie ou remboursement anticipé. Clause inscrite dans les statuts si investisseur entrant.</td></tr>
+      <tr><td><strong>Ligne de découvert 20K€</strong></td><td>Tous</td><td>Négociée à l'ouverture du compte pro. Utilisée uniquement si EBE mensuel insuffisant — remboursée prioritairement dès retour positif.</td></tr>
+      <tr><td><strong>Respect des obligations sociales et fiscales</strong></td><td>URSSAF, SIE, mairie</td><td>Paiements dans les délais, déclarations mensuelles TVA, déclarations sociales trimestrielles</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout navy-bg">
+    <div class="callout-icon">📌</div>
+    <div>
+      <h4>Synthèse finale — Pour les investisseurs, banques et partenaires</h4>
+      <p>Ce projet à 300K€ est la version la plus accessible et la plus rentable (ROI 3–3,5 ans) des trois scénarios étudiés. Strasbourg est le seul grand marché français sans concurrent sur ce concept. Le modèle est validé à Paris. Les charges mensuelles (24 683 €) sont parmi les plus basses possibles pour ce type d'espace, grâce à une cuisine légère et un format 220 m² maîtrisé. L'achat des simulateurs en propriété pleine (vs leasing) renforce le bilan, améliore les garanties et valorise mieux le fonds à terme. Le programme de sponsoring peut générer 15 à 45K€/an de CA additionnel à très haute marge, accélérant encore le ROI. Ce dossier est une invitation à co-construire la référence du divertissement actif en Alsace.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--w);border:1px solid var(--br);border-radius:9px;padding:18px 20px;margin:20px 0;">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--mu);margin-bottom:12px;">Documents annexes disponibles sur demande</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;font-size:13px;color:var(--t2);">
+      <div>📄 Étude de marché complète (25p.)</div>
+      <div>📊 Tableaux financiers Excel complets</div>
+      <div>🗺️ Analyse locaux prospectés Strasbourg</div>
+      <div>📍 Devis Foresight GC3 (3 bays)</div>
+      <div>⚖️ Projet de statuts SAS</div>
+      <div>🤝 Contrats partenariat type</div>
+      <div>📸 Moodboard concept décoration</div>
+      <div>📅 Planning détaillé lancement</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:32px 0 8px;font-size:11px;color:var(--mu);border-top:1px solid var(--brl);margin-top:36px;">
+    Dossier de Présentation — Version 300K€ · Achat simulateurs · Juin 2026 · Confidentiel<br>
+    Strasbourg, Eurométropole d'Alsace, Grand Est, France<br>
+    Projections basées sur des données de marché réelles et des benchmarks sectoriels CHR / entertainment. Non contractuel.
+  </div>
+</div>
+
+</body></html>
